@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <YLT_BaseLib/YLT_BaseLib.h>
 
-@interface YLT_PushModular : NSObject
+@interface YLT_PushModular : YLT_BaseModular
 
 @end

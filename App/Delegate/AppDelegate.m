@@ -11,7 +11,7 @@
 #import "AppDelegate+ThirdLibrary.h"
 #import "AppDelegate+Location.h"
 #import "UIColor+AppColor.h"
-#import "ModularManager.h"
+#import <YLT_BaseLib/YLT_BaseLib.h>
 
 @interface AppDelegate ()
 
@@ -20,77 +20,105 @@
 @implementation AppDelegate
 
 
++ (void)load {
+    [YLT_ModularManager modularWithPlistPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"Modular.plist"]];
+}
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self initLocationService];
-    [self initThirdLibrary];
-    [self initUI];
-    [[ModularManager shareInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+//    [self initAppService];
+//    [self initThirdLibrary];
+//    [self initUI];
+    
+    if (@available(iOS 10.0, *)) {
+        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    } else {
+    }
+    [YLT_ModularManager application:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [[ModularManager shareInstance] applicationDidBecomeActive:application];
+    [YLT_ModularManager applicationDidBecomeActive:application];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [YLT_ModularManager applicationDidEnterBackground:application];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    [[ModularManager shareInstance] applicationWillResignActive:application];
+    [YLT_ModularManager applicationWillResignActive:application];
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
-    [[ModularManager shareInstance] application:app openURL:url options:options];
+    [YLT_ModularManager application:app openURL:url options:options];
     return YES;
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-    [[ModularManager shareInstance] applicationDidReceiveMemoryWarning:application];
+    [YLT_ModularManager applicationDidReceiveMemoryWarning:application];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self stopThirdLibrary];
-    [[ModularManager shareInstance] applicationWillTerminate:application];
+    [YLT_ModularManager applicationWillTerminate:application];
 }
 
 - (void)applicationSignificantTimeChange:(UIApplication *)application {
-    [[ModularManager shareInstance] applicationSignificantTimeChange:application];
+    [YLT_ModularManager applicationSignificantTimeChange:application];
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-    [[ModularManager shareInstance] application:application didRegisterUserNotificationSettings:notificationSettings];
+    [YLT_ModularManager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [[ModularManager shareInstance] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    [YLT_ModularManager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    [[ModularManager shareInstance] application:application didFailToRegisterForRemoteNotificationsWithError:error];
+    [YLT_ModularManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [[ModularManager shareInstance] application:application didReceiveRemoteNotification:userInfo];
+    [YLT_ModularManager application:application didReceiveRemoteNotification:userInfo];
 }
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void(^)())completionHandler {
-    [[ModularManager shareInstance] application:application handleActionWithIdentifier:identifier forLocalNotification:notification completionHandler:completionHandler];
-};
+    [YLT_ModularManager application:application handleActionWithIdentifier:identifier forLocalNotification:notification completionHandler:completionHandler];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    [YLT_ModularManager application:application didReceiveLocalNotification:notification];
+}
+
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound);
+    [YLT_ModularManager userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
+    [YLT_ModularManager userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+}
+#endif
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo withResponseInfo:(NSDictionary *)responseInfo completionHandler:(void(^)())completionHandler {
-    [[ModularManager shareInstance] application:application handleActionWithIdentifier:identifier forRemoteNotification:userInfo withResponseInfo:responseInfo completionHandler:completionHandler];
+    [YLT_ModularManager application:application handleActionWithIdentifier:identifier forRemoteNotification:userInfo withResponseInfo:responseInfo completionHandler:completionHandler];
 }
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler {
-    [[ModularManager shareInstance] application:application handleActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
+    [YLT_ModularManager application:application handleActionWithIdentifier:identifier forRemoteNotification:userInfo completionHandler:completionHandler];
 }
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forLocalNotification:(UILocalNotification *)notification withResponseInfo:(NSDictionary *)responseInfo completionHandler:(void(^)())completionHandler {
-    [[ModularManager shareInstance] application:application handleActionWithIdentifier:identifier forLocalNotification:notification withResponseInfo:responseInfo completionHandler:completionHandler];
+    [YLT_ModularManager application:application handleActionWithIdentifier:identifier forLocalNotification:notification withResponseInfo:responseInfo completionHandler:completionHandler];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
-    [[ModularManager shareInstance] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+    [YLT_ModularManager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 #pragma clang diagnostic pop
 

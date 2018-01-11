@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3242D8E250EF808B63039ED3 /* libPods-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693DDA6B8D84FBBC94BDAF0 /* libPods-App.a */; };
+		3570393D200736E700F76CAC /* Modular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3570393C200736E600F76CAC /* Modular.plist */; };
 		FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366971FC017A5006255D0 /* AppDelegate.m */; };
 		FA23669B1FC017A5006255D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23669A1FC017A5006255D0 /* ViewController.m */; };
 		FA23669E1FC017A5006255D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA23669C1FC017A5006255D0 /* Main.storyboard */; };
@@ -19,8 +20,6 @@
 		FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366D41FC019FF006255D0 /* AppDelegate+AppService.m */; };
 		FA2366D81FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366D71FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m */; };
 		FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */; };
-		FA2366DF1FC01C15006255D0 /* Modular.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA2366DC1FC01C15006255D0 /* Modular.plist */; };
-		FA2366E01FC01C15006255D0 /* ModularManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366DE1FC01C15006255D0 /* ModularManager.m */; };
 		FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E41FC01C62006255D0 /* YLT_PushModular.m */; };
 		FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E71FC01C8C006255D0 /* ShareData.m */; };
 		FA2366ED1FC01CFB006255D0 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366EC1FC01CFB006255D0 /* NSDictionary+Safe.m */; };
@@ -50,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3570393C200736E600F76CAC /* Modular.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Modular.plist; sourceTree = "<group>"; };
 		6546C63886D3FA48D1E5CBEF /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 		9693DDA6B8D84FBBC94BDAF0 /* libPods-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7CBEFF6D1B981D12FAD5356 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,9 +75,6 @@
 		FA2366D71FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ThirdLibrary.m"; sourceTree = "<group>"; };
 		FA2366D91FC01A6F006255D0 /* UIColor+AppColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColor.h"; sourceTree = "<group>"; };
 		FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColor.m"; sourceTree = "<group>"; };
-		FA2366DC1FC01C15006255D0 /* Modular.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Modular.plist; sourceTree = "<group>"; };
-		FA2366DD1FC01C15006255D0 /* ModularManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModularManager.h; sourceTree = "<group>"; };
-		FA2366DE1FC01C15006255D0 /* ModularManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModularManager.m; sourceTree = "<group>"; };
 		FA2366E31FC01C62006255D0 /* YLT_PushModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PushModular.h; sourceTree = "<group>"; };
 		FA2366E41FC01C62006255D0 /* YLT_PushModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PushModular.m; sourceTree = "<group>"; };
 		FA2366E61FC01C8C006255D0 /* ShareData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareData.h; sourceTree = "<group>"; };
@@ -239,7 +236,7 @@
 		FA2366CB1FC01990006255D0 /* Modular */ = {
 			isa = PBXGroup;
 			children = (
-				FA2366E11FC01C40006255D0 /* Manager */,
+				3570393C200736E600F76CAC /* Modular.plist */,
 				FA2366E31FC01C62006255D0 /* YLT_PushModular.h */,
 				FA2366E41FC01C62006255D0 /* YLT_PushModular.m */,
 			);
@@ -275,16 +272,6 @@
 				FA7C27501FC14408002235DC /* AppDelegate+Location.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		FA2366E11FC01C40006255D0 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				FA2366DC1FC01C15006255D0 /* Modular.plist */,
-				FA2366DD1FC01C15006255D0 /* ModularManager.h */,
-				FA2366DE1FC01C15006255D0 /* ModularManager.m */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		FA2366E91FC01CF5006255D0 /* Lib */ = {
@@ -416,8 +403,8 @@
 				FA2366A31FC017A5006255D0 /* LaunchScreen.storyboard in Resources */,
 				FA2366F01FC01D0F006255D0 /* Tools in Resources */,
 				FA2366A01FC017A5006255D0 /* Assets.xcassets in Resources */,
+				3570393D200736E700F76CAC /* Modular.plist in Resources */,
 				FA23669E1FC017A5006255D0 /* Main.storyboard in Resources */,
-				FA2366DF1FC01C15006255D0 /* Modular.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +498,6 @@
 				FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */,
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
-				FA2366E01FC01C15006255D0 /* ModularManager.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
 				FA2366D81FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m in Sources */,
 			);
