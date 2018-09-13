@@ -27,8 +27,8 @@
 		FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F41FC01D3F006255D0 /* PPRequest.m */; };
 		FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F71FC01D3F006255D0 /* PPModel.m */; };
 		FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F81FC01D3F006255D0 /* PPModel+DB.m */; };
-		FA7C27511FC14408002235DC /* AppDelegate+Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C27501FC14408002235DC /* AppDelegate+Location.m */; };
 		FABD69D8214A947100234DA4 /* PHTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FABD69D7214A947100234DA4 /* PHTools.m */; };
+		FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,10 +89,10 @@
 		FA2366F71FC01D3F006255D0 /* PPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPModel.m; sourceTree = "<group>"; };
 		FA2366F81FC01D3F006255D0 /* PPModel+DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PPModel+DB.m"; sourceTree = "<group>"; };
 		FA2366F91FC01D3F006255D0 /* PPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRequest.h; sourceTree = "<group>"; };
-		FA7C274F1FC14408002235DC /* AppDelegate+Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Location.h"; sourceTree = "<group>"; };
-		FA7C27501FC14408002235DC /* AppDelegate+Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Location.m"; sourceTree = "<group>"; };
 		FABD69D6214A947100234DA4 /* PHTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHTools.h; path = ../../../XX/BlackCard/BMApi/Model/ModelHelper/PHTools.h; sourceTree = "<group>"; };
 		FABD69D7214A947100234DA4 /* PHTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHTools.m; path = ../../../XX/BlackCard/BMApi/Model/ModelHelper/PHTools.m; sourceTree = "<group>"; };
+		FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_LocationModular.h; sourceTree = "<group>"; };
+		FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_LocationModular.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +239,8 @@
 				3570393C200736E600F76CAC /* Modular.plist */,
 				FA2366E31FC01C62006255D0 /* YLT_PushModular.h */,
 				FA2366E41FC01C62006255D0 /* YLT_PushModular.m */,
+				FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */,
+				FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -268,8 +270,6 @@
 				FA2366D71FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m */,
 				FA2366D91FC01A6F006255D0 /* UIColor+AppColor.h */,
 				FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */,
-				FA7C274F1FC14408002235DC /* AppDelegate+Location.h */,
-				FA7C27501FC14408002235DC /* AppDelegate+Location.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -474,11 +474,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */,
-				FA7C27511FC14408002235DC /* AppDelegate+Location.m in Sources */,
 				FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */,
 				FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */,
 				FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */,
 				FA2366ED1FC01CFB006255D0 /* NSDictionary+Safe.m in Sources */,
+				FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */,
 				FA23669B1FC017A5006255D0 /* ViewController.m in Sources */,
 				FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */,
 				FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */,

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "AppDelegate+AppService.h"
 #import "AppDelegate+ThirdLibrary.h"
-#import "AppDelegate+Location.h"
 #import "UIColor+AppColor.h"
 #import <YLT_BaseLib/YLT_BaseLib.h>
 

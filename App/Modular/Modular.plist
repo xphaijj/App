@@ -3,5 +3,6 @@
 <plist version="1.0">
 <array>
 	<string>YLT_PushModular</string>
+	<string>YLT_LocationModular</string>
 </array>
 </plist>

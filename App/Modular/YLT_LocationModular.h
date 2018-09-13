@@ -1,13 +1,15 @@
 //
-//  AppDelegate+Location.h
+//  YLT_LocationModular.h
 //  App
 //
-//  Created by Alex on 2017/11/19.
-//  Copyright © 2017年 Alex. All rights reserved.
+//  Created by Alex on 2018/9/13.
+//  Copyright © 2018年 Alex. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "YLT_BaseModular.h"
 #import <CoreLocation/CoreLocation.h>
+
+#define LOCATION_UPDATE_NOTIFICATION @"LOCATION_UPDATE_NOTIFICATION" //地理位置更新通知
 
 typedef NS_ENUM(NSUInteger, YLT_AddressType) {
     YLT_ADDRESS_TYPE_ADDRESS = 100,//省市区
@@ -18,10 +20,18 @@ typedef NS_ENUM(NSUInteger, YLT_AddressType) {
     YLT_ADDRESS_TYPE_DETAIL,//详细地址
 };
 
-#define LOCATION_UPDATE @"LOCATION_UPDATE" //地理位置更新通知
+@interface YLT_LocationModular : YLT_BaseModular<CLLocationManagerDelegate>
 
-@interface AppDelegate (Location)<CLLocationManagerDelegate>
+YLT_ShareInstanceHeader(YLT_LocationModular);
 
+/**
+ 当前定位的经纬度
+ */
+@property (nonatomic, assign) CLLocationCoordinate2D currentLocationCoordinate2D;
+
+/**
+ 定位的管理者
+ */
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
 /**
@@ -31,11 +41,10 @@ typedef NS_ENUM(NSUInteger, YLT_AddressType) {
 
 /**
  获取地址
-
+ 
  @param addressType 地址类型
  @param success 成功回调
  */
 - (void)addressType:(YLT_AddressType)addressType
             success:(void(^)(NSString *address, NSArray<CLPlacemark *> *placemarks))success;
-
 @end
