@@ -2,7 +2,7 @@
 // PPModel+DB.h 
 //
 // Created By 项普华 Version: 2.0
-// Copyright (C) 2017/11/18  By AlexXiang  All rights reserved.
+// Copyright (C) 2018/09/13  By AlexXiang  All rights reserved.
 // email:// xiangpuhua@126.com  tel:// +86 13316987488 
 //
 //
@@ -16,13 +16,13 @@
 
 @interface ChatMessage(DB) {
 }
-- (void)saveCallback:(void(^)(BOOL success, id response))callback;
-- (void)delCallback:(void(^)(BOOL success, id response))callback;
-+ (void)delByConditions:(NSString *)sender callback:(void(^)(BOOL success, id response))callback;
-- (void)updateCallback:(void(^)(BOOL success, id response))callback;
-+ (void)updateByConditions:(NSString *)sender callback:(void(^)(BOOL success, id response))callback;
-+ (void)findByConditions:(NSString *)sender callback:(void(^)(BOOL success, id response))callback;
-+ (void)maxKeyValueCallback:(void(^)(BOOL success, id response))callback;
+- (NSInteger)saveDB:(FMDatabase *)db;
+- (BOOL)delDB:(FMDatabase *)db;
++ (BOOL)delDB:(FMDatabase *)db forConditions:(NSString *)sender;
+- (BOOL)updateDB:(FMDatabase *)db;
++ (BOOL)updateDB:(FMDatabase *)db forConditions:(NSString *)sender;
++ (NSArray *)findDB:(FMDatabase *)db forConditions:(NSString *)sender;
++ (NSInteger)maxKeyValueDB:(FMDatabase *)db;
 
 @end
 

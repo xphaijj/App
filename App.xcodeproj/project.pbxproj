@@ -24,11 +24,11 @@
 		FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E71FC01C8C006255D0 /* ShareData.m */; };
 		FA2366ED1FC01CFB006255D0 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366EC1FC01CFB006255D0 /* NSDictionary+Safe.m */; };
 		FA2366F01FC01D0F006255D0 /* Tools in Resources */ = {isa = PBXBuildFile; fileRef = FA2366EE1FC01D0E006255D0 /* Tools */; };
-		FA2366F31FC01D2F006255D0 /* PHTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F21FC01D2F006255D0 /* PHTools.m */; };
 		FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F41FC01D3F006255D0 /* PPRequest.m */; };
 		FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F71FC01D3F006255D0 /* PPModel.m */; };
 		FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F81FC01D3F006255D0 /* PPModel+DB.m */; };
 		FA7C27511FC14408002235DC /* AppDelegate+Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7C27501FC14408002235DC /* AppDelegate+Location.m */; };
+		FABD69D8214A947100234DA4 /* PHTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FABD69D7214A947100234DA4 /* PHTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +83,6 @@
 		FA2366EC1FC01CFB006255D0 /* NSDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Safe.m"; sourceTree = "<group>"; };
 		FA2366EE1FC01D0E006255D0 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = Tools; sourceTree = "<group>"; };
 		FA2366EF1FC01D0F006255D0 /* source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = source.h; sourceTree = "<group>"; };
-		FA2366F11FC01D2F006255D0 /* PHTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHTools.h; sourceTree = "<group>"; };
-		FA2366F21FC01D2F006255D0 /* PHTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHTools.m; sourceTree = "<group>"; };
 		FA2366F41FC01D3F006255D0 /* PPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRequest.m; sourceTree = "<group>"; };
 		FA2366F51FC01D3F006255D0 /* PPModel+DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PPModel+DB.h"; sourceTree = "<group>"; };
 		FA2366F61FC01D3F006255D0 /* PPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPModel.h; sourceTree = "<group>"; };
@@ -93,6 +91,8 @@
 		FA2366F91FC01D3F006255D0 /* PPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRequest.h; sourceTree = "<group>"; };
 		FA7C274F1FC14408002235DC /* AppDelegate+Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Location.h"; sourceTree = "<group>"; };
 		FA7C27501FC14408002235DC /* AppDelegate+Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Location.m"; sourceTree = "<group>"; };
+		FABD69D6214A947100234DA4 /* PHTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHTools.h; path = ../../../XX/BlackCard/BMApi/Model/ModelHelper/PHTools.h; sourceTree = "<group>"; };
+		FABD69D7214A947100234DA4 /* PHTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHTools.m; path = ../../../XX/BlackCard/BMApi/Model/ModelHelper/PHTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,14 +219,14 @@
 		FA2366CA1FC0198A006255D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FABD69D6214A947100234DA4 /* PHTools.h */,
+				FABD69D7214A947100234DA4 /* PHTools.m */,
 				FA2366F61FC01D3F006255D0 /* PPModel.h */,
 				FA2366F71FC01D3F006255D0 /* PPModel.m */,
 				FA2366F51FC01D3F006255D0 /* PPModel+DB.h */,
 				FA2366F81FC01D3F006255D0 /* PPModel+DB.m */,
 				FA2366F91FC01D3F006255D0 /* PPRequest.h */,
 				FA2366F41FC01D3F006255D0 /* PPRequest.m */,
-				FA2366F11FC01D2F006255D0 /* PHTools.h */,
-				FA2366F21FC01D2F006255D0 /* PHTools.m */,
 				FA2366EF1FC01D0F006255D0 /* source.h */,
 				FA2366EE1FC01D0E006255D0 /* Tools */,
 			);
@@ -302,7 +302,6 @@
 				FA23668F1FC017A5006255D0 /* Sources */,
 				FA2366901FC017A5006255D0 /* Frameworks */,
 				FA2366911FC017A5006255D0 /* Resources */,
-				6FA34F2C7BCCDC51FDD4C892 /* [CP] Embed Pods Frameworks */,
 				22BA30B515988C84E8D8D57C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -457,26 +456,14 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKPromptResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6FA34F2C7BCCDC51FDD4C892 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -486,7 +473,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2366F31FC01D2F006255D0 /* PHTools.m in Sources */,
 				FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */,
 				FA7C27511FC14408002235DC /* AppDelegate+Location.m in Sources */,
 				FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */,
@@ -499,6 +485,7 @@
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
+				FABD69D8214A947100234DA4 /* PHTools.m in Sources */,
 				FA2366D81FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

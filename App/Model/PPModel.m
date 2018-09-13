@@ -2,7 +2,7 @@
 // PPModel.m 
 //
 // Created By 项普华 Version: 2.0
-// Copyright (C) 2017/11/18  By AlexXiang  All rights reserved.
+// Copyright (C) 2018/09/13  By AlexXiang  All rights reserved.
 // email:// xiangpuhua@126.com  tel:// +86 13316987488 
 //
 //
@@ -12,7 +12,6 @@
 
 
 @implementation ChatMessage
-
 
 - (id)init {
 	self = [super init];
@@ -33,6 +32,7 @@
 	return @{
 				};
 }
+
 + (NSDictionary *)YLT_ClassInArray {
 	return @{
 				};
@@ -42,7 +42,6 @@
 
 
 @implementation User
-
 
 - (id)init {
 	self = [super init];
@@ -57,6 +56,7 @@
 	return @{
 				};
 }
+
 + (NSDictionary *)YLT_ClassInArray {
 	return @{
 				};

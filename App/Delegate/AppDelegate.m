@@ -21,21 +21,18 @@
 
 
 + (void)load {
-    [YLT_ModularManager modularWithPlistPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"Modular.plist"]];
+    [YLT_ModularManager ylt_modularWithPlistPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"Modular.plist"]];
 }
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [self initAppService];
-//    [self initThirdLibrary];
-//    [self initUI];
+    [self initAppService];
+    [self initThirdLibrary];
+    [self initUI];
     
-    if (@available(iOS 10.0, *)) {
-        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-    } else {
-    }
+
     [YLT_ModularManager application:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }

@@ -2,7 +2,7 @@
 // PPModel.h 
 //
 // Created By 项普华 Version: 2.0
-// Copyright (C) 2017/11/18  By AlexXiang  All rights reserved.
+// Copyright (C) 2018/09/13  By AlexXiang  All rights reserved.
 // email:// xiangpuhua@126.com  tel:// +86 13316987488 
 //
 //
@@ -30,37 +30,21 @@ typedef NS_ENUM(NSUInteger, ChatType) {
 
 @interface ChatMessage : YLT_BaseModel {
 }
-/**
- 消息ID
- */
+/** 消息ID */
 @property (readwrite, nonatomic, assign) NSInteger messageId;
-/**
- 消息类型
- */
+/** 消息类型 */
 @property (readwrite, nonatomic, assign) ChatType messageType;
-/**
- 是否是阅后即焚消息
- */
+/** 是否是阅后即焚消息 */
 @property (readwrite, nonatomic, assign) BOOL needDestroy;
-/**
- 倒计时时间剩余
- */
+/** 倒计时时间剩余 */
 @property (readwrite, nonatomic, assign) NSInteger remind;
-/**
- 消息内容 除普通文字外 其他消息表示该文件的存储路径
- */
+/** 消息内容 除普通文字外 其他消息表示该文件的存储路径 */
 @property (readwrite, nonatomic, strong) NSString * message;
-/**
- 消息的发送者
- */
+/** 消息的发送者 */
 @property (readwrite, nonatomic, assign) NSInteger from;
-/**
- 消息的接收者
- */
+/** 消息的接收者 */
 @property (readwrite, nonatomic, assign) NSInteger to;
-/**
- topic
- */
+/** topic */
 @property (readwrite, nonatomic, strong) NSString * topic;
 
 @end
@@ -68,13 +52,9 @@ typedef NS_ENUM(NSUInteger, ChatType) {
 
 @interface User : YLT_BaseModel {
 }
-/**
- 用户ID
- */
+/** 用户ID */
 @property (readwrite, nonatomic, assign) NSInteger userId;
-/**
- 用户名
- */
+/** 用户名 */
 @property (readwrite, nonatomic, strong) NSString * name;
 
 @end

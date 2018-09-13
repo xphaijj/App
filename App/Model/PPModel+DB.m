@@ -2,7 +2,7 @@
 // PPModel+DB.m 
 //
 // Created By 项普华 Version: 2.0
-// Copyright (C) 2017/11/18  By AlexXiang  All rights reserved.
+// Copyright (C) 2018/09/13  By AlexXiang  All rights reserved.
 // email:// xiangpuhua@126.com  tel:// +86 13316987488 
 //
 //
@@ -14,160 +14,153 @@
 @implementation ChatMessage(DB)
 
 
-- (void)saveCallback:(void(^)(BOOL success, id response))callback {
-	[[YLT_DBHelper shareInstance].databaseQueue inDatabase:^(FMDatabase *db) {
-		BOOL result = NO;
-		@try {
-			[db open];
-			[db executeUpdate:@"CREATE TABLE IF NOT EXISTS DB_ChatMessage(messageId INTEGER PRIMARY KEY AUTOINCREMENT, messageType TEXT, needDestroy TINYINT, remind INTEGER, message TEXT, from INTEGER, to INTEGER, topic TEXT)"];
-			result = [db executeUpdate:@"INSERT INTO DB_ChatMessage(messageType,needDestroy,remind,message,from,to,topic) VALUES (?,?,?,?,?,?,?)", self.messageType, [NSNumber numberWithBool:self.needDestroy], [NSNumber numberWithInteger:self.remind], self.message, [NSNumber numberWithInteger:self.from], [NSNumber numberWithInteger:self.to], self.topic];
-			self.messageId = [db lastInsertRowId];
-			[db close];
-		} @catch (NSException *exception) {
-			YLT_LogError(@"数据库异常");
-			[db rollback];
-		} @finally {
-			[db commit];
-			if (callback) {
-				callback(result, self);
-			}
-		}
-	}];
+- (NSInteger)saveDB:(FMDatabase *)db {
+	BOOL sync = NO;
+	if (db == nil) {
+		sync = YES;
+		db = [FMDatabase databaseWithPath:[YLT_DBHelper shareInstance].ylt_dbPath];
+	}
+	if (![db open]) {
+		YLT_LogWarn(@"数据库错误");
+		return 0;
+	}
+	NSInteger result = 0;
+	[db executeUpdate:@"CREATE TABLE IF NOT EXISTS DB_ChatMessage(messageId INTEGER PRIMARY KEY AUTOINCREMENT, messageType INTEGER, needDestroy TINYINT, remind INTEGER, message TEXT, from INTEGER, to INTEGER, topic TEXT)"];
+	result = [db executeUpdate:@"INSERT INTO DB_ChatMessage(messageType,needDestroy,remind,message,from,to,topic) VALUES (?,?,?,?,?,?,?)", [NSNumber numberWithInteger:self.messageType], [NSNumber numberWithBool:self.needDestroy], [NSNumber numberWithInteger:self.remind], self.message, [NSNumber numberWithInteger:self.from], [NSNumber numberWithInteger:self.to], self.topic];
+	result = [db lastInsertRowId];
+	if (sync) {
+		[db close];
+	}
+	return result;
 }
 
-- (void)delCallback:(void(^)(BOOL success, id response))callback {
-	[[YLT_DBHelper shareInstance].databaseQueue inDatabase:^(FMDatabase *db) {
-		BOOL result = NO;
-		@try {
-			[db open];
-			result = [db executeUpdate:@"DELETE FROM DB_ChatMessage WHERE messageId = ?", [NSNumber numberWithInteger:self.messageId]];
-			[db close];
-		} @catch (NSException *exception) {
-			YLT_LogError(@"数据库异常");
-			[db rollback];
-		} @finally {
-			[db commit];
-			if (callback) {
-				callback(result, self);
-			}
-		}
-	}];
+- (BOOL)delDB:(FMDatabase *)db {
+	BOOL sync = NO;
+	if (db == nil) {
+		sync = YES;
+		db = [FMDatabase databaseWithPath:[YLT_DBHelper shareInstance].ylt_dbPath];
+	}
+	if (![db open]) {
+		YLT_LogWarn(@"数据库错误");
+		return 0;
+	}
+	BOOL result = NO;
+	result = [db executeUpdate:@"DELETE FROM DB_ChatMessage WHERE messageId = ?", [NSNumber numberWithInteger:self.messageId]];
+	if (sync) {
+		[db close];
+	}
+	return result;
 }
 
-+ (void)delByConditions:(NSString *)sender callback:(void(^)(BOOL success, id response))callback {
-	[[YLT_DBHelper shareInstance].databaseQueue inDatabase:^(FMDatabase *db) {
-		BOOL result = NO;
-		@try {
-			[db open];
-			result = [db executeUpdate:@"DELETE FROM DB_ChatMessage WHERE %@", sender];
-			[db close];
-		} @catch (NSException *exception) {
-			YLT_LogError(@"数据库异常");
-			[db rollback];
-		} @finally {
-			[db commit];
-			if (callback) {
-				callback(result, self);
-			}
-		}
-	}];
++ (BOOL)delDB:(FMDatabase *)db forConditions:(NSString *)sender {
+	BOOL sync = NO;
+	if (db == nil) {
+		sync = YES;
+		db = [FMDatabase databaseWithPath:[YLT_DBHelper shareInstance].ylt_dbPath];
+	}
+	if (![db open]) {
+		YLT_LogWarn(@"数据库错误");
+		return 0;
+	}
+	BOOL result = NO;
+	result = [db executeUpdate:[NSString stringWithFormat:@"DELETE FROM DB_ChatMessage WHERE %@", sender]];
+	if (sync) {
+		[db close];
+	}
+	return result;
 }
 
-- (void)updateCallback:(void(^)(BOOL success, id response))callback {
-	[[YLT_DBHelper shareInstance].databaseQueue inDatabase:^(FMDatabase *db) {
-		BOOL result = NO;
-		@try {
-			[db open];
-			result = [db executeUpdate:@"UPDATE DB_ChatMessage SET  messageType = ?, needDestroy = ?, remind = ?, message = ?, from = ?, to = ?, topic = ? WHERE messageId = ?", self.messageType, [NSNumber numberWithBool:self.needDestroy], [NSNumber numberWithInteger:self.remind], self.message, [NSNumber numberWithInteger:self.from], [NSNumber numberWithInteger:self.to], self.topic, [NSNumber numberWithInteger:self.messageId]];
-			[db close];
-		} @catch (NSException *exception) {
-			YLT_LogError(@"数据库异常");
-			[db rollback];
-		} @finally {
-			[db commit];
-			if (callback) {
-				callback(result, self);
-			}
-		}
-	}];
+- (BOOL)updateDB:(FMDatabase *)db {
+	BOOL sync = NO;
+	if (db == nil) {
+		sync = YES;
+		db = [FMDatabase databaseWithPath:[YLT_DBHelper shareInstance].ylt_dbPath];
+	}
+	if (![db open]) {
+		YLT_LogWarn(@"数据库错误");
+		return 0;
+	}
+	BOOL result = NO;
+	result = [db executeUpdate:@"UPDATE DB_ChatMessage SET  messageType = ?, needDestroy = ?, remind = ?, message = ?, from = ?, to = ?, topic = ? WHERE messageId = ?", [NSNumber numberWithInteger:self.messageType], [NSNumber numberWithBool:self.needDestroy], [NSNumber numberWithInteger:self.remind], self.message, [NSNumber numberWithInteger:self.from], [NSNumber numberWithInteger:self.to], self.topic, [NSNumber numberWithInteger:self.messageId]];
+	if (sync) {
+		[db close];
+	}
+	return result;
 }
 
-+ (void)updateByConditions:(NSString *)sender callback:(void(^)(BOOL success, id response))callback {
-	[[YLT_DBHelper shareInstance].databaseQueue inDatabase:^(FMDatabase *db) {
-		BOOL result = NO;
-		@try {
-			[db open];
-			result = [db executeUpdate:@"UPDATE DB_ChatMessage SET ", sender];
-			[db close];
-		} @catch (NSException *exception) {
-			YLT_LogError(@"数据库异常");
-			[db rollback];
-		} @finally {
-			[db commit];
-			if (callback) {
-				callback(result, self);
-			}
-		}
-	}];
++ (BOOL)updateDB:(FMDatabase *)db forConditions:(NSString *)sender {
+	BOOL sync = NO;
+	if (db == nil) {
+		sync = YES;
+		db = [FMDatabase databaseWithPath:[YLT_DBHelper shareInstance].ylt_dbPath];
+	}
+	if (![db open]) {
+		YLT_LogWarn(@"数据库错误");
+		return 0;
+	}
+	BOOL result = NO;
+	result = [db executeUpdate:[NSString stringWithFormat:@"UPDATE DB_ChatMessage SET %@", sender]];
+	if (sync) {
+		[db close];
+	}
+	return result;
 }
 
-+ (void)findByConditions:(NSString *)sender callback:(void(^)(BOOL success, id response))callback {
-	[[YLT_DBHelper shareInstance].databaseQueue inDatabase:^(FMDatabase *db) {
-		NSMutableArray *result = [[NSMutableArray alloc] init];
-		@try {
-			[db open];
-			FMResultSet* set;
-			if (sender.length == 0) {
-				set = [db executeQuery:@"SELECT * FROM DB_ChatMessage"];
-			}
-			else {
-				set = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM DB_ChatMessage WHERE %@", sender]];
-			}
-			while ([set next]) {
-				ChatMessage *item = [[ChatMessage alloc] init];
-				item.messageId = [set intForColumn:@"messageId"];
-				item.messageType = [set stringForColumn:@"messageType"];
-				item.needDestroy = [set boolForColumn:@"needDestroy"];
-				item.remind = [set intForColumn:@"remind"];
-				item.message = [set stringForColumn:@"message"];
-				item.from = [set intForColumn:@"from"];
-				item.to = [set intForColumn:@"to"];
-				item.topic = [set stringForColumn:@"topic"];
-				[result addObject:item];
-			}
-			[db close];
-		} @catch (NSException *exception) {
-			YLT_LogError(@"数据库异常");
-			[db rollback];
-		} @finally {
-			[db commit];
-			if (callback) {
-				callback((result.count != 0), result);
-			}
-		}
-	}];
++ (NSArray *)findDB:(FMDatabase *)db forConditions:(NSString *)sender {
+	BOOL sync = NO;
+	if (db == nil) {
+		sync = YES;
+		db = [FMDatabase databaseWithPath:[YLT_DBHelper shareInstance].ylt_dbPath];
+	}
+	if (![db open]) {
+		YLT_LogWarn(@"数据库错误");
+		return nil;
+	}
+	NSMutableArray *result = [[NSMutableArray alloc] init];
+	FMResultSet* set;
+	if (sender.length == 0) {
+		set = [db executeQuery:@"SELECT * FROM DB_ChatMessage"];
+	}
+	else {
+		set = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM DB_ChatMessage WHERE %@", sender]];
+	}
+	while ([set next]) {
+		ChatMessage *item = [[ChatMessage alloc] init];
+		item.messageId = [set intForColumn:@"messageId"];
+		item.messageType = [set intForColumn:@"messageType"];
+		item.needDestroy = [set boolForColumn:@"needDestroy"];
+		item.remind = [set intForColumn:@"remind"];
+		item.message = [set stringForColumn:@"message"];
+		item.from = [set intForColumn:@"from"];
+		item.to = [set intForColumn:@"to"];
+		item.topic = [set stringForColumn:@"topic"];
+		[result addObject:item];
+	}
+	if (sync) {
+		[db close];
+	}
+	return result;
 }
 
-+ (void)maxKeyValueCallback:(void(^)(BOOL success, id response))callback {
-	[[YLT_DBHelper shareInstance].databaseQueue inDatabase:^(FMDatabase *db) {
-		NSInteger result = 0;
-		@try {
-			[db open];
-			FMResultSet* set = [db executeQuery:@"SELECT MAX(CAST(messageId as INT)) FROM DB_ChatMessage"];
-			if ([set next]) {
-				result = [set intForColumnIndex:0];
-			}
-			[db close];
-		} @catch (NSException *exception) {
-			YLT_LogError(@"数据库异常");
-			[db rollback];
-		} @finally {
-			[db commit];
-			if (callback) {
-				callback((result != 0), @(result));
-			}
-		}
-	}];
++ (NSInteger)maxKeyValueDB:(FMDatabase *)db {
+	BOOL sync = NO;
+	if (db == nil) {
+		sync = YES;
+		db = [FMDatabase databaseWithPath:[YLT_DBHelper shareInstance].ylt_dbPath];
+	}
+	if (![db open]) {
+		YLT_LogWarn(@"数据库错误");
+		return 0;
+	}
+	FMResultSet* set = [db executeQuery:@"SELECT MAX(CAST(messageId as INT)) FROM DB_ChatMessage"];
+	NSInteger result = 0;
+	if ([set next]) {
+		result = [set intForColumnIndex:0];
+	}
+	if (sync) {
+		[db close];
+	}
+	return result;
 }
 
 @end

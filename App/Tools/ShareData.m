@@ -12,8 +12,7 @@
 
 YLT_ShareInstance(ShareData);
 
-- (void)YLT_init {
-    
+- (void)ylt_init {
 }
 
 @end

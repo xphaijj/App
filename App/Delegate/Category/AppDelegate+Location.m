@@ -60,7 +60,7 @@
  定位的初始化
  */
 - (void)initLocationService {
-    [[YLT_AuthorizationHelper shareInstance] YLT_AuthorizationType:YLT_MapWhenInUse success:^{
+    [[YLT_AuthorizationHelper shareInstance] ylt_authorizationType:YLT_MapWhenInUse success:^{
         [self.locationManager startUpdatingLocation];
     } failed:^{
     }];
@@ -85,11 +85,11 @@
         [self.geocoder reverseGeocodeLocation:[locations firstObject] completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
             if (error == nil && placemarks.count > 0 && self.success) {
                 CLPlacemark *pl = [placemarks firstObject];
-                NSString *province = [pl.administrativeArea YLT_CheckString]?pl.administrativeArea:([pl.subAdministrativeArea YLT_CheckString]?pl.subAdministrativeArea:@"");
-                NSString *city = [pl.locality YLT_CheckString]?pl.locality:([pl.subLocality YLT_CheckString]?pl.subLocality:@"");
-                NSString *discrict = [pl.subLocality YLT_CheckString]?pl.subLocality:@"";
-                NSString *street = [pl.thoroughfare YLT_CheckString]?pl.thoroughfare:([pl.subThoroughfare YLT_CheckString]?pl.subThoroughfare:@"");
-                NSString *detail = [pl.name YLT_CheckString]?pl.name:@"";
+                NSString *province = [pl.administrativeArea ylt_isValid]?pl.administrativeArea:([pl.subAdministrativeArea ylt_isValid]?pl.subAdministrativeArea:@"");
+                NSString *city = [pl.locality ylt_isValid]?pl.locality:([pl.subLocality ylt_isValid]?pl.subLocality:@"");
+                NSString *discrict = [pl.subLocality ylt_isValid]?pl.subLocality:@"";
+                NSString *street = [pl.thoroughfare ylt_isValid]?pl.thoroughfare:([pl.subThoroughfare ylt_isValid]?pl.subThoroughfare:@"");
+                NSString *detail = [pl.name ylt_isValid]?pl.name:@"";
                 switch (self.addressType) {
                     case YLT_ADDRESS_TYPE_PROVINCE:
                     {
