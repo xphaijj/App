@@ -63,6 +63,11 @@
 @property (nonatomic, strong) id ylt_params;
 
 /**
+ 当前页面的操作队列，进入页面的时候会启动，离开页面时会挂起
+ */
+@property (nonatomic, strong, readonly) NSOperationQueue *ylt_queue;
+
+/**
  页面回调
  */
 @property (nonatomic, copy) void(^ylt_callback)(id response);
@@ -71,6 +76,22 @@
  页面回调
  */
 @property (nonatomic, copy) void(^ylt_completion)(NSError *error, id response);
+
+/**
+ push进页面
+
+ @param vc 目标页面
+ @param callback 回调
+ */
+- (void)ylt_pushToVC:(UIViewController *)vc callback:(void(^)(id response))callback;
+
+/**
+ push进页面
+ 
+ @param vc 目标页面
+ @param callback 回调
+ */
+- (void)ylt_presentToVC:(UIViewController *)vc callback:(void(^)(id response))callback;
 
 /**
  创建控制器
@@ -99,6 +120,14 @@
 
 /**
  创建视图并PUSH到对应的视图
+ 
+ @param ylt_param 参数
+ @return 控制器
+ */
++ (UIViewController *)ylt_pushVCWithParam:(id)ylt_param;
+
+/**
+ 创建视图并PUSH到对应的视图
 
  @param ylt_param 参数
  @param callback 回调
@@ -106,6 +135,14 @@
  */
 + (UIViewController *)ylt_pushVCWithParam:(id)ylt_param
                                  callback:(void(^)(id response))callback;
+
+/**
+ 创建控制器并Modal到对应的视图
+ 
+ @param ylt_param 参数
+ @return 控制器
+ */
++ (UIViewController *)ylt_modalVCWithParam:(id)ylt_param;
 
 /**
  创建控制器并Modal到对应的视图

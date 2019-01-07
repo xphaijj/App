@@ -31,3 +31,7 @@ message User {
     optional string name = nil;//用户名
 }
 
+request post login User {
+    optional string username = nil;
+    optional string password = nil;
+}

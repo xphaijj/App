@@ -58,6 +58,17 @@
     };
 }
 /**
+ 普通字体
+ */
+- (UIButton *(^)(UIFont *font))ylt_font {
+    @weakify(self);
+    return ^id(UIFont *font) {
+        @strongify(self);
+        self.titleLabel.font = font;
+        return self;
+    };
+}
+/**
  选中image
  */
 - (UIButton *(^)(id img))ylt_selectedImage {
@@ -180,13 +191,13 @@
             }
                 break;
             case YLT_ButtonLayoutImageAtTop: {
-                self.titleEdgeInsets = UIEdgeInsetsMake(0.0, -self.imageView.frame.size.width, -self.imageView.frame.size.height-20, 0.0);
+                self.titleEdgeInsets = UIEdgeInsetsMake(0.0, -self.imageView.frame.size.width, -self.imageView.frame.size.height, 0.0);
                 self.imageEdgeInsets = UIEdgeInsetsMake(-self.titleLabel.intrinsicContentSize.height, 0.0, 0.0, -self.titleLabel.intrinsicContentSize.width);
             }
                 break;
             case YLT_ButtonLayoutImageAtBottom: {
                 self.titleEdgeInsets = UIEdgeInsetsMake(-self.titleLabel.intrinsicContentSize.height, -self.imageView.frame.size.width, 0.0, 0.0);
-                self.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -self.imageView.frame.size.height-20, -self.titleLabel.intrinsicContentSize.width);
+                self.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -self.imageView.frame.size.height, -self.titleLabel.intrinsicContentSize.width);
             }
                 break;
         }

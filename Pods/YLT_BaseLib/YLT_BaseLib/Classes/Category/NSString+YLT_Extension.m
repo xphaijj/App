@@ -25,6 +25,7 @@
 @dynamic ylt_isEmoji;
 @dynamic ylt_isURL;
 @dynamic ylt_isLocalPath;
+@dynamic ylt_isAllChinese;
 
 #pragma mark - Public method 类方法
 /**
@@ -133,6 +134,20 @@
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
     NSInteger numMatch = [regex numberOfMatchesInString:sender options:NSMatchingReportProgress range:NSMakeRange(0, sender.length)];
     return numMatch > 0 ? YES : NO;
+}
+/**
+ 字符串是否全部是中文
+ 
+ @param sender 目标字符串
+ @return  YES:全部是 NO:包含非中文字符串
+ */
++ (BOOL)ylt_isAllChineseString:(NSString *)sender {
+    NSString *pattern  = @"^[\u4e00-\u9fa5]+$";
+    NSPredicate *regextest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
+    if (([regextest evaluateWithObject:sender] == YES)) {
+        return YES;
+    }
+    return NO;
 }
 
 /**
@@ -601,6 +616,13 @@
 }
 
 /**
+ 字符串是否全部是中文
+ */
+- (BOOL)ylt_isAllChinese {
+    return [NSString ylt_isAllChineseString:self];
+}
+
+/**
  字符串是否为整形
  */
 - (BOOL)ylt_isPureInt {
@@ -676,6 +698,9 @@
     NSString *resultString = self;
     //删除字符串中的空格
     resultString = [[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    if ([resultString rangeOfString:@"clear"].location != NSNotFound) {
+        return UIColor.clearColor;
+    }
     if ([resultString hasPrefix:@"0X"]) {
         resultString = [resultString substringFromIndex:2];
     }
@@ -730,6 +755,64 @@
     [[NSScanner scannerWithString:aString] scanHexInt:&a];
     
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:((float) a / 255.0f)];
+}
+
+/**
+ 将当前字符串转化为颜色值 argb 形式
+ 
+ @return 颜色值
+ */
+- (UIColor *)ylt_androidColorFromHexString {
+    NSString *resultString = self;
+    //删除字符串中的空格
+    resultString = [[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    if ([resultString rangeOfString:@"clear"].location != NSNotFound) {
+        return UIColor.clearColor;
+    }
+    if ([resultString hasPrefix:@"0X"]) {
+        resultString = [resultString substringFromIndex:2];
+    }
+    //如果是#开头的，那么截取字符串，字符串从索引为1的位置开始，一直到末尾
+    if ([resultString hasPrefix:@"#"]) {
+        resultString = [resultString substringFromIndex:1];
+    }
+    
+    if (resultString.length != 3 && resultString.length != 4 && resultString.length != 6 && resultString.length != 8) {
+        return [UIColor clearColor];
+    }
+    
+    if (resultString.length == 3) {
+        NSRange range;
+        range.location = 0;
+        range.length = 1;
+        NSString *r = [resultString substringWithRange:range];
+        range.location = 1;
+        NSString *g = [resultString substringWithRange:range];
+        range.location = 2;
+        NSString *b = [resultString substringWithRange:range];
+        resultString = [NSString stringWithFormat:@"FF%@%@%@%@%@%@", r, r, g, g, b, b];
+    }
+    
+    if (resultString.length == 4) {
+        NSRange range;
+        range.location = 0;
+        range.length = 1;
+        NSString *a = [resultString substringWithRange:range];
+        range.location = 1;
+        NSString *r = [resultString substringWithRange:range];
+        range.location = 2;
+        NSString *g = [resultString substringWithRange:range];
+        range.location = 3;
+        NSString *b = [resultString substringWithRange:range];
+        
+        resultString = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@", a, a, r, r, g, g, b, b];
+    }
+
+    if (resultString.length == 8) {
+        resultString = [NSString stringWithFormat:@"%@%@", [resultString substringFromIndex:2], [resultString substringToIndex:2]];
+    }
+    
+    return resultString.ylt_colorFromHexString;
 }
 
 /**

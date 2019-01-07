@@ -2,18 +2,14 @@
 // PPModel.h 
 //
 // Created By 项普华 Version: 2.0
-// Copyright (C) 2018/09/13  By AlexXiang  All rights reserved.
+// Copyright (C) 2019/01/07  By AlexXiang  All rights reserved.
 // email:// xiangpuhua@126.com  tel:// +86 13316987488 
 //
 //
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "NSDictionary+Safe.h"
-#import <MJExtension/MJExtension.h>
-#import <YLT_BaseLib/YLT_BaseLib.h>
-
-
+#import "BaseCollection.h"
 typedef NS_ENUM(NSUInteger, ChatType) {
     ChatType_CHAT_TYPE_MESSAGE,//普通文字消息
     ChatType_CHAT_TYPE_PICTURE,//图片消息
@@ -39,13 +35,13 @@ typedef NS_ENUM(NSUInteger, ChatType) {
 /** 倒计时时间剩余 */
 @property (readwrite, nonatomic, assign) NSInteger remind;
 /** 消息内容 除普通文字外 其他消息表示该文件的存储路径 */
-@property (readwrite, nonatomic, strong) NSString * message;
+@property (readwrite, nonatomic, strong) NSString *message;
 /** 消息的发送者 */
 @property (readwrite, nonatomic, assign) NSInteger from;
 /** 消息的接收者 */
 @property (readwrite, nonatomic, assign) NSInteger to;
 /** topic */
-@property (readwrite, nonatomic, strong) NSString * topic;
+@property (readwrite, nonatomic, strong) NSString *topic;
 
 @end
 
@@ -55,6 +51,6 @@ typedef NS_ENUM(NSUInteger, ChatType) {
 /** 用户ID */
 @property (readwrite, nonatomic, assign) NSInteger userId;
 /** 用户名 */
-@property (readwrite, nonatomic, strong) NSString * name;
+@property (readwrite, nonatomic, strong) NSString *name;
 
 @end

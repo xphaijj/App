@@ -7,6 +7,7 @@
 
 #import "UIBarButtonItem+YLT_Extension.h"
 #import <objc/runtime.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 NSString *const ZYBarButtonItem_hasBadgeKey = @"ZYBarButtonItem_hasBadgeKey";
 NSString *const ZYBarButtonItem_badgeKey = @"ZYBarButtonItem_badgeKey";
@@ -17,9 +18,8 @@ NSString *const ZYBarButtonItem_badgeColorKey = @"ZYBarButtonItem_badgeColorKey"
 
 @implementation UIBarButtonItem (YTL_Utils)
 
-- (void)initBadge{
+- (void)initBadge {
     UIView *superview = nil;
-    
     if (self.customView) {
         superview = self.customView;
         superview.clipsToBounds = NO;
@@ -120,7 +120,7 @@ NSString *const ZYBarButtonItem_badgeColorKey = @"ZYBarButtonItem_badgeColorKey"
 - (void)setHasBadge:(BOOL)hasBadge {
     if (hasBadge) {
         [self showBadge];
-    }else{
+    } else {
         [self hideBadge];
     }
     
@@ -132,4 +132,26 @@ NSString *const ZYBarButtonItem_badgeColorKey = @"ZYBarButtonItem_badgeColorKey"
     NSNumber *number = objc_getAssociatedObject(self, &ZYBarButtonItem_hasBadgeKey);
     return number.boolValue;
 }
+
+- (void)setYlt_clickBlock:(void (^)(UIBarButtonItem *))ylt_clickBlock {
+    if (ylt_clickBlock) {
+        @weakify(self);
+        self.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+            return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+                @strongify(self);
+                [subscriber sendNext:self];
+                [subscriber sendCompleted];
+                return nil;
+            }];
+        }];
+        [self.rac_command.executionSignals subscribeNext:^(RACSignal<id> * _Nullable x) {
+            [x subscribeNext:^(UIBarButtonItem *x) {
+                if (ylt_clickBlock) {
+                    ylt_clickBlock(x);
+                }
+            }];
+        }];
+    }
+}
+
 @end

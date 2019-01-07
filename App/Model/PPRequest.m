@@ -2,38 +2,107 @@
 // PPRequest.m 
 //
 // Created By 项普华 Version: 2.0
-// Copyright (C) 2018/09/13  By AlexXiang  All rights reserved.
+// Copyright (C) 2019/01/07  By AlexXiang  All rights reserved.
 // email:// xiangpuhua@126.com  tel:// +86 13316987488 
 //
 //
 
-#import "PHTools.h"
+#import "PHRequest.h"
 #import "PPRequest.h"
+#import <AFNetworking/AFNetworking.h>
+#import "NSDictionary+Safe.h"
 
 @implementation PPRequest
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
+/**
+ * @brief 
+ * @prama username:
+ * @prama password:
+ **/
++(NSURLSessionDataTask *)loginRequestShowHUD:(BOOL)showHUD username:(NSString *)username password:(NSString *)password success:(void (^)(NSURLSessionDataTask *task, BaseCollection *result, User *data, id sourceData))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure; {
+	NSMutableDictionary *requestParams = [[NSMutableDictionary alloc] init];
+	[requestParams setObj:username forKey:@"username"];
+	[requestParams setObj:password forKey:@"password"];
+	NSURLSessionDataTask *task = [self loginRequestShowHUD:showHUD iparams:(NSDictionary *)requestParams success:success failure:failure];
+	return task;
+}
 
-static PPRequest *_sharedClient;
-+ (instancetype _Nonnull)sharedClient {
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{ 
-		[self resetClient];
-	});
-	if ([self respondsToSelector:@selector(configRequest:)]) {
-		[self performSelector:@selector(configRequest:) withObject:_sharedClient];
++(NSURLSessionDataTask *)loginRequestShowHUD:(BOOL)showHUD iparams:(NSDictionary *)iparams success:(void (^)(NSURLSessionDataTask *task, BaseCollection *result, User *data, id sourceData))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;{
+	if (showHUD) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[PHRequest showRequestHUD];
+		});
 	}
-	return _sharedClient;
+	NSMutableDictionary *requestParams = [[NSMutableDictionary alloc] initWithDictionary:([PHRequest baseParams:@{@"action":@"login"}])];
+	[requestParams addEntriesFromDictionary:iparams];
+	NSURLSessionDataTask *op = [[PHRequest sharedClient:@"login"] POST:[PHRequest baseURL:[NSString stringWithFormat:@"%@//%@", BASE_URL, @""]] parameters:([PHRequest uploadParams:requestParams]) progress:^(NSProgress * uploadProgress) {
+		if (showHUD) {
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[PHRequest showPercentHUD:(((CGFloat)uploadProgress.completedUnitCount)/((CGFloat)uploadProgress.totalUnitCount))];
+			});
+		}
+	} success:^(NSURLSessionDataTask *task, NSDictionary *result) {
+		if (showHUD) {
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[PHRequest hideRequestHUD];
+			});
+		}
+		BaseCollection *res = [BaseCollection mj_objectWithKeyValues:result];
+		id data = ([PHRequest responseParams:result]);
+		if ([data isKindOfClass:[NSDictionary class]]) {
+			User *info = [User mj_objectWithKeyValues:data];
+			success(task, res, info, result);
+		} else {
+			success(task, res, data, result);
+		}
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		YLT_LogError(@"%@", task);
+		if (showHUD) {
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[PHRequest errorRequestHUD:task error:error];
+			});
+		}
+		failure(task, error);
+	}];
+	return op;
 }
 
-+ (void)resetClient {
-	_sharedClient = [[PPRequest alloc] initWithBaseURL:[NSURL URLWithString:HOST_NAME]];
-	_sharedClient.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-	_sharedClient.responseSerializer = [AFJSONResponseSerializer serializer];//申明返回的结果是json类型
-	_sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];//如果报接受类型不一致请替换一致text/html或别的
-	_sharedClient.requestSerializer = [AFJSONRequestSerializer serializer];//申明请求的数据是json类型
++(RACSignal *)loginRequestShowHUD:(BOOL)showHUD username:(NSString *)username password:(NSString *)password; {
+	@weakify(self);
+	RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+		@strongify(self);
+		NSURLSessionDataTask *task = [self loginRequestShowHUD:(BOOL)showHUD username:(NSString *)username password:(NSString *)password success:^(NSURLSessionDataTask *task, BaseCollection *result, User *data, id sourceData) {
+			[subscriber sendNext:@{@"result":result, @"data":data, @"sourceData":sourceData}];
+			[subscriber sendCompleted];
+		} failure:^(NSURLSessionDataTask *task, NSError *error) {
+			[subscriber sendNext:error];
+			[subscriber sendCompleted];
+		}];
+		return [RACDisposable disposableWithBlock:^{
+			[task cancel];
+		}];
+	}];
+	return [signal replayLazily];
 }
 
++(RACSignal *)loginRequestShowHUD:(BOOL)showHUD iparams:(NSDictionary *)iparams; {
+	@weakify(self);
+	RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+		@strongify(self);
+		NSURLSessionDataTask *task = [self loginRequestShowHUD:(BOOL)showHUD iparams:(NSDictionary *)iparams success:^(NSURLSessionDataTask *task, BaseCollection *result, User *data, id sourceData) {
+			[subscriber sendNext:@{@"result":result, @"data":data, @"sourceData":sourceData}];
+			[subscriber sendCompleted];
+		} failure:^(NSURLSessionDataTask *task, NSError *error) {
+			[subscriber sendNext:error];
+			[subscriber sendCompleted];
+		}];
+		return [RACDisposable disposableWithBlock:^{
+			[task cancel];
+		}];
+	}];
+	return [signal replayLazily];
+}
 
 #pragma clang diagnostic pop
 

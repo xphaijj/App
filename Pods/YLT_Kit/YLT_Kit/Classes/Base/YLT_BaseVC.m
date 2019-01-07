@@ -14,6 +14,11 @@
 @implementation YLT_BaseVC
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wundeclared-selector"
+- (void)loadView {
+    [super loadView];
+    self.view.backgroundColor = UIColor.whiteColor;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

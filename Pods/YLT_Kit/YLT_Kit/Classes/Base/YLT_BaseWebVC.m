@@ -9,6 +9,36 @@
 #import "UIView+YLT_Create.h"
 #import <MJRefresh/MJRefresh.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <Aspects/Aspects.h>
+
+@interface YLT_WKWebView : WKWebView
+/**
+ 观察的对象名称列表
+ */
+@property (nonatomic, strong) NSArray *observers;
+@end
+
+@implementation YLT_WKWebView
+
+- (instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration{
+    if (self = [super initWithFrame:frame configuration:configuration]) {
+        NSError *error = nil;
+        @weakify(self);
+        [self aspect_hookSelector:NSSelectorFromString(@"dealloc") withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> info) {
+            @strongify(self);
+            [self stopLoading];
+            self.UIDelegate = nil;
+            self.navigationDelegate = nil;
+            [self.configuration.userContentController removeAllUserScripts];
+            [self.observers enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.configuration.userContentController removeScriptMessageHandlerForName:obj];
+            }];
+        } error:&error];
+    }
+    return self;
+}
+
+@end
 
 @interface YLT_WKProcessPool : WKProcessPool
 YLT_ShareInstanceHeader(YLT_WKProcessPool);
@@ -52,7 +82,7 @@ YLT_ShareInstance(YLT_WKProcessPool);
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _webView = [[WKWebView alloc] initWithFrame:self.bounds configuration:self.configuration];
+        _webView = [[YLT_WKWebView alloc] initWithFrame:self.bounds configuration:self.configuration];
         [self addSubview:self.webView];
         self.webView.UIDelegate = self;
         self.webView.navigationDelegate = self;
@@ -76,6 +106,8 @@ YLT_ShareInstance(YLT_WKProcessPool);
         }];
         
         self.ylt_tap(self, @selector(tapAction:));
+        YLT_WKWebView *tmpview = (YLT_WKWebView *)_webView;
+        RAC(tmpview,observers) = RACObserve(self, observers);
     }
     return self;
 }
@@ -505,6 +537,7 @@ YLT_ShareInstance(YLT_WKProcessPool);
     YLT_BaseWebVC *vc = [[self alloc] init];
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@""];
     vc.url = [NSURL URLWithString:urlString];
+    [vc prepareLoading:urlString];
     return vc;
 }
 
@@ -517,7 +550,27 @@ YLT_ShareInstance(YLT_WKProcessPool);
 + (instancetype)ylt_webVCFromFilePath:(NSString *)filePath {
     YLT_BaseWebVC *vc = [[self alloc] init];
     vc.url = [NSURL fileURLWithPath:filePath];
+    [vc prepareLoading:filePath];
     return vc;
+}
+
+- (void)prepareLoading:(NSString *)urlString {
+    NSDictionary *params = [self analysisURL:urlString];
+    if (params && [params.allKeys containsObject:@"navigationBarHidden"]) {
+        @weakify(self);
+        if ([[params objectForKey:@"navigationBarHidden"] boolValue]) {
+            [[self rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(RACTuple * _Nullable x) {
+                @strongify(self);
+                [self.navigationController setNavigationBarHidden:YES animated:YES];
+            }];
+            [[self rac_signalForSelector:@selector(viewWillDisappear:)] subscribeNext:^(RACTuple * _Nullable x) {
+                @strongify(self);
+                [self.navigationController setNavigationBarHidden:NO animated:YES];
+            }];
+        } else {
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+        }
+    }
 }
 
 /**
@@ -624,12 +677,28 @@ YLT_ShareInstance(YLT_WKProcessPool);
 }
 
 - (void)dealloc {
-    [_webView.webView stopLoading];
-    _webView.webView.UIDelegate = nil;
-    _webView.webView.navigationDelegate = nil;
     _webView.webView.scrollView.delegate = nil;
-    [_webView.configuration.userContentController removeAllUserScripts];
-    [_webView ylt_removeAllObserMessageHandlers];
+}
+
+- (NSDictionary *)analysisURL:(NSString *)url {
+    NSMutableDictionary *result = [NSMutableDictionary new];
+    NSArray *components = [url componentsSeparatedByString:@"?"];
+    if (components.count >= 2) {
+        NSString *tempName = components.lastObject;
+        NSArray *components = [tempName componentsSeparatedByString:@"&"];
+        for (NSString *tmpStr in components) {
+            if (!tmpStr.ylt_isValid) {
+                continue;
+            }
+            NSArray *tmpArray = [tmpStr componentsSeparatedByString:@"="];
+            if (tmpArray.count == 2) {
+                [result setObject:tmpArray[1] forKey:tmpArray[0]];
+            } else {
+                YLT_LogError(@"参数不合法 : %@",tmpStr);
+            }
+        }
+    }
+    return result;
 }
 
 #pragma mark - getter

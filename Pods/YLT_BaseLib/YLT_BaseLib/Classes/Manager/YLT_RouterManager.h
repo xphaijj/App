@@ -7,16 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
-#define YLT_ROUTER_PREFIX @"ylt://"
-//回调的KEY
-#define YLT_ROUTER_COMPLETION @"YLT_ROUTER_COMPLETION"
-
-
-#define YLT_ROUTER_CLS_NAME @"YLT_ROUTER_CLS_NAME"
-#define YLT_ROUTER_SEL_NAME @"YLT_ROUTER_SEL_NAME"
-#define YLT_ROUTER_ARG_DATA @"YLT_ROUTER_ARG_DATA"
-
 @interface YLT_RouterManager : NSObject
+
+/**
+ 注册web路由
+
+ @param webRouter webRouter
+ */
++ (void)registerWebRouter:(NSString *)webRouter;
 
 /**
  路由  默认路由实例方法

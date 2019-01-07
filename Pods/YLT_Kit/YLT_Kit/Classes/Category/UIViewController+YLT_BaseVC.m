@@ -10,6 +10,7 @@
 #import <objc/message.h>
 #import <YLT_BaseLib/YLT_BaseLib.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <Aspects/Aspects.h>
 
 @implementation UIViewController (YLT_BaseVC)
 
@@ -23,29 +24,33 @@
         [UIViewController ylt_swizzleInstanceMethod:@selector(viewWillLayoutSubviews) withMethod:@selector(ylt_viewWillLayoutSubviews)];
         [UIViewController ylt_swizzleInstanceMethod:@selector(viewWillDisappear:) withMethod:@selector(ylt_viewWillDisappear:)];
         [UIViewController ylt_swizzleInstanceMethod:@selector(prepareForSegue:sender:) withMethod:@selector(ylt_prepareForSegue:sender:)];
-        [UIViewController ylt_swizzleInstanceMethod:NSSelectorFromString(@"dealloc") withMethod:@selector(ylt_dealloc)];
+        [UIViewController ylt_swizzleInstanceMethod:@selector(didMoveToParentViewController:) withMethod:@selector(ylt_didMoveToParentViewController:)];
     });
 }
 
 #pragma mark - hook
 - (void)ylt_viewDidLoad {
-    [self ylt_viewDidLoad];
+    if ([self respondsToSelector:@selector(ylt_bindData)]) {
+        [self performSelector:@selector(ylt_bindData)];
+    }
     if ([self respondsToSelector:@selector(ylt_setup)]) {
         [self performSelector:@selector(ylt_setup)];
     }
     if ([self respondsToSelector:@selector(ylt_addSubViews)]) {
         [self performSelector:@selector(ylt_addSubViews)];
     }
-    if ([self respondsToSelector:@selector(ylt_bindData)]) {
-        [self performSelector:@selector(ylt_bindData)];
-    }
     if ([self respondsToSelector:@selector(ylt_request)]) {
         [self performSelector:@selector(ylt_request)];
     }
+    [self ylt_viewDidLoad];
 }
 
 - (void)ylt_viewWillAppear:(BOOL)animated {
     [self ylt_viewWillAppear:animated];
+    if (self.ylt_queue.isSuspended) {
+        //队列处于暂停状态 页面显示 开启队列
+        [self.ylt_queue setSuspended:NO];
+    }
 }
 
 - (void)ylt_viewWillLayoutSubviews {
@@ -55,23 +60,40 @@
     }
 }
 
+- (void)ylt_didMoveToParentViewController:(UIViewController *)parent {
+    [self ylt_didMoveToParentViewController:parent];
+    if (parent == nil) {
+        if ([self respondsToSelector:@selector(ylt_back)]) {
+            [self performSelector:@selector(ylt_back)];
+        }
+    }
+}
+
 - (void)ylt_viewWillDisappear:(BOOL)animated {
     [self ylt_viewWillDisappear:animated];
     if (self.navigationController && self.navigationController.viewControllers.count != 1 && [self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
         if ([self respondsToSelector:@selector(ylt_dismiss)]) {
             [self performSelector:@selector(ylt_dismiss)];
         }
-        if ([self respondsToSelector:@selector(ylt_back)]) {
-            [self performSelector:@selector(ylt_back)];
-        }
     } else if (self.presentedViewController == nil) {
         if ([self respondsToSelector:@selector(ylt_dismiss)]) {
             [self performSelector:@selector(ylt_dismiss)];
         }
-        if ([self respondsToSelector:@selector(ylt_back)]) {
-            [self performSelector:@selector(ylt_back)];
-        }
     }
+    if (!self.ylt_queue.isSuspended && self.ylt_queue.operationCount > 0) {
+        //队列处于非暂停状态 暂停队列
+        [self.ylt_queue setSuspended:YES];
+    }
+}
+
+- (void)ylt_dealloc {
+    if ([self isKindOfClass:UIViewController.class]) {
+        YLT_LogWarn(@"%@ dealloc is safe", NSStringFromClass(self.class));
+        //队列处于非暂停状态 暂停队列
+        [self.ylt_queue cancelAllOperations];
+        YLT_RemoveNotificationObserver();
+    }
+    [self ylt_dealloc];
 }
 
 - (void)ylt_prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -81,12 +103,45 @@
     }
 }
 
-- (void)ylt_dealloc {
-    [self ylt_dealloc];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+#pragma mark - Public Method
+
+/**
+ push进页面
+ 
+ @param vc 目标页面
+ @param callback 回调
+ */
+- (void)ylt_pushToVC:(UIViewController *)vc callback:(void(^)(id response))callback {
+    if (vc == nil) {
+        return;
+    }
+    vc.hidesBottomBarWhenPushed = YES;
+    if (callback) {
+        vc.ylt_callback = callback;
+    }
+    if (self.navigationController) {
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        UINavigationController *navigationController = navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:navigationController animated:YES completion:nil];
+    }
 }
 
-#pragma mark - Public Method
+/**
+ push进页面
+ 
+ @param vc 目标页面
+ @param callback 回调
+ */
+- (void)ylt_presentToVC:(UIViewController *)vc callback:(void(^)(id response))callback {
+    if (vc == nil) {
+        return;
+    }
+    if (callback) {
+        vc.ylt_callback = callback;
+    }
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 /**
  创建控制器
@@ -148,6 +203,16 @@
 }
 
 /**
+ 创建视图并PUSH到对应的视图
+ 
+ @param ylt_param 参数
+ @return 控制器
+ */
++ (UIViewController *)ylt_pushVCWithParam:(id)ylt_param {
+    return [self ylt_pushVCWithParam:ylt_param callback:nil];
+}
+
+/**
  创建控制器并Modal到对应的视图
  
  @param ylt_param 参数
@@ -161,6 +226,16 @@
     return vc;
 }
 
+/**
+ 创建控制器并Modal到对应的视图
+ 
+ @param ylt_param 参数
+ @return 控制器
+ */
++ (UIViewController *)ylt_modalVCWithParam:(id)ylt_param {
+    return [self ylt_modalVCWithParam:ylt_param callback:nil];
+}
+
 #pragma mark - getter
 
 - (void)setYlt_params:(id)ylt_params {
@@ -169,6 +244,16 @@
 
 - (id)ylt_params {
     return objc_getAssociatedObject(self, @selector(ylt_params));
+}
+
+- (NSOperationQueue *)ylt_queue {
+    NSOperationQueue *result = objc_getAssociatedObject(self, @selector(ylt_queue));
+    if (result == nil) {
+        result = [[NSOperationQueue alloc] init];
+        result.maxConcurrentOperationCount = 5;
+        objc_setAssociatedObject(self, @selector(ylt_queue), result, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return result;
 }
 
 - (void)setYlt_callback:(void (^)(id))ylt_callback {
@@ -191,6 +276,9 @@
 
 - (void(^)(NSError *, id))ylt_completion {
     void(^completion)(NSError *, id) = objc_getAssociatedObject(self, @selector(ylt_completion));
+    if (!completion && self.ylt_params && self.ylt_params[YLT_ROUTER_COMPLETION]) {
+        completion = self.ylt_params[YLT_ROUTER_COMPLETION];
+    }
     if (!completion) {
         completion = ^(NSError *error, id response) {
             YLT_Log(@"%@  %@", error, response);
