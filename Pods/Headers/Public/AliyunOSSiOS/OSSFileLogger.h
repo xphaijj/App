@@ -1,1 +1,1 @@
-../../../AliyunOSSiOS/AliyunOSSiOS/OSSFileLog/OSSFileLogger.h
+../../../AliyunOSSiOS/AliyunOSSSDK/OSSFileLog/OSSFileLogger.h

@@ -8,6 +8,7 @@
 #import "NSObject+YLT_Router.h"
 #import "YLT_BaseMacro.h"
 #import "NSString+YLT_Extension.h"
+#import "NSObject+YLT_Extension.h"
 
 @implementation NSObject (YLT_Router)
 
@@ -51,7 +52,7 @@ static NSString *webRouterURL = nil;
         return [self ylt_routerToClassname:clsname selname:selname isClassMethod:isClassMethod param:params arg:arg completion:completion];
     } else if ([routerURL hasPrefix:@"http://"] || [routerURL hasPrefix:@"https://"]) {
         if (webRouterURL.ylt_isValid) {
-            [self ylt_routerToURL:webRouterURL arg:@{@"url":routerURL} completion:completion];
+            [self ylt_routerToURL:webRouterURL arg:@{@"url":routerURL, @"params":arg?:@""} completion:completion];
         } else {
             Class cls = NSClassFromString(@"YLT_BaseWebVC");
             id instance = nil;
@@ -63,8 +64,17 @@ static NSString *webRouterURL = nil;
             if (!instance) {
                 instance = [[UIViewController alloc] init];
             }
+            if ([instance respondsToSelector:@selector(setYlt_params:)]) {
+                [instance performSelector:@selector(setYlt_params:) withObject:arg];
+            }
             YLT_EndIgnoreUndeclaredSelecror
-            
+            if (self.ylt_currentVC) {
+                if (self.ylt_currentVC.navigationController) {
+                    [self.ylt_currentVC.navigationController pushViewController:instance animated:YES];
+                } else {
+                    [self.ylt_currentVC presentViewController:instance animated:YES completion:nil];
+                }
+            }
             return instance;
         }
         return nil;

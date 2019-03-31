@@ -22,26 +22,12 @@
     return [[self class] mj_objectWithKeyValues:self.mj_keyValues];
 }
 
-+ (void)load {
-    [YLT_BaseModel ylt_swizzleClassMethod:@selector(mj_objectWithKeyValues:context:) withMethod:@selector(ylt_objectWithKeyValues:context:)];
-    [YLT_BaseModel ylt_swizzleClassMethod:@selector(mj_objectArrayWithKeyValuesArray:context:) withMethod:@selector(ylt_objectArrayWithKeyValuesArray:context:)];
-}
-
-/**
- 字典转模型
- 
- @param data 字典
- @return 模型
- */
-+ (instancetype)ylt_objectWithKeyValues:(id)keyValues context:(NSManagedObjectContext *)context {
-    YLT_BaseModel *res = [self ylt_objectWithKeyValues:keyValues context:context];
-    res.ylt_sourceData = keyValues;
++ (instancetype)mj_objectWithKeyValues:(id)keyValues context:(NSManagedObjectContext *)context{
+    YLT_BaseModel *res = [super mj_objectWithKeyValues:keyValues context:context];
+    if ([res respondsToSelector:@selector(setYlt_sourceData:)]) {
+        res.ylt_sourceData = keyValues;
+    }
     return res;
-}
-
-+ (NSMutableArray *)ylt_objectArrayWithKeyValuesArray:(id)keyValuesArray context:(NSManagedObjectContext *)context {
-    NSMutableArray *result = [self ylt_objectArrayWithKeyValuesArray:keyValuesArray context:context];
-    return result;
 }
 
 #pragma mark - ORM
@@ -129,14 +115,14 @@
                 @try {
                     result = [[self class] mj_objectWithKeyValues:data];
                 } @catch (NSException *exception) {
-                    YLT_LogError(@"%@", exception);
+                    YLT_LogWarn(@"%@", exception);
                 } @finally {
                     return result;
                 }
             }
             return result;
         } else {
-            YLT_LogError(@"对象异常");
+            YLT_LogWarn(@"对象异常");
             return nil;
         }
     }
@@ -176,7 +162,7 @@
             @try {
                 [self mj_setKeyValues:data];
             } @catch (NSException *exception) {
-                YLT_LogError(@"%@", exception);
+                YLT_LogWarn(@"%@", exception);
             } @finally {
                 return YES;
             }

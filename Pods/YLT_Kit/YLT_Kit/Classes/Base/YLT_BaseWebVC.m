@@ -9,36 +9,6 @@
 #import "UIView+YLT_Create.h"
 #import <MJRefresh/MJRefresh.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import <Aspects/Aspects.h>
-
-@interface YLT_WKWebView : WKWebView
-/**
- 观察的对象名称列表
- */
-@property (nonatomic, strong) NSArray *observers;
-@end
-
-@implementation YLT_WKWebView
-
-- (instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration{
-    if (self = [super initWithFrame:frame configuration:configuration]) {
-        NSError *error = nil;
-        @weakify(self);
-        [self aspect_hookSelector:NSSelectorFromString(@"dealloc") withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> info) {
-            @strongify(self);
-            [self stopLoading];
-            self.UIDelegate = nil;
-            self.navigationDelegate = nil;
-            [self.configuration.userContentController removeAllUserScripts];
-            [self.observers enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                [self.configuration.userContentController removeScriptMessageHandlerForName:obj];
-            }];
-        } error:&error];
-    }
-    return self;
-}
-
-@end
 
 @interface YLT_WKProcessPool : WKProcessPool
 YLT_ShareInstanceHeader(YLT_WKProcessPool);
@@ -82,18 +52,17 @@ YLT_ShareInstance(YLT_WKProcessPool);
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _webView = [[YLT_WKWebView alloc] initWithFrame:self.bounds configuration:self.configuration];
+        _webView = [[WKWebView alloc] initWithFrame:self.bounds configuration:self.configuration];
         [self addSubview:self.webView];
         self.webView.UIDelegate = self;
         self.webView.navigationDelegate = self;
         [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
         }];
-        
         @weakify(self);
         _progressLayer = [CALayer layer];
         self.progressLayer.frame = CGRectMake(0, 0, 0, 2);
-        self.progressLayer.backgroundColor = [UIColor blueColor].CGColor;
+        self.progressLayer.backgroundColor = self.progressColor?self.progressColor.CGColor:UIColor.blueColor.CGColor;
         [self.layer addSublayer:self.progressLayer];
         [[self.webView rac_valuesForKeyPath:@"estimatedProgress" observer:self] subscribeNext:^(id  _Nullable x) {
             @strongify(self);
@@ -106,14 +75,8 @@ YLT_ShareInstance(YLT_WKProcessPool);
         }];
         
         self.ylt_tap(self, @selector(tapAction:));
-        YLT_WKWebView *tmpview = (YLT_WKWebView *)_webView;
-        RAC(tmpview,observers) = RACObserve(self, observers);
     }
     return self;
-}
-
-- (void)dealloc {
-    YLT_Log(@"--- BaseWebView dealloc");
 }
 
 /**
@@ -245,6 +208,12 @@ YLT_ShareInstance(YLT_WKProcessPool);
     return webView;
 }
 
+- (void)dealloc {
+    [self.webView stopLoading];
+    self.webView.UIDelegate = nil;
+    self.webView.navigationDelegate = nil;
+    [self.webView.configuration.userContentController removeAllUserScripts];
+}
 
 #pragma mark - WKScriptMessageHandler
 /**
@@ -328,7 +297,9 @@ YLT_ShareInstance(YLT_WKProcessPool);
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     YLT_LogInfo(@"%@", webView);
     if (!self.notUseWebTitle) {
+        @weakify(self);
         [self.webView evaluateJavaScript:@"document.title" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+            @strongify(self);
             if ([result isKindOfClass:[NSString class]] && ((NSString *) result).ylt_isValid && self.ylt_responderVC) {
                 self.ylt_responderVC.title = result;
             }
@@ -457,6 +428,11 @@ YLT_ShareInstance(YLT_WKProcessPool);
 
 #pragma mark - getter
 
+- (void)setProgressColor:(UIColor *)progressColor {
+    _progressColor = progressColor;
+    self.progressLayer.backgroundColor = progressColor.CGColor;
+}
+
 - (UIView *)loadingFailedView {
     if (!_loadingFailedView) {
         _loadingFailedView =
@@ -487,11 +463,11 @@ YLT_ShareInstance(YLT_WKProcessPool);
         WKPreferences *preferences = [WKPreferences new];
         //在iOS上默认为NO，表示不能自动通过窗口打开
         preferences.javaScriptCanOpenWindowsAutomatically = YES;
-        preferences.minimumFontSize = 10.0;
+        preferences.minimumFontSize = 0.0;
         preferences.javaScriptEnabled = YES;
         _configuration.preferences = preferences;
         // web内容处理池，由于没有属性可以设置，也没有方法可以调用，不用手动创建
-        _configuration.processPool = [YLT_WKProcessPool shareInstance];
+        _configuration.processPool = [WKProcessPool new];//[YLT_WKProcessPool shareInstance];
     }
     return _configuration;
 }
@@ -522,9 +498,19 @@ YLT_ShareInstance(YLT_WKProcessPool);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.url = self.url;
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtn];
-    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeBtn];
-    self.navigationItem.leftBarButtonItems = @[backItem, closeItem];
+}
+
+- (void)registerBackBtn:(BOOL)hasBackBtn closeBtn:(BOOL)hasCloseBtn {
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    if (hasBackBtn) {
+        [list addObject:[[UIBarButtonItem alloc] initWithCustomView:self.backBtn]];
+    }
+    if (hasCloseBtn) {
+        [list addObject:[[UIBarButtonItem alloc] initWithCustomView:self.closeBtn]];
+    }
+    if (list.count > 0) {
+        self.navigationItem.leftBarButtonItems = list;
+    }
 }
 
 /**
@@ -677,7 +663,7 @@ YLT_ShareInstance(YLT_WKProcessPool);
 }
 
 - (void)dealloc {
-    _webView.webView.scrollView.delegate = nil;
+    [self ylt_removeAllObserMessageHandlers];
 }
 
 - (NSDictionary *)analysisURL:(NSString *)url {
@@ -723,6 +709,7 @@ YLT_ShareInstance(YLT_WKProcessPool);
             }
         });
         _backBtn.titleLabel.font = [UIFont systemFontOfSize:16.];
+        [_backBtn setTitleColor:[[UINavigationBar appearance] tintColor] forState:UIControlStateNormal];
         [_backBtn sizeToFit];
     }
     return _backBtn;
@@ -744,15 +731,16 @@ YLT_ShareInstance(YLT_WKProcessPool);
             }
         });
         _closeBtn.titleLabel.font = [UIFont systemFontOfSize:16.];
+        [_closeBtn setTitleColor:[[UINavigationBar appearance] tintColor] forState:UIControlStateNormal];
         [_closeBtn sizeToFit];
         RAC(_closeBtn, hidden) = [RACObserve(self.webView.webView, canGoBack) map:^id _Nullable(NSNumber *canGoBackNum) {
             @strongify(self);
-            //            if (canGoBackNum.boolValue) {
-            //                [self.backBtn setTitle:@"返回" forState:UIControlStateNormal];
-            //            } else {
-            //                [self.backBtn setTitle:@"" forState:UIControlStateNormal];
-            //            }
-            //            [self.backBtn sizeToFit];
+//            if (canGoBackNum.boolValue) {
+//                [self.backBtn setTitle:@"返回" forState:UIControlStateNormal];
+//            } else {
+//                [self.backBtn setTitle:@"" forState:UIControlStateNormal];
+//            }
+//            [self.backBtn sizeToFit];
             return @(!canGoBackNum.boolValue);
         }];
     }

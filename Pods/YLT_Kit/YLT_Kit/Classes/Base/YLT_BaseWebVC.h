@@ -76,6 +76,10 @@
  */
 @property (nonatomic, strong, readonly) WKWebView *webView;
 /**
+ 进度条的颜色
+ */
+@property (nonatomic, strong) UIColor *progressColor;
+/**
  加载失败的占位图
  */
 @property (nonatomic, strong) UIView *loadingFailedView;
@@ -165,6 +169,7 @@
 @end
 
 @interface YLT_BaseWebVC : YLT_BaseVC<YLT_WebProtocl>
+
 /**
  网页视图
  */
@@ -195,5 +200,7 @@
  @return 控制器
  */
 + (instancetype)ylt_webVCFromFilePath:(NSString *)filePath;
+
+- (void)registerBackBtn:(BOOL)hasBackBtn closeBtn:(BOOL)hasCloseBtn;
 
 @end
