@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <YLT_BaseLib/YLT_BaseLib.h>
+#import "UIColor+AppColor.h"
+#import "UIFont+AppFont.h"
 
 @interface ShareData : NSObject
 

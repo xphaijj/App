@@ -88,8 +88,8 @@ YLT_ShareInstance(YLT_WKProcessPool);
 - (void)ylt_addObserverNames:(NSArray<NSString *> *)names callback:(void(^)(WKScriptMessage *message))callback {
     for (NSString *name in names) {
         if (name.ylt_isValid) {
-            [self.configuration.userContentController removeScriptMessageHandlerForName:name];
-            [self.configuration.userContentController addScriptMessageHandler:self name:name];
+            [_configuration.userContentController removeScriptMessageHandlerForName:name];
+            [_configuration.userContentController addScriptMessageHandler:self name:name];
             [self.observers addObject:name];
         }
     }
@@ -103,7 +103,7 @@ YLT_ShareInstance(YLT_WKProcessPool);
  */
 - (void)ylt_removeObserverMessageHandlersForNames:(NSArray<NSString *> *)names {
     [names enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self.configuration.userContentController removeScriptMessageHandlerForName:obj];
+        [_configuration.userContentController removeScriptMessageHandlerForName:obj];
     }];
 }
 
@@ -111,7 +111,7 @@ YLT_ShareInstance(YLT_WKProcessPool);
  移除所有的message handler
  */
 - (void)ylt_removeAllObserMessageHandlers {
-    [self ylt_removeObserverMessageHandlersForNames:self.observers];
+    [self ylt_removeObserverMessageHandlersForNames:_observers];
 }
 
 /**
@@ -363,6 +363,14 @@ YLT_ShareInstance(YLT_WKProcessPool);
     completionHandler(YES);
 }
 
+//出现new tab的时候是否响应的问题
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    if (!navigationAction.targetFrame.isMainFrame) {
+        [webView loadRequest:navigationAction.request];
+    }
+    return nil;
+}
+
 #pragma mark - WKUIDelegate
 
 
@@ -582,7 +590,7 @@ YLT_ShareInstance(YLT_WKProcessPool);
  移除所有的观察名称
  */
 - (void)ylt_removeAllObserMessageHandlers {
-    [self.webView ylt_removeAllObserMessageHandlers];
+    [_webView ylt_removeAllObserMessageHandlers];
 }
 
 /**

@@ -77,6 +77,14 @@
 - (UIImage *)ylt_scaledToSize:(CGSize)size;
 
 /**
+ 压缩最大边框为 maxLength 的图片
+ 
+ @param maxLength 最大的边长
+ @return 压缩图
+ */
+- (UIImage *)ylt_scaledToMaxLength:(CGFloat)maxLength;
+
+/**
  压缩到指定大小size,并保证图片清晰度和质量好于上面方法
  
  @param size 目标size
@@ -209,6 +217,10 @@
  @return 转换后的图片资源数组
  */
 + (NSArray <UIImage *>*)imgArrFromGif:(NSData *)data;
+
+/// 旋转图片
+/// @param orient 方向
+- (UIImage *)ylt_rotate:(UIImageOrientation)orient;
 
 /**
  旋转自定义角度

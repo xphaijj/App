@@ -8,6 +8,8 @@
 #ifndef YLT_BaseMacro_h
 #define YLT_BaseMacro_h
 
+#import "NSObject+YLT_ThreadSafe.h"
+
 /// iOS设备信息
 #define iPad ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
 #define iPhone ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
@@ -56,7 +58,12 @@
 #define iOS12  ([[UIDevice currentDevice] systemVersion].floatValue >= 12.0 && [[UIDevice currentDevice] systemVersion].floatValue <= 13.0)
 #define iOS12Later  ([[UIDevice currentDevice] systemVersion].floatValue >= 12.0)
 
-#define iOSNew ([[UIDevice currentDevice] systemVersion].floatValue >= 13.0)
+#define iOS13  ([[UIDevice currentDevice] systemVersion].floatValue >= 13.0 && [[UIDevice currentDevice] systemVersion].floatValue <= 14.0)
+#define iOS13Later  ([[UIDevice currentDevice] systemVersion].floatValue >= 13.0)
+
+#define iOSNew ([[UIDevice currentDevice] systemVersion].floatValue >= 14.0)
+
+#define YLT_IsDark (iOS12Later ? (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) : NO)
 
 /// 获取系统对象
 #define YLT_Application        [UIApplication sharedApplication]
@@ -180,7 +187,8 @@
                                                 share_onceToken = 0;\
                                                 ylt_init_onceToken = 0;\
                                                 share_cls = nil;\
-                                            }
+                                            }\
+                                            YLT_THREAD_SAFE
 //懒加载宏定义
 
 #define YLT_Lazy(cls, sel, _sel) \
@@ -228,5 +236,8 @@
 
 #define YLT_BeginIgnoreUndeclaredSelecror YLT_BeginIgnoreClangWarning(-Wundeclared-selector)
 #define YLT_EndIgnoreUndeclaredSelecror YLT_EndIgnoreClangWarning
+
+#define YLT_BeginIgnoreUnusedVariable YLT_BeginIgnoreClangWarning(-Wunused-variable)
+#define YLT_EndIgnoreUnusedVariable YLT_EndIgnoreClangWarning
 
 #endif /* YLT_BaseMacro_h */

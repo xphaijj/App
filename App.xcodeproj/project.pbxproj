@@ -22,11 +22,13 @@
 		FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */; };
 		FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E41FC01C62006255D0 /* YLT_PushModular.m */; };
 		FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E71FC01C8C006255D0 /* ShareData.m */; };
-		FA2366ED1FC01CFB006255D0 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366EC1FC01CFB006255D0 /* NSDictionary+Safe.m */; };
 		FA2366F01FC01D0F006255D0 /* Tools in Resources */ = {isa = PBXBuildFile; fileRef = FA2366EE1FC01D0E006255D0 /* Tools */; };
 		FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F41FC01D3F006255D0 /* PPRequest.m */; };
 		FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F71FC01D3F006255D0 /* PPModel.m */; };
 		FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F81FC01D3F006255D0 /* PPModel+DB.m */; };
+		FA44B044235ED09600D81F53 /* AppWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B043235ED09600D81F53 /* AppWebVC.m */; };
+		FA44B047235ED5CE00D81F53 /* UIFont+AppFont.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B046235ED5CE00D81F53 /* UIFont+AppFont.m */; };
+		FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */; };
 		FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +65,6 @@
 		FA2366E41FC01C62006255D0 /* YLT_PushModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PushModular.m; sourceTree = "<group>"; };
 		FA2366E61FC01C8C006255D0 /* ShareData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareData.h; sourceTree = "<group>"; };
 		FA2366E71FC01C8C006255D0 /* ShareData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareData.m; sourceTree = "<group>"; };
-		FA2366EB1FC01CFB006255D0 /* NSDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Safe.h"; sourceTree = "<group>"; };
-		FA2366EC1FC01CFB006255D0 /* NSDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Safe.m"; sourceTree = "<group>"; };
 		FA2366EE1FC01D0E006255D0 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = Tools; sourceTree = "<group>"; };
 		FA2366EF1FC01D0F006255D0 /* source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = source.h; sourceTree = "<group>"; };
 		FA2366F41FC01D3F006255D0 /* PPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRequest.m; sourceTree = "<group>"; };
@@ -73,6 +73,12 @@
 		FA2366F71FC01D3F006255D0 /* PPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPModel.m; sourceTree = "<group>"; };
 		FA2366F81FC01D3F006255D0 /* PPModel+DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PPModel+DB.m"; sourceTree = "<group>"; };
 		FA2366F91FC01D3F006255D0 /* PPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRequest.h; sourceTree = "<group>"; };
+		FA44B042235ED09600D81F53 /* AppWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppWebVC.h; sourceTree = "<group>"; };
+		FA44B043235ED09600D81F53 /* AppWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppWebVC.m; sourceTree = "<group>"; };
+		FA44B045235ED5CE00D81F53 /* UIFont+AppFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+AppFont.h"; sourceTree = "<group>"; };
+		FA44B046235ED5CE00D81F53 /* UIFont+AppFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AppFont.m"; sourceTree = "<group>"; };
+		FA44B048235EDB5500D81F53 /* AppDelegate+AppBug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppBug.h"; sourceTree = "<group>"; };
+		FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppBug.m"; sourceTree = "<group>"; };
 		FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_LocationModular.h; sourceTree = "<group>"; };
 		FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_LocationModular.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +135,8 @@
 		FA2366951FC017A5006255D0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FA44B04C235EDB8500D81F53 /* Class */,
+				FA44B041235ED08200D81F53 /* Web */,
 				FA2366E91FC01CF5006255D0 /* Lib */,
 				FA2366CE1FC019B0006255D0 /* Tools */,
 				FA2366CB1FC01990006255D0 /* Modular */,
@@ -164,11 +172,14 @@
 		FA2366C81FC01976006255D0 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				FA2366CF1FC019C1006255D0 /* Category */,
 				FA2366961FC017A5006255D0 /* AppDelegate.h */,
 				FA2366971FC017A5006255D0 /* AppDelegate.m */,
-				FA2366991FC017A5006255D0 /* ViewController.h */,
-				FA23669A1FC017A5006255D0 /* ViewController.m */,
+				FA2366D31FC019FF006255D0 /* AppDelegate+AppService.h */,
+				FA2366D41FC019FF006255D0 /* AppDelegate+AppService.m */,
+				FA2366D61FC01A2E006255D0 /* AppDelegate+ThirdLibrary.h */,
+				FA2366D71FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m */,
+				FA44B048235EDB5500D81F53 /* AppDelegate+AppBug.h */,
+				FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -207,40 +218,47 @@
 		FA2366CE1FC019B0006255D0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				FA2366D91FC01A6F006255D0 /* UIColor+AppColor.h */,
+				FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */,
+				FA44B045235ED5CE00D81F53 /* UIFont+AppFont.h */,
+				FA44B046235ED5CE00D81F53 /* UIFont+AppFont.m */,
 				FA2366E61FC01C8C006255D0 /* ShareData.h */,
 				FA2366E71FC01C8C006255D0 /* ShareData.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		FA2366CF1FC019C1006255D0 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				FA2366D31FC019FF006255D0 /* AppDelegate+AppService.h */,
-				FA2366D41FC019FF006255D0 /* AppDelegate+AppService.m */,
-				FA2366D61FC01A2E006255D0 /* AppDelegate+ThirdLibrary.h */,
-				FA2366D71FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m */,
-				FA2366D91FC01A6F006255D0 /* UIColor+AppColor.h */,
-				FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
 		FA2366E91FC01CF5006255D0 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				FA2366EA1FC01CFB006255D0 /* NSDictionary-Safe */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		FA2366EA1FC01CFB006255D0 /* NSDictionary-Safe */ = {
+		FA44B041235ED08200D81F53 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				FA2366EB1FC01CFB006255D0 /* NSDictionary+Safe.h */,
-				FA2366EC1FC01CFB006255D0 /* NSDictionary+Safe.m */,
+				FA44B042235ED09600D81F53 /* AppWebVC.h */,
+				FA44B043235ED09600D81F53 /* AppWebVC.m */,
 			);
-			path = "NSDictionary-Safe";
+			path = Web;
+			sourceTree = "<group>";
+		};
+		FA44B04B235EDB7600D81F53 /* StartVC */ = {
+			isa = PBXGroup;
+			children = (
+				FA2366991FC017A5006255D0 /* ViewController.h */,
+				FA23669A1FC017A5006255D0 /* ViewController.m */,
+			);
+			path = StartVC;
+			sourceTree = "<group>";
+		};
+		FA44B04C235EDB8500D81F53 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				FA44B04B235EDB7600D81F53 /* StartVC */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +356,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-App/Pods-App-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
@@ -353,7 +371,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App/Pods-App-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App/Pods-App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -366,14 +384,16 @@
 				FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */,
 				FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */,
 				FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */,
+				FA44B047235ED5CE00D81F53 /* UIFont+AppFont.m in Sources */,
 				FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */,
-				FA2366ED1FC01CFB006255D0 /* NSDictionary+Safe.m in Sources */,
 				C734423121E3262800BD5175 /* PHRequest.m in Sources */,
 				FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */,
 				C734423421E3262E00BD5175 /* BaseCollection.m in Sources */,
+				FA44B044235ED09600D81F53 /* AppWebVC.m in Sources */,
 				FA23669B1FC017A5006255D0 /* ViewController.m in Sources */,
 				FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */,
 				FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */,
+				FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */,
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
@@ -513,9 +533,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UZGK9HUE57;
+				DEVELOPMENT_TEAM = S8JBM2NX4M;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phxiang.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,6 +552,7 @@
 				DEVELOPMENT_TEAM = UZGK9HUE57;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phxiang.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

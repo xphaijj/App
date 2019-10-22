@@ -7,6 +7,7 @@
 //
 
 #import "YLT_PushModular.h"
+#import "AppDelegate.h"
 
 @interface YLT_PushModular ()<UNUserNotificationCenterDelegate>
 
@@ -19,7 +20,7 @@
 
 + (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if (@available(iOS 10.0, *)) {
-        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+        [UNUserNotificationCenter currentNotificationCenter].delegate = (AppDelegate *)YLT_AppDelegate;
     } else {
     }
     return YES;

@@ -9,7 +9,6 @@
 #import "YLT_LocationModular.h"
 #import <objc/message.h>
 #import <YLT_BaseLib/YLT_BaseLib.h>
-#import "NSDictionary+Safe.h"
 
 @interface YLT_LocationModular () {
 }
@@ -76,14 +75,12 @@ YLT_ShareInstance(YLT_LocationModular);
             NSString *street = [pl.thoroughfare ylt_isValid]?pl.thoroughfare:([pl.subThoroughfare ylt_isValid]?pl.subThoroughfare:@"");
             NSString *detail = [pl.name ylt_isValid]?pl.name:@"";
             switch (self.addressType) {
-                case YLT_ADDRESS_TYPE_PROVINCE:
-                {
-                self.success(province, placemarks);
+                case YLT_ADDRESS_TYPE_PROVINCE: {
+                    self.success(province, placemarks);
                 }
                     break;
-                case YLT_ADDRESS_TYPE_CITY:
-                {
-                self.success(city, placemarks);
+                case YLT_ADDRESS_TYPE_CITY: {
+                    self.success(city, placemarks);
                 }
                     break;
                 case YLT_ADDRESS_TYPE_DISCRICT: {

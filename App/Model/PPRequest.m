@@ -10,7 +10,6 @@
 #import "PHRequest.h"
 #import "PPRequest.h"
 #import <AFNetworking/AFNetworking.h>
-#import "NSDictionary+Safe.h"
 
 @implementation PPRequest
 #pragma clang diagnostic push
@@ -22,8 +21,8 @@
  **/
 +(NSURLSessionDataTask *)loginRequestShowHUD:(BOOL)showHUD username:(NSString *)username password:(NSString *)password success:(void (^)(NSURLSessionDataTask *task, BaseCollection *result, User *data, id sourceData))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure; {
 	NSMutableDictionary *requestParams = [[NSMutableDictionary alloc] init];
-	[requestParams setObj:username forKey:@"username"];
-	[requestParams setObj:password forKey:@"password"];
+	[requestParams setObject:username forKey:@"username"];
+	[requestParams setObject:password forKey:@"password"];
 	NSURLSessionDataTask *task = [self loginRequestShowHUD:showHUD iparams:(NSDictionary *)requestParams success:success failure:failure];
 	return task;
 }

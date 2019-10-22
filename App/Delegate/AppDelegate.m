@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+AppService.h"
 #import "AppDelegate+ThirdLibrary.h"
+#import "AppDelegate+AppBug.h"
 #import "UIColor+AppColor.h"
 #import <YLT_BaseLib/YLT_BaseLib.h>
 
@@ -30,8 +31,8 @@
     [self initAppService];
     [self initThirdLibrary];
     [self initUI];
+    [self initBugs];
     
-
     [YLT_ModularManager application:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }

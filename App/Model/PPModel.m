@@ -8,7 +8,6 @@
 //
 
 #import "PPModel.h"
-#import "NSDictionary+Safe.h"
 #import <MJExtension/MJExtension.h>
 #import <YLT_BaseLib/YLT_BaseLib.h>
 #import "PHRequest.h"
