@@ -28,6 +28,7 @@
 		FA44B044235ED09600D81F53 /* AppWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B043235ED09600D81F53 /* AppWebVC.m */; };
 		FA44B047235ED5CE00D81F53 /* UIFont+AppFont.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B046235ED5CE00D81F53 /* UIFont+AppFont.m */; };
 		FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */; };
+		FA44B04F235EF58900D81F53 /* YLT_TcpModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */; };
 		FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		FA44B046235ED5CE00D81F53 /* UIFont+AppFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+AppFont.m"; sourceTree = "<group>"; };
 		FA44B048235EDB5500D81F53 /* AppDelegate+AppBug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppBug.h"; sourceTree = "<group>"; };
 		FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppBug.m"; sourceTree = "<group>"; };
+		FA44B04D235EF58900D81F53 /* YLT_TcpModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_TcpModular.h; sourceTree = "<group>"; };
+		FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_TcpModular.m; sourceTree = "<group>"; };
 		FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_LocationModular.h; sourceTree = "<group>"; };
 		FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_LocationModular.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +209,8 @@
 				FA2366E41FC01C62006255D0 /* YLT_PushModular.m */,
 				FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */,
 				FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */,
+				FA44B04D235EF58900D81F53 /* YLT_TcpModular.h */,
+				FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
+				FA44B04F235EF58900D81F53 /* YLT_TcpModular.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

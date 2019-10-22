@@ -4,5 +4,6 @@
 <array>
 	<string>YLT_PushModular</string>
 	<string>YLT_LocationModular</string>
+	<string>YLT_TcpModular</string>
 </array>
 </plist>

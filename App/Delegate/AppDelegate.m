@@ -22,10 +22,12 @@
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    /* 优先适配完App里面存在的BUG **/
+    [self initBugs];
+    /* 启动App的基础服务 **/
     [self initAppService];
     [self initThirdLibrary];
     [self initUI];
-    [self initBugs];
     
     [YLT_ModularManager ylt_modularWithPlistPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"Modular.plist"]];
     [YLT_ModularManager application:application didFinishLaunchingWithOptions:launchOptions];
