@@ -21,16 +21,17 @@
 
     [self ylt_addObserverNames:@[] callback:^(WKScriptMessage *message) {
         @strongify(self);
+
+        YLT_BeginIgnorePerformSelectorLeaksWarning
         YLT_MAIN(^{
             YLT_Log(@"----AppWebVC %@ %@", message.name, message.body);
             NSDictionary *jsonData = [((NSString *) message.body) mj_JSONObject];
             SEL sel = NSSelectorFromString([NSString stringWithFormat:@"web_%@:", message.name]);
             if ([jsonData isKindOfClass:[NSDictionary class]] && sel) {
-                YLT_BeginIgnorePerformSelectorLeaksWarning
                 [self performSelector:sel withObject:jsonData];
-                YLT_EndIgnorePerformSelectorLeaksWarning
             }
         });
+        YLT_EndIgnorePerformSelectorLeaksWarning
     }];
 }
 
