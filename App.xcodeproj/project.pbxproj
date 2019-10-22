@@ -18,7 +18,6 @@
 		FA2366A31FC017A5006255D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2366A11FC017A5006255D0 /* LaunchScreen.storyboard */; };
 		FA2366A61FC017A5006255D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366A51FC017A5006255D0 /* main.m */; };
 		FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366D41FC019FF006255D0 /* AppDelegate+AppService.m */; };
-		FA2366D81FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366D71FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m */; };
 		FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */; };
 		FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E41FC01C62006255D0 /* YLT_PushModular.m */; };
 		FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E71FC01C8C006255D0 /* ShareData.m */; };
@@ -57,8 +56,6 @@
 		FA2366BC1FC017A5006255D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA2366D31FC019FF006255D0 /* AppDelegate+AppService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppService.h"; sourceTree = "<group>"; };
 		FA2366D41FC019FF006255D0 /* AppDelegate+AppService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppService.m"; sourceTree = "<group>"; };
-		FA2366D61FC01A2E006255D0 /* AppDelegate+ThirdLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ThirdLibrary.h"; sourceTree = "<group>"; };
-		FA2366D71FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ThirdLibrary.m"; sourceTree = "<group>"; };
 		FA2366D91FC01A6F006255D0 /* UIColor+AppColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColor.h"; sourceTree = "<group>"; };
 		FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColor.m"; sourceTree = "<group>"; };
 		FA2366E31FC01C62006255D0 /* YLT_PushModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PushModular.h; sourceTree = "<group>"; };
@@ -176,8 +173,6 @@
 				FA2366971FC017A5006255D0 /* AppDelegate.m */,
 				FA2366D31FC019FF006255D0 /* AppDelegate+AppService.h */,
 				FA2366D41FC019FF006255D0 /* AppDelegate+AppService.m */,
-				FA2366D61FC01A2E006255D0 /* AppDelegate+ThirdLibrary.h */,
-				FA2366D71FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m */,
 				FA44B048235EDB5500D81F53 /* AppDelegate+AppBug.h */,
 				FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */,
 			);
@@ -397,7 +392,6 @@
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
-				FA2366D81FC01A2E006255D0 /* AppDelegate+ThirdLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,14 @@
  */
 - (void)initAppService;
 
+/**
+启动三方服务
+*/
+- (void)initThirdLibrary;
 
+/**
+停止三方服务
+*/
+- (void)stopThirdLibrary;
 
 @end

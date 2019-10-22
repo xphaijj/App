@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+AppService.h"
-#import "AppDelegate+ThirdLibrary.h"
 #import "AppDelegate+AppBug.h"
 #import "UIColor+AppColor.h"
 #import <YLT_BaseLib/YLT_BaseLib.h>
@@ -19,11 +18,6 @@
 
 @implementation AppDelegate
 
-
-+ (void)load {
-    [YLT_ModularManager ylt_modularWithPlistPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"Modular.plist"]];
-}
-
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 
@@ -33,6 +27,7 @@
     [self initUI];
     [self initBugs];
     
+    [YLT_ModularManager ylt_modularWithPlistPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"Modular.plist"]];
     [YLT_ModularManager application:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
