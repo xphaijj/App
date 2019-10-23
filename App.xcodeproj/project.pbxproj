@@ -29,6 +29,9 @@
 		FA44B047235ED5CE00D81F53 /* UIFont+AppFont.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B046235ED5CE00D81F53 /* UIFont+AppFont.m */; };
 		FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */; };
 		FA44B04F235EF58900D81F53 /* YLT_TcpModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */; };
+		FA44B053235EF60F00D81F53 /* UIViewController+AppTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B052235EF60F00D81F53 /* UIViewController+AppTrack.m */; };
+		FA44B056235F01B500D81F53 /* YLT_TrackModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B055235F01B500D81F53 /* YLT_TrackModular.m */; };
+		FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */; };
 		FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,13 @@
 		FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppBug.m"; sourceTree = "<group>"; };
 		FA44B04D235EF58900D81F53 /* YLT_TcpModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_TcpModular.h; sourceTree = "<group>"; };
 		FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_TcpModular.m; sourceTree = "<group>"; };
+		FA44B051235EF60F00D81F53 /* UIViewController+AppTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AppTrack.h"; sourceTree = "<group>"; };
+		FA44B052235EF60F00D81F53 /* UIViewController+AppTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AppTrack.m"; sourceTree = "<group>"; };
+		FA44B054235F01B500D81F53 /* YLT_TrackModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_TrackModular.h; sourceTree = "<group>"; };
+		FA44B055235F01B500D81F53 /* YLT_TrackModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_TrackModular.m; sourceTree = "<group>"; };
+		FA6F1A2C23602B310029B0CF /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		FA6F1A2E23602BAE0029B0CF /* YLT_PayModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PayModular.h; sourceTree = "<group>"; };
+		FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PayModular.m; sourceTree = "<group>"; };
 		FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_LocationModular.h; sourceTree = "<group>"; };
 		FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_LocationModular.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,12 +215,11 @@
 			isa = PBXGroup;
 			children = (
 				3570393C200736E600F76CAC /* Modular.plist */,
-				FA2366E31FC01C62006255D0 /* YLT_PushModular.h */,
-				FA2366E41FC01C62006255D0 /* YLT_PushModular.m */,
-				FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */,
-				FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */,
-				FA44B04D235EF58900D81F53 /* YLT_TcpModular.h */,
-				FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */,
+				FA6F1A2D23602B9B0029B0CF /* Pay */,
+				FA6F1A3323602BD10029B0CF /* TCP */,
+				FA6F1A3223602BC30029B0CF /* Location */,
+				FA6F1A3123602BBA0029B0CF /* Push */,
+				FA44B050235EF5DA00D81F53 /* Track */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -224,6 +233,7 @@
 				FA44B046235ED5CE00D81F53 /* UIFont+AppFont.m */,
 				FA2366E61FC01C8C006255D0 /* ShareData.h */,
 				FA2366E71FC01C8C006255D0 /* ShareData.m */,
+				FA6F1A2C23602B310029B0CF /* AppMacro.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -259,6 +269,53 @@
 				FA44B04B235EDB7600D81F53 /* StartVC */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		FA44B050235EF5DA00D81F53 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				FA44B051235EF60F00D81F53 /* UIViewController+AppTrack.h */,
+				FA44B052235EF60F00D81F53 /* UIViewController+AppTrack.m */,
+				FA44B054235F01B500D81F53 /* YLT_TrackModular.h */,
+				FA44B055235F01B500D81F53 /* YLT_TrackModular.m */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		FA6F1A2D23602B9B0029B0CF /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				FA6F1A2E23602BAE0029B0CF /* YLT_PayModular.h */,
+				FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		FA6F1A3123602BBA0029B0CF /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				FA2366E31FC01C62006255D0 /* YLT_PushModular.h */,
+				FA2366E41FC01C62006255D0 /* YLT_PushModular.m */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		FA6F1A3223602BC30029B0CF /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */,
+				FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		FA6F1A3323602BD10029B0CF /* TCP */ = {
+			isa = PBXGroup;
+			children = (
+				FA44B04D235EF58900D81F53 /* YLT_TcpModular.h */,
+				FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */,
+			);
+			path = TCP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA44B056235F01B500D81F53 /* YLT_TrackModular.m in Sources */,
 				FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */,
 				FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */,
 				FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */,
@@ -393,9 +451,11 @@
 				FA23669B1FC017A5006255D0 /* ViewController.m in Sources */,
 				FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */,
 				FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */,
+				FA44B053235EF60F00D81F53 /* UIViewController+AppTrack.m in Sources */,
 				FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */,
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
+				FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
 				FA44B04F235EF58900D81F53 /* YLT_TcpModular.m in Sources */,
 			);

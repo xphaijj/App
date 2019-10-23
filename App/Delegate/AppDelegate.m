@@ -10,6 +10,7 @@
 #import "AppDelegate+AppService.h"
 #import "AppDelegate+AppBug.h"
 #import "UIColor+AppColor.h"
+#import "ShareData.h"
 #import <YLT_BaseLib/YLT_BaseLib.h>
 
 @interface AppDelegate ()
@@ -17,6 +18,8 @@
 @end
 
 @implementation AppDelegate
+
+//#define
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
@@ -29,6 +32,7 @@
     [self initThirdLibrary];
     [self initUI];
     
+    TrackEvent(@"enter", @{@"data":@"str"});
     [YLT_ModularManager ylt_modularWithPlistPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"Modular.plist"]];
     [YLT_ModularManager application:application didFinishLaunchingWithOptions:launchOptions];
     return YES;

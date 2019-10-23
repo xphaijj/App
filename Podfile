@@ -14,7 +14,6 @@ pod 'MJRefresh'	#下拉刷新
 #pod 'IGListKit'		#强列表
 #pod 'YYKit'	#组件
 #pod 'lottie-ios'   #动画特效处理
-pod 'MLeaksFinder'  #内存泄露的管理
 
 pod 'MJExtension'  #RumTime运行时 类属性的处理
 pod 'FMDB'			#数据库
@@ -25,9 +24,6 @@ pod 'SVProgressHUD' #加载框
 #pod 'DCURLRouter'      #路由控制
 
 #pod 'SXTopMenu'   #顶部菜单栏
-
-pod 'GDPerformanceView'	#CPU 等监控
-
 #pod 'TTTAttributedLabel' #富文本
 
 pod 'JPush' #极光推送
@@ -38,6 +34,11 @@ pod 'DZNEmptyDataSet' #数据为空的列表处理
 
 pod 'SCLAlertView-Objective-C' #警告框
 pod 'RMUniversalAlert' #警告框
+pod 'Bugly' #bug统计
+
+pod 'MLeaksFinder', :configurations => ['Debug']        #内存泄露的管理
+pod 'GDPerformanceView', :configurations => ['Debug']   #CPU 等监控
+pod 'FLEX', :configurations => ['Debug'] # FLEX
 
 #pod 'BaiduMapKit' #百度地图SDK
 
@@ -47,6 +48,8 @@ pod 'RMUniversalAlert' #警告框
 
 #pod 'GrowingIO' #统计工具
 
+# 友盟统计
+pod 'UMCAnalytics'
 # U-Share SDK UI模块（分享面板，建议添加）
 pod 'UMengUShare/UI'
 
