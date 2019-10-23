@@ -8,6 +8,7 @@
 
 #import "AppDelegate+AppService.h"
 #import "UIColor+AppColor.h"
+#import "AppAssistiveTouchView.h"
 
 @implementation AppDelegate (AppService)
 
@@ -15,6 +16,12 @@
  页面元素的初始化
  */
 - (void)initUI {
+    
+#if DEBUG
+    AppAssistiveTouchView *touchView = [[AppAssistiveTouchView alloc] initWithFrame:CGRectMake(YLT_SCREEN_WIDTH-104, 100, 44*2, 44)];
+    [self.window.rootViewController.view insertSubview:touchView atIndex:99999];
+#endif
+    
 }
 
 /**

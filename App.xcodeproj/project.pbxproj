@@ -32,6 +32,8 @@
 		FA44B053235EF60F00D81F53 /* UIViewController+AppTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B052235EF60F00D81F53 /* UIViewController+AppTrack.m */; };
 		FA44B056235F01B500D81F53 /* YLT_TrackModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B055235F01B500D81F53 /* YLT_TrackModular.m */; };
 		FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */; };
+		FA6F1A37236033CF0029B0CF /* AppAssistiveTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A36236033CF0029B0CF /* AppAssistiveTouchView.m */; };
+		FA6F1A3A23603A480029B0CF /* AppLogListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A3923603A480029B0CF /* AppLogListVC.m */; };
 		FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,10 @@
 		FA6F1A2C23602B310029B0CF /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		FA6F1A2E23602BAE0029B0CF /* YLT_PayModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PayModular.h; sourceTree = "<group>"; };
 		FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PayModular.m; sourceTree = "<group>"; };
+		FA6F1A35236033CF0029B0CF /* AppAssistiveTouchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppAssistiveTouchView.h; sourceTree = "<group>"; };
+		FA6F1A36236033CF0029B0CF /* AppAssistiveTouchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppAssistiveTouchView.m; sourceTree = "<group>"; };
+		FA6F1A3823603A480029B0CF /* AppLogListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLogListVC.h; sourceTree = "<group>"; };
+		FA6F1A3923603A480029B0CF /* AppLogListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppLogListVC.m; sourceTree = "<group>"; };
 		FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_LocationModular.h; sourceTree = "<group>"; };
 		FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_LocationModular.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +247,7 @@
 		FA2366E91FC01CF5006255D0 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FA6F1A34236033A60029B0CF /* AssisitiveTouch */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -316,6 +323,17 @@
 				FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */,
 			);
 			path = TCP;
+			sourceTree = "<group>";
+		};
+		FA6F1A34236033A60029B0CF /* AssisitiveTouch */ = {
+			isa = PBXGroup;
+			children = (
+				FA6F1A35236033CF0029B0CF /* AppAssistiveTouchView.h */,
+				FA6F1A36236033CF0029B0CF /* AppAssistiveTouchView.m */,
+				FA6F1A3823603A480029B0CF /* AppLogListVC.h */,
+				FA6F1A3923603A480029B0CF /* AppLogListVC.m */,
+			);
+			path = AssisitiveTouch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,10 +472,12 @@
 				FA44B053235EF60F00D81F53 /* UIViewController+AppTrack.m in Sources */,
 				FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */,
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
+				FA6F1A37236033CF0029B0CF /* AppAssistiveTouchView.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
 				FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
 				FA44B04F235EF58900D81F53 /* YLT_TcpModular.m in Sources */,
+				FA6F1A3A23603A480029B0CF /* AppLogListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
