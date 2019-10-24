@@ -61,7 +61,7 @@ PODS:
   - UMengUShare/UI (6.4.8.2):
     - UMengUShare/Core
   - WToast (2.1.1)
-  - YLT_BaseLib (0.3.53):
+  - YLT_BaseLib (0.3.54):
     - FastCoding
     - FMDB
     - MJExtension
@@ -164,7 +164,7 @@ SPEC CHECKSUMS:
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   WToast: d4bd28442dd5ff69d66fe82f5be8c8895c7a0a67
-  YLT_BaseLib: 5fa6424b2820bfb2ff4b82f300c93ca2ad312b92
+  YLT_BaseLib: 04a3da3d75e8502429f3ff8f839451f644bbb8f6
   YLT_Crypto: 3d7dceec11f4a3046f58b4852092d68e4c37ab4e
   YLT_Kit: 033730eb2ed99b1cf4aebbb5493ddfb315ee9920
 

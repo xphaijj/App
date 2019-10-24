@@ -21,12 +21,12 @@
 }
 
 - (void)umengTrack_viewWillAppear:(BOOL)animated {
-    [YLT_RouterManager ylt_routerToClassname:@"YLT_TrackModular" selname:@"trackBeginPage:" arg:@{@"pagename":NSStringFromClass([self class])} completion:nil];
+    [YLT_RouterManager ylt_routerToClassname:@"YLT_TrackModular" selname:@"trackBeginPage:" isClassMethod:YES arg:@{@"pagename":NSStringFromClass([self class])} completion:nil];
     [self umengTrack_viewWillAppear:animated];
 }
 
 - (void)umengTrack_viewWillDisappear:(BOOL)animated {
-    [YLT_RouterManager ylt_routerToClassname:@"YLT_TrackModular" selname:@"trackEndPage:" arg:@{@"pagename":NSStringFromClass([self class])} completion:nil];
+    [YLT_RouterManager ylt_routerToClassname:@"YLT_TrackModular" selname:@"trackEndPage:" isClassMethod:YES arg:@{@"pagename":NSStringFromClass([self class])} completion:nil];
     [self umengTrack_viewWillDisappear:animated];
 }
 

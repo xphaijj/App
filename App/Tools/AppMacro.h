@@ -9,6 +9,6 @@
 #ifndef AppMacro_h
 #define AppMacro_h
 
-#define TrackEvent(eventStr, attributeData) [YLT_RouterManager ylt_routerToClassname:@"YLT_TrackModular" selname:@"trackEvent:" arg:@{@"event":eventStr, @"attribute":attributeData} completion:nil];
+#define TrackEvent(eventStr, attributeData) [YLT_RouterManager ylt_routerToClassname:@"YLT_TrackModular" selname:@"trackEvent:" isClassMethod:YES arg:@{@"event":eventStr, @"attribute":attributeData} completion:nil];
 
 #endif /* AppMacro_h */

@@ -42,7 +42,9 @@
     rightItem.ylt_clickBlock = ^(UIBarButtonItem *sender) {
         @strongify(self)
         [YLT_LogHelper clearLogDB:nil];
-        self.table.ylt_tableData(@[[YLT_TableSectionModel ylt_createSectionData:[YLT_APILogModel findDB:nil forConditions:nil] headerString:nil footerString:nil]]);
+        [YLT_APILogModel findDB_ForConditions:@"" complete:^(id response) {
+            self.table.ylt_tableData(@[[YLT_TableSectionModel ylt_createSectionData:response headerString:nil footerString:nil]]);
+        }];
     };
     self.navigationItem.rightBarButtonItem = rightItem;
     
@@ -55,13 +57,15 @@
     searchBar.keyboardType = UIKeyboardTypeASCIICapable;
     searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    
     self.table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.top.equalTo(searchBar.mas_bottom);
-    }, UITableViewStylePlain).ylt_convertToTableView().ylt_cell(48, AppLogListCell.class).ylt_tableData(@[[YLT_TableSectionModel ylt_createSectionData:[YLT_APILogModel findDB:nil forConditions:nil] headerString:nil footerString:nil]]).ylt_cellClick(^(UITableViewCell *cell, NSIndexPath *indexPath, YLT_APILogModel *logModel) {
+    }, UITableViewStylePlain).ylt_convertToTableView().ylt_cell(48, AppLogListCell.class).ylt_cellClick(^(UITableViewCell *cell, NSIndexPath *indexPath, YLT_APILogModel *logModel) {
         YLT_Log(@"%@", logModel.mark);
     });
+    [YLT_APILogModel findDB_ForConditions:@"" complete:^(id response) {
+        self.table.ylt_tableData(@[[YLT_TableSectionModel ylt_createSectionData:response headerString:nil footerString:nil]]);
+    }];
 }
 
 @end
