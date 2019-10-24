@@ -25,6 +25,7 @@
 		FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F41FC01D3F006255D0 /* PPRequest.m */; };
 		FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F71FC01D3F006255D0 /* PPModel.m */; };
 		FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F81FC01D3F006255D0 /* PPModel+DB.m */; };
+		FA30B53123614E76006E9449 /* AppLogDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30B53023614E76006E9449 /* AppLogDetailVC.m */; };
 		FA44B044235ED09600D81F53 /* AppWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B043235ED09600D81F53 /* AppWebVC.m */; };
 		FA44B047235ED5CE00D81F53 /* UIFont+AppFont.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B046235ED5CE00D81F53 /* UIFont+AppFont.m */; };
 		FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */; };
@@ -76,6 +77,8 @@
 		FA2366F71FC01D3F006255D0 /* PPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPModel.m; sourceTree = "<group>"; };
 		FA2366F81FC01D3F006255D0 /* PPModel+DB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PPModel+DB.m"; sourceTree = "<group>"; };
 		FA2366F91FC01D3F006255D0 /* PPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRequest.h; sourceTree = "<group>"; };
+		FA30B52F23614E76006E9449 /* AppLogDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLogDetailVC.h; sourceTree = "<group>"; };
+		FA30B53023614E76006E9449 /* AppLogDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppLogDetailVC.m; sourceTree = "<group>"; };
 		FA44B042235ED09600D81F53 /* AppWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppWebVC.h; sourceTree = "<group>"; };
 		FA44B043235ED09600D81F53 /* AppWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppWebVC.m; sourceTree = "<group>"; };
 		FA44B045235ED5CE00D81F53 /* UIFont+AppFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+AppFont.h"; sourceTree = "<group>"; };
@@ -332,6 +335,8 @@
 				FA6F1A36236033CF0029B0CF /* AppAssistiveTouchView.m */,
 				FA6F1A3823603A480029B0CF /* AppLogListVC.h */,
 				FA6F1A3923603A480029B0CF /* AppLogListVC.m */,
+				FA30B52F23614E76006E9449 /* AppLogDetailVC.h */,
+				FA30B53023614E76006E9449 /* AppLogDetailVC.m */,
 			);
 			path = AssisitiveTouch;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */,
 				FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */,
 				FA44B047235ED5CE00D81F53 /* UIFont+AppFont.m in Sources */,
+				FA30B53123614E76006E9449 /* AppLogDetailVC.m in Sources */,
 				FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */,
 				C734423121E3262800BD5175 /* PHRequest.m in Sources */,
 				FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */,

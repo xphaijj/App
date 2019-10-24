@@ -42,8 +42,9 @@
                 [model saveDB:nil];
             }
             
-            vc = [[AppLogListVC alloc] init];
-            [self.ylt_currentVC ylt_pushToVC:vc callback:nil];
+            vc = [[UINavigationController alloc] initWithRootViewController:[[AppLogListVC alloc] init]];
+            vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+            [self.ylt_currentVC ylt_presentToVC:vc callback:nil];
         });
         
         self.ylt_pan(self, @selector(panAction:));

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "YLT_BaseVC.h"
+#import <YLT_Kit/YLT_Kit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
