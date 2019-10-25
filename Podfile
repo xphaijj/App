@@ -60,7 +60,8 @@ pod 'UMengUShare/Plugin/IDFA'
 
 pod 'YLT_BaseLib'
 pod 'YLT_Kit'
-pod 'YLT_Crypto'
+pod 'MIHCrypto'
+#pod 'YLT_Crypto'
 
 
 end

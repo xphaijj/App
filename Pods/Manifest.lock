@@ -29,10 +29,33 @@ PODS:
   - JPush (3.2.6):
     - JCore (< 3.0.0, >= 2.0.0)
   - Masonry (1.1.0)
+  - MIHCrypto (0.4.1):
+    - MIHCrypto/AES (= 0.4.1)
+    - MIHCrypto/Core (= 0.4.1)
+    - MIHCrypto/DES (= 0.4.1)
+    - MIHCrypto/Mathematics (= 0.4.1)
+    - MIHCrypto/MD5 (= 0.4.1)
+    - MIHCrypto/RSA (= 0.4.1)
+    - MIHCrypto/SHA (= 0.4.1)
+  - MIHCrypto/AES (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/Core (0.4.1):
+    - OpenSSL-Universal (~> 1.0.1.18)
+  - MIHCrypto/DES (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/Mathematics (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/MD5 (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/RSA (0.4.1):
+    - MIHCrypto/Core
+  - MIHCrypto/SHA (0.4.1):
+    - MIHCrypto/Core
   - MJExtension (3.2.1)
   - MJRefresh (3.2.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
+  - OpenSSL-Universal (1.0.1.20)
   - ReactiveObjC (3.1.1)
   - RMUniversalAlert (0.8.1):
     - RMUniversalAlert/Core (= 0.8.1)
@@ -65,7 +88,6 @@ PODS:
     - FastCoding
     - FMDB
     - MJExtension
-  - YLT_Crypto (0.0.3)
   - YLT_Kit (0.3.47):
     - AFNetworking
     - Aspects
@@ -85,6 +107,7 @@ DEPENDENCIES:
   - GDPerformanceView
   - JPush
   - Masonry
+  - MIHCrypto
   - MJExtension
   - MJRefresh
   - MLeaksFinder
@@ -98,7 +121,6 @@ DEPENDENCIES:
   - UMengUShare/UI
   - WToast
   - YLT_BaseLib
-  - YLT_Crypto
   - YLT_Kit
 
 SPEC REPOS:
@@ -116,9 +138,11 @@ SPEC REPOS:
     - JCore
     - JPush
     - Masonry
+    - MIHCrypto
     - MJExtension
     - MJRefresh
     - MLeaksFinder
+    - OpenSSL-Universal
     - ReactiveObjC
     - RMUniversalAlert
     - SCLAlertView-Objective-C
@@ -132,7 +156,6 @@ SPEC REPOS:
     - UMengUShare
     - WToast
     - YLT_BaseLib
-    - YLT_Crypto
     - YLT_Kit
 
 SPEC CHECKSUMS:
@@ -149,9 +172,11 @@ SPEC CHECKSUMS:
   JCore: d345c049141877eb61c33011455fdb5fcab1673f
   JPush: 41dd48a69bd8c08abc692dc7f2b23c0fb281471f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MIHCrypto: 9c83cf35a3c218928847df8faf1ba080975a0bf2
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  OpenSSL-Universal: 71f2c4b2ae758e2218090f905e95ca0ac5c01be7
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RMUniversalAlert: ce7118101a19fa41b9adedf907b66a8cc3bd32c8
   SCLAlertView-Objective-C: 2bb9be204bffaf24762a0e33fe6ca9645819b3b7
@@ -165,9 +190,8 @@ SPEC CHECKSUMS:
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   WToast: d4bd28442dd5ff69d66fe82f5be8c8895c7a0a67
   YLT_BaseLib: dfdd1377329956d71a4ab39b7e33bd94dc691a12
-  YLT_Crypto: 3d7dceec11f4a3046f58b4852092d68e4c37ab4e
   YLT_Kit: 033730eb2ed99b1cf4aebbb5493ddfb315ee9920
 
-PODFILE CHECKSUM: fd82ff00fadd0c4fd98efbe860318ca7d92d8885
+PODFILE CHECKSUM: 15771ce28752e133652567156e173bc3b1b1caad
 
 COCOAPODS: 1.7.2
