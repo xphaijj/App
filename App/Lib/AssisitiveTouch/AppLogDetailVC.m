@@ -48,7 +48,6 @@
             NSArray *matches = [regex matchesInString:contentString options:0 range:NSMakeRange(0, contentString.length)];
             for(NSTextCheckingResult *result in [matches objectEnumerator]) {
                 NSRange matchRange = [result range];
-                YLT_Log(@"matchRange%@",NSStringFromRange(matchRange));
                 [attributeStr setAttributes:@{NSFontAttributeName:[UIFont ylt_mediumFont:14.5],NSForegroundColorAttributeName:UIColor.redColor} range:matchRange];
             }
             textView.attributedText = attributeStr;
