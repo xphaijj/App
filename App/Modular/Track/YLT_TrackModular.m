@@ -10,6 +10,7 @@
 #import <YLT_BaseLib/YLT_BaseLib.h>
 #import <UMCommon/UMCommon.h>
 #import <UMAnalytics/MobClick.h>
+#import <UMShare/UMShare.h>
 
 static NSString *const UMengAppKey = @"";
 
@@ -17,13 +18,56 @@ static NSString *const UMengAppKey = @"";
 
 + (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self registerSDK];
+    [self configAppShare];
+    
     return YES;
 }
 
++ (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    return result;
+}
+
++ (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    return result;
+}
+
 + (void)registerSDK {
+#if DEBUG
+    [UMConfigure setLogEnabled:YES];//设置打开日志
+#else
+    [UMConfigure setEncryptEnabled:YES];//打开加密传输
+#endif
     // 启动时发送 Log AppStore分发渠道
     [UMConfigure initWithAppkey:UMengAppKey channel:@"AppStore"];
     [MobClick setCrashReportEnabled:YES];//不接收crash统计A
+}
+
+//配置分享信息
++ (void)configAppShare {
+    /* 设置微信的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession
+                                          appKey:@"wxdc1e388c3822c80b"
+                                       appSecret:@"3baf1193c85774b3fd9d18447d76cab0"
+                                     redirectURL:@"http://mobile.umeng.com/social"];
+    /*
+     * 移除相应平台的分享，如微信收藏
+     */
+    //[[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
+    /* 设置分享到QQ互联的appID
+     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
+    */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
+                                          appKey:@"1105821097"/*设置QQ平台的appID*/
+                                       appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+    /* 设置新浪的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina
+                                          appKey:@"3921700954"
+                                       appSecret:@"04b48b094faeb16683c32669824ebdad"
+                                     redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
 }
 
 /**

@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AliyunOSSiOS (2.10.7)
   - Aspects (1.4.1)
   - Bugly (2.5.0)
   - DZNEmptyDataSet (1.8.1)
@@ -64,7 +63,6 @@ PODS:
     - "UIActionSheet+Blocks (>= 0.9)"
     - "UIAlertController+Blocks (>= 0.9)"
     - "UIAlertView+Blocks (>= 0.9)"
-  - SCLAlertView-Objective-C (1.1.6)
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
   - SDWebImage/Core (5.2.3)
@@ -75,15 +73,33 @@ PODS:
   - UMCAnalytics (6.0.5):
     - UMCCommon
   - UMCCommon (2.1.1)
-  - UMengUShare/Core (6.4.8.2):
-    - UMengUShare/Network
-  - UMengUShare/Network (6.4.8.2)
-  - UMengUShare/Plugin/IDFA (6.4.8.2):
-    - UMengUShare/Core
-  - UMengUShare/Social/ReducedWeChat (6.4.8.2):
-    - UMengUShare/Core
-  - UMengUShare/UI (6.4.8.2):
-    - UMengUShare/Core
+  - UMCSecurityPlugins (1.0.6)
+  - UMCShare/Core (6.9.6):
+    - UMCCommon
+  - UMCShare/Social/QQ (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedQQ (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedSina (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/Sina (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedSina
+  - UMCShare/Social/WeChat (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI (6.9.6):
+    - UMCCommon
+    - UMCShare/Core
   - WToast (2.1.1)
   - XHLaunchAd (3.9.8):
     - FLAnimatedImage (~> 1.0.12)
@@ -102,7 +118,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - AliyunOSSiOS
   - Bugly
   - DZNEmptyDataSet
   - FLEX
@@ -116,12 +131,14 @@ DEPENDENCIES:
   - MLeaksFinder
   - ReactiveObjC
   - RMUniversalAlert
-  - SCLAlertView-Objective-C
   - SVProgressHUD
   - UMCAnalytics
-  - UMengUShare/Plugin/IDFA
-  - UMengUShare/Social/ReducedWeChat
-  - UMengUShare/UI
+  - UMCCommon
+  - UMCSecurityPlugins
+  - UMCShare/Social/QQ
+  - UMCShare/Social/Sina
+  - UMCShare/Social/WeChat
+  - UMCShare/UI
   - WToast
   - XHLaunchAd
   - YLT_BaseLib
@@ -130,7 +147,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
-    - AliyunOSSiOS
     - Aspects
     - Bugly
     - DZNEmptyDataSet
@@ -150,7 +166,6 @@ SPEC REPOS:
     - OpenSSL-Universal
     - ReactiveObjC
     - RMUniversalAlert
-    - SCLAlertView-Objective-C
     - SDWebImage
     - SVProgressHUD
     - "UIActionSheet+Blocks"
@@ -158,7 +173,8 @@ SPEC REPOS:
     - "UIAlertView+Blocks"
     - UMCAnalytics
     - UMCCommon
-    - UMengUShare
+    - UMCSecurityPlugins
+    - UMCShare
     - WToast
     - XHLaunchAd
     - YLT_BaseLib
@@ -166,7 +182,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AliyunOSSiOS: 602b6a4e70e62a5f0a6431c20496343141d7e66f
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -186,7 +201,6 @@ SPEC CHECKSUMS:
   OpenSSL-Universal: 71f2c4b2ae758e2218090f905e95ca0ac5c01be7
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RMUniversalAlert: ce7118101a19fa41b9adedf907b66a8cc3bd32c8
-  SCLAlertView-Objective-C: 2bb9be204bffaf24762a0e33fe6ca9645819b3b7
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UIActionSheet+Blocks": e180b7dad0a721ab7f212ac9742af799008bb358
@@ -194,12 +208,13 @@ SPEC CHECKSUMS:
   "UIAlertView+Blocks": a46c99c5144f6c5dbc7d62fd2a0678daceec89a3
   UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
-  UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  UMCShare: e0cef55c0fd6051254c8cda1d0630eb578b27bad
   WToast: d4bd28442dd5ff69d66fe82f5be8c8895c7a0a67
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YLT_BaseLib: dfdd1377329956d71a4ab39b7e33bd94dc691a12
   YLT_Kit: 033730eb2ed99b1cf4aebbb5493ddfb315ee9920
 
-PODFILE CHECKSUM: 3f31379644a1bf6f0f985132a7ed69ff07870abc
+PODFILE CHECKSUM: 7b0ca9d57c7dc07c731e8932ae5115eb453fbc17
 
 COCOAPODS: 1.7.2
