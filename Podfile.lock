@@ -20,6 +20,7 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - FastCoding (3.3)
   - FBRetainCycleDetector (0.1.4)
+  - FLAnimatedImage (1.0.12)
   - FLEX (3.0.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -84,6 +85,8 @@ PODS:
   - UMengUShare/UI (6.4.8.2):
     - UMengUShare/Core
   - WToast (2.1.1)
+  - XHLaunchAd (3.9.8):
+    - FLAnimatedImage (~> 1.0.12)
   - YLT_BaseLib (0.3.55):
     - FastCoding
     - FMDB
@@ -120,6 +123,7 @@ DEPENDENCIES:
   - UMengUShare/Social/ReducedWeChat
   - UMengUShare/UI
   - WToast
+  - XHLaunchAd
   - YLT_BaseLib
   - YLT_Kit
 
@@ -132,6 +136,7 @@ SPEC REPOS:
     - DZNEmptyDataSet
     - FastCoding
     - FBRetainCycleDetector
+    - FLAnimatedImage
     - FLEX
     - FMDB
     - GDPerformanceView
@@ -155,6 +160,7 @@ SPEC REPOS:
     - UMCCommon
     - UMengUShare
     - WToast
+    - XHLaunchAd
     - YLT_BaseLib
     - YLT_Kit
 
@@ -166,6 +172,7 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FastCoding: 3b590f7143a229780fa744b35084d85d9461587e
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FLEX: d66c759bce0f6ebbbf472c742380874d846f2883
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GDPerformanceView: d70d646bf7022a3dfd64222e4966f403bfffef19
@@ -189,9 +196,10 @@ SPEC CHECKSUMS:
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   WToast: d4bd28442dd5ff69d66fe82f5be8c8895c7a0a67
+  XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YLT_BaseLib: dfdd1377329956d71a4ab39b7e33bd94dc691a12
   YLT_Kit: 033730eb2ed99b1cf4aebbb5493ddfb315ee9920
 
-PODFILE CHECKSUM: 15771ce28752e133652567156e173bc3b1b1caad
+PODFILE CHECKSUM: 3f31379644a1bf6f0f985132a7ed69ff07870abc
 
 COCOAPODS: 1.7.2

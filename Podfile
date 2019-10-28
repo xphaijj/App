@@ -10,6 +10,7 @@ pod 'ReactiveObjC'#响应式编程
 #pod 'WechatOpenSDK', '~> 1.7.7' #微信SDK
 pod 'Masonry'	#约束布局
 pod 'MJRefresh'	#下拉刷新
+pod 'XHLaunchAd' #App启动广告页
 
 #pod 'IGListKit'		#强列表
 #pod 'YYKit'	#组件

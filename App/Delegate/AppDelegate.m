@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AppDelegate+AppService.h"
 #import "AppDelegate+AppBug.h"
+#import "AppDelegate+AppLaunchAd.h"
 #import "UIColor+AppColor.h"
 #import "ShareData.h"
 #import <YLT_BaseLib/YLT_BaseLib.h>
@@ -30,6 +31,7 @@
     /* 启动App的基础服务 **/
     [self initAppService];
     [self initThirdLibrary];
+    [self initLaunchAd];
     [self initUI];
     
     TrackEvent(@"enter", @{@"data":@"str"});

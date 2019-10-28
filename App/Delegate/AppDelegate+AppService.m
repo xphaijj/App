@@ -19,6 +19,7 @@
  */
 - (void)initUI {
     
+    
 #if DEBUG
     // 网络 请求日志系统监控
     AppAssistiveTouchView *touchView = [[AppAssistiveTouchView alloc] initWithFrame:CGRectMake(YLT_SCREEN_WIDTH-104, 100, 44*2, 44)];
