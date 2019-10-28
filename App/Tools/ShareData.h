@@ -11,9 +11,12 @@
 #import "UIColor+AppColor.h"
 #import "UIFont+AppFont.h"
 #import "AppMacro.h"
+#import "PPModel.h"
 
 @interface ShareData : NSObject
 
 YLT_ShareInstanceHeader(ShareData);
+
+@property (nonatomic, strong) User *currentUser;
 
 @end

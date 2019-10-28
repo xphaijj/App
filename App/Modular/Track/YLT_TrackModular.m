@@ -111,4 +111,19 @@ static NSString *const UMengAppKey = @"";
     }
 }
 
+/// 分享
+/// @param data 分享的数据
++ (void)shareData:(NSDictionary *)data {
+    UMSocialMessageObject *object = [UMSocialMessageObject messageObject];
+    
+    UMSocialPlatformType type = UMSocialPlatformType_WechatSession;
+    [[UMSocialManager defaultManager] shareToPlatform:type messageObject:object currentViewController:self.ylt_currentVC completion:^(id result, NSError *error) {
+        if (error) {
+            YLT_LogError(@"分享失败 %@", error.description);
+        } else {
+            YLT_Log(@"分享成功");
+        }
+    }];
+}
+
 @end

@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)trackBeginPage:(UIViewController *)sender;
 + (void)trackEndPage:(UIViewController *)sender;
 
+/// 分享
+/// @param data 分享的数据
++ (void)shareData:(NSDictionary *)data;
+
 @end
 
 NS_ASSUME_NONNULL_END
