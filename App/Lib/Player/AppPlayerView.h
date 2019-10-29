@@ -16,11 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *path;
 
 /// 当前状态
-@property (nonatomic, assign, readonly) BOOL isPlaying;
-
-- (void)play;
-
-- (void)pause;
+@property (nonatomic, assign) BOOL isPlaying;
 
 /// 根据视频路径获取视频的时长和大小
 /// @param path  视频路径

@@ -10,7 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface AppPlayerView() {
-    BOOL isPlaying;
 }
 
 @property (nonatomic, strong) AVPlayer *player;
@@ -24,19 +23,17 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = UIColor.clearColor;
-        isPlaying = NO;
     }
     return self;
 }
 
-- (void)play {
-    isPlaying = YES;
-    [self.player play];
-}
-
-- (void)pause {
-    isPlaying = NO;
-    [self.player pause];
+- (void)setIsPlaying:(BOOL)isPlaying {
+    _isPlaying = isPlaying;
+    if (_isPlaying) {
+        [self.player play];
+    } else {
+        [self.player pause];
+    }
 }
 
 - (void)setPath:(NSString *)path {
@@ -51,10 +48,6 @@
     [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1, 1) queue:nil usingBlock:^(CMTime time) {
         YLT_Log(@"%lld", time.value/time.timescale);
     }];
-}
-
-- (BOOL)isPlaying {
-    return isPlaying;
 }
 
 /// 根据视频路径获取视频的时长和大小

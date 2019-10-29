@@ -44,11 +44,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if (self.playerView.isPlaying) {
-        [self.playerView pause];
-    } else {
-        [self.playerView play];
-    }
+    self.playerView.isPlaying = !self.playerView.isPlaying;
 }
 
 + (void)test {
