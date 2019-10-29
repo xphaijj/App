@@ -36,6 +36,7 @@
 		FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */; };
 		FA6F1A37236033CF0029B0CF /* AppAssistiveTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A36236033CF0029B0CF /* AppAssistiveTouchView.m */; };
 		FA6F1A3A23603A480029B0CF /* AppLogListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A3923603A480029B0CF /* AppLogListVC.m */; };
+		FAB73EE023680C5200F93280 /* AppPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB73EDF23680C5200F93280 /* AppPlayerView.m */; };
 		FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,8 @@
 		FA6F1A36236033CF0029B0CF /* AppAssistiveTouchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppAssistiveTouchView.m; sourceTree = "<group>"; };
 		FA6F1A3823603A480029B0CF /* AppLogListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLogListVC.h; sourceTree = "<group>"; };
 		FA6F1A3923603A480029B0CF /* AppLogListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppLogListVC.m; sourceTree = "<group>"; };
+		FAB73EDE23680C5200F93280 /* AppPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppPlayerView.h; sourceTree = "<group>"; };
+		FAB73EDF23680C5200F93280 /* AppPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppPlayerView.m; sourceTree = "<group>"; };
 		FABD69D9214A9F3F00234DA4 /* YLT_LocationModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_LocationModular.h; sourceTree = "<group>"; };
 		FABD69DA214A9F3F00234DA4 /* YLT_LocationModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_LocationModular.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,6 +258,7 @@
 		FA2366E91FC01CF5006255D0 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FAB73EDD23680C3800F93280 /* Player */,
 				FA6F1A34236033A60029B0CF /* AssisitiveTouch */,
 			);
 			path = Lib;
@@ -344,6 +348,15 @@
 				FA30B53023614E76006E9449 /* AppLogDetailVC.m */,
 			);
 			path = AssisitiveTouch;
+			sourceTree = "<group>";
+		};
+		FAB73EDD23680C3800F93280 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				FAB73EDE23680C5200F93280 /* AppPlayerView.h */,
+				FAB73EDF23680C5200F93280 /* AppPlayerView.m */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +483,7 @@
 				FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */,
 				FA5C8D9923668D5E006BC03F /* AppDelegate+AppLaunchAd.m in Sources */,
 				FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */,
+				FAB73EE023680C5200F93280 /* AppPlayerView.m in Sources */,
 				FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */,
 				FA44B047235ED5CE00D81F53 /* UIFont+AppFont.m in Sources */,
 				FA30B53123614E76006E9449 /* AppLogDetailVC.m in Sources */,

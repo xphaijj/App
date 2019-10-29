@@ -14,7 +14,7 @@
 #import "ShareData.h"
 #import <YLT_BaseLib/YLT_BaseLib.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
