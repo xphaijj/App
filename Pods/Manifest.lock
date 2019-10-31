@@ -63,9 +63,9 @@ PODS:
     - "UIActionSheet+Blocks (>= 0.9)"
     - "UIAlertController+Blocks (>= 0.9)"
     - "UIAlertView+Blocks (>= 0.9)"
-  - SDWebImage (5.2.3):
-    - SDWebImage/Core (= 5.2.3)
-  - SDWebImage/Core (5.2.3)
+  - SDWebImage (5.2.5):
+    - SDWebImage/Core (= 5.2.5)
+  - SDWebImage/Core (5.2.5)
   - SVProgressHUD (2.2.5)
   - "UIActionSheet+Blocks (0.9)"
   - "UIAlertController+Blocks (0.9.2)"
@@ -145,7 +145,7 @@ DEPENDENCIES:
   - YLT_Kit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Aspects
     - Bugly
@@ -201,7 +201,7 @@ SPEC CHECKSUMS:
   OpenSSL-Universal: 71f2c4b2ae758e2218090f905e95ca0ac5c01be7
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RMUniversalAlert: ce7118101a19fa41b9adedf907b66a8cc3bd32c8
-  SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
+  SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UIActionSheet+Blocks": e180b7dad0a721ab7f212ac9742af799008bb358
   "UIAlertController+Blocks": 80e28b92523fb58aba4d1bccec013d5a0b0bddb2
@@ -215,6 +215,6 @@ SPEC CHECKSUMS:
   YLT_BaseLib: dfdd1377329956d71a4ab39b7e33bd94dc691a12
   YLT_Kit: 033730eb2ed99b1cf4aebbb5493ddfb315ee9920
 
-PODFILE CHECKSUM: 7b0ca9d57c7dc07c731e8932ae5115eb453fbc17
+PODFILE CHECKSUM: 7d95150c36f3caa15c68ba99ae23b7d129665941
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.8.4

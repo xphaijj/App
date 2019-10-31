@@ -18,9 +18,12 @@ pod 'DZNEmptyDataSet' #数据为空的列表处理
 pod 'RMUniversalAlert' #警告框
 pod 'Bugly' #bug统计
 
+pod 'YLT_BaseLib'
+pod 'YLT_Kit'
+pod 'MIHCrypto'
+
 # 友盟统计
 pod 'UMCAnalytics'
-
 # 友盟分享
 pod 'UMCCommon'
 pod 'UMCSecurityPlugins'
@@ -34,15 +37,10 @@ pod 'UMCShare/Social/QQ'
 pod 'UMCShare/Social/Sina'
 
 
-pod 'YLT_BaseLib'
-pod 'YLT_Kit'
-pod 'MIHCrypto'
-#pod 'YLT_Crypto'
-
-
 pod 'MLeaksFinder', :configurations => ['Debug']        #内存泄露的管理
 pod 'GDPerformanceView', :configurations => ['Debug']   #CPU 等监控
 pod 'FLEX', :configurations => ['Debug'] # FLEX
 
 end
+
 
