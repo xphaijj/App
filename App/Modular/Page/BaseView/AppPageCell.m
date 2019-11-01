@@ -10,4 +10,9 @@
 
 @implementation AppPageCell
 
+- (void)setData:(YLT_BaseModel *)data {
+    _data = data;
+    self.mainView.data = data;
+}
+
 @end

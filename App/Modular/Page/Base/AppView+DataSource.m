@@ -1,16 +1,16 @@
 //
-//  AppPageView+DataSource.m
+//  AppView+DataSource.m
 //  App
 //
 //  Created by 項普華 on 2019/10/31.
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "AppPageView+DataSource.h"
+#import "AppView+DataSource.h"
 #import "AppPageCell.h"
 #import "AppPageTools.h"
 
-@implementation AppPageView (DataSource)
+@implementation AppView (DataSource)
 
 - (void)registerMainCollection:(UICollectionView *)mainCollection {
     [mainCollection registerCell:@[@"AppPageCell", @"AppBannerCell"]];
@@ -53,6 +53,10 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     YLT_BaseModel *sectionData = self.list.firstObject;
+    if (sectionData.sectionRowCount != 0) {
+        return sectionData.sectionRowCount;
+    }
+    
     if (sectionData && sectionData.sectionData) {
         return sectionData.sectionData.count;
     }
@@ -63,7 +67,7 @@
     YLT_BaseModel *sectionData = self.list[indexPath.section];
     if ([AppPageTools isValidPageData:sectionData]) {
         AppPageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:sectionData.cellIdentify forIndexPath:indexPath];
-        cell.data = sectionData.sectionData[indexPath.row];
+        cell.data = (sectionData.sectionRowCount==0)?sectionData.sectionData[indexPath.row]:sectionData;
         return cell;
     }
     AppPageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AppPageCell" forIndexPath:indexPath];

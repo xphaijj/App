@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppBannerCell : AppPageCell
 
-@property (nonatomic, strong) AppBannerView *mainView;
+
 
 @end
 

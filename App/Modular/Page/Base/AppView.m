@@ -1,21 +1,21 @@
 //
-//  AppPageView.m
+//  AppView.m
 //  App
 //
 //  Created by 項普華 on 2019/10/31.
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "AppPageView.h"
-#import "AppPageView+DataSource.h"
+#import "AppView.h"
+#import "AppView+DataSource.h"
 
-@interface AppPageView () {
+@interface AppView () {
 }
 @property (nonatomic, strong) UICollectionView *mainCollection;
 
 @end
 
-@implementation AppPageView
+@implementation AppView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

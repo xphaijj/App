@@ -7,15 +7,31 @@
 //
 
 #import "AppBannerView.h"
+#import <SDCycleScrollView/SDCycleScrollView.h>
+
+@interface AppBannerView ()
+
+@property (nonatomic, strong) SDCycleScrollView *banner;
+
+@end
 
 @implementation AppBannerView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = UIColor.redColor;
+        self.banner = [SDCycleScrollView cycleScrollViewWithFrame:frame shouldInfiniteLoop:YES imageNamesGroup:nil];
+        [self addSubview:self.banner];
+        [self.banner mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self);
+        }];
     }
     return self;
+}
+
+- (void)setData:(YLT_BaseModel *)data {
+    [super setData:data];
+    NSLog(@"%@", data.sectionData);
 }
 
 @end

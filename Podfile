@@ -17,6 +17,7 @@ pod 'JPush' #极光推送
 pod 'DZNEmptyDataSet' #数据为空的列表处理
 pod 'RMUniversalAlert' #警告框
 pod 'Bugly' #bug统计
+pod 'SDCycleScrollView'
 
 pod 'YLT_BaseLib'
 pod 'YLT_Kit'

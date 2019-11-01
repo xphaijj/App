@@ -1,5 +1,5 @@
 //
-//  AppBannerView.h
+//  AppPageView.m
 //  App
 //
 //  Created by 項普華 on 2019/11/1.
@@ -8,10 +8,6 @@
 
 #import "AppPageView.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface AppBannerView : AppPageView
+@implementation AppPageView
 
 @end
-
-NS_ASSUME_NONNULL_END

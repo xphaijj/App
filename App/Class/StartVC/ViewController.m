@@ -10,7 +10,7 @@
 #import <YLT_Kit/YLT_Kit.h>
 #import "YLT_LocationModular.h"
 #import "AppPlayerView.h"
-#import "AppPageView.h"
+#import "AppView.h"
 #import "PPModel+PageProtocol.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -31,19 +31,25 @@
         locationLabel.text = address;
     }];
     
-    AppPageView *pageView = [[AppPageView alloc] init];
+    AppView *pageView = [[AppView alloc] init];
     [self.view addSubview:pageView];
     [pageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     NSMutableArray *list = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 100; i++) {
+    for (NSInteger i = 0; i < 10; i++) {
         User *user = [[User alloc] init];
         user.userId = i;
         user.name = [NSString stringWithFormat:@"%zd", i];
         [list addObject:user];
     }
-    pageView.list = list;
+    User *user = [[User alloc] init];
+    user.sectionData = list;
+    
+    User *u = [[User alloc] init];
+    u.sectionData = list;
+    
+    pageView.list = @[user, u];
     
 //    UITableView *table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);

@@ -22,7 +22,7 @@
     return self;
 }
 
-- (void)setData:(id)data {
+- (void)setData:(YLT_BaseModel *)data {
     [super setData:data];
 }
 

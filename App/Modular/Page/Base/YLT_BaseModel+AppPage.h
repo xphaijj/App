@@ -20,6 +20,9 @@
 - (NSString *)routerAction;
 
 #pragma mark - layout
+/// 每个 section 包含的 rowCount
+- (NSInteger)sectionRowCount;
+
 /// 固定宽高      优先级 1
 - (CGSize)rowSize;
 

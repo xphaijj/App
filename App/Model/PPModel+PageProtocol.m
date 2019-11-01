@@ -26,4 +26,8 @@
     return UIEdgeInsetsMake(8, 8, 8, 8);
 }
 
+- (NSInteger)sectionRowCount {
+    return 1;
+}
+
 @end

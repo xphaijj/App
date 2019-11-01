@@ -6,11 +6,11 @@
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import <YLT_Kit/YLT_Kit.h>
+#import "AppPageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AppMenuView : YLT_BaseView
+@interface AppMenuView : AppPageView
 
 @end
 

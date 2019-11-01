@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppPageView.h"
+#import <YLT_BaseLib/YLT_BaseLib.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppPageCell : UICollectionViewCell
 
-@property (nonatomic, strong) id data;
+@property (nonatomic, strong) AppPageView *mainView;
+
+@property (nonatomic, strong) YLT_BaseModel *data;
 
 @end
 

@@ -24,6 +24,12 @@
 }
 
 #pragma mark - layout
+
+/// 每个 section 包含的 rowCount
+- (NSInteger)sectionRowCount {
+    return 0;
+}
+
 /// 固定宽高      优先级 1
 - (CGSize)rowSize {
     return CGSizeZero;

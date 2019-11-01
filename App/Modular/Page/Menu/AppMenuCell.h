@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppMenuCell : AppPageCell
 
-@property (nonatomic, strong) AppMenuView *mainView;
-
 @end
 
 NS_ASSUME_NONNULL_END
