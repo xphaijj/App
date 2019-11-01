@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param data 当前pageData
 + (BOOL)isValidPageData:(YLT_BaseModel *)data;
 
+/// section部分的行数
+/// @param data 数据
++ (NSInteger)rowForSection:(YLT_BaseModel *)data;
+
 /// 单元格的size 默认屏幕宽度，宽高比为16：9
 /// @param style 单元格样式
 + (CGSize)rowSizeFromStyle:(YLT_BaseModel *)style totalWidth:(CGFloat)totalWidth;

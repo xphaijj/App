@@ -1,33 +1,39 @@
 //
-//  PPModel+PageProtocol.m
+//  Banner+AppBannerView.m
 //  App
 //
 //  Created by 項普華 on 2019/11/1.
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "PPModel+PageProtocol.h"
+#import "Banner+DataLayout.h"
 
-@implementation User (PageProtocol)
+@implementation Banner (DataLayout)
 
+#pragma mark - layout
 - (NSString *)cellIdentify {
     return @"AppBannerCell";
 }
 
 - (NSInteger)columnCount {
-    return 3;
+    return 1;
 }
 
-- (CGFloat)ratio {
-    return 1.0;
+- (CGFloat)rowHeight {
+    return 138.;
 }
 
 - (UIEdgeInsets)sectionInsets {
-    return UIEdgeInsetsMake(8, 8, 8, 8);
+    return UIEdgeInsetsMake(4, 15, 4, 15);
 }
 
 - (NSInteger)sectionRowCount {
     return 1;
+}
+
+#pragma mark - data
+- (NSString *)imageURL {
+    return self.imageUrl;
 }
 
 @end

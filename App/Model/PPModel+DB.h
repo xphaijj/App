@@ -2,7 +2,7 @@
 // PPModel+DB.h 
 //
 // Created By 项普华 Version: 2.0
-// Copyright (C) 2019/10/29  By AlexXiang  All rights reserved.
+// Copyright (C) 2019/11/01  By AlexXiang  All rights reserved.
 // email:// xiangpuhua@126.com  tel:// +86 13316987488 
 //
 //
@@ -17,6 +17,18 @@ typedef void(^YLT_DBComplete)(id response);
 
 
 @interface User(DB) {
+}
+
+@end
+
+
+@interface Banner(DB) {
+}
+
+@end
+
+
+@interface Menu(DB) {
 }
 
 @end

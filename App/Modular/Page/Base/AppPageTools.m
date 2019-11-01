@@ -16,14 +16,27 @@
 /// @param data 当前pageData
 + (BOOL)isValidPageData:(YLT_BaseModel *)data {
     return (
-            (data.cellIdentify.ylt_isValid) &&
+            ([data isKindOfClass:[YLT_BaseModel class]] &&
+             data.cellIdentify.ylt_isValid) &&
             (NSClassFromString(data.cellIdentify) != NULL)
             );
+}
+
+/// section部分的行数
+/// @param data 数据
++ (NSInteger)rowForSection:(YLT_BaseModel *)data {
+    if (![data isKindOfClass:[YLT_BaseModel class]]) {
+        return 0;
+    }
+    return data.sectionRowCount;
 }
 
 /// 单元格的size 默认屏幕宽度，宽高比为16：9
 /// @param style 单元格样式
 + (CGSize)rowSizeFromStyle:(YLT_BaseModel *)style totalWidth:(CGFloat)totalWidth {
+    if (![style isKindOfClass:[YLT_BaseModel class]]) {
+        return CGSizeZero;
+    }
     if (style) {
         if (!CGSizeEqualToSize(CGSizeZero, style.rowSize)) {
             return style.rowSize;
@@ -44,12 +57,18 @@
 /// 计算间隔
 /// @param style 单元格样式
 + (CGFloat)spacingFromStyle:(YLT_BaseModel *)style {
+    if (![style isKindOfClass:[YLT_BaseModel class]]) {
+        return 0;
+    }
     return (style.spacing == 0) ? 8.0 : style.spacing;
 }
 
 /// 计算内边距
 /// @param style 单元格样式
 + (UIEdgeInsets)edgeInsetsFromStyle:(YLT_BaseModel *)style {
+    if (![style isKindOfClass:[YLT_BaseModel class]]) {
+        return UIEdgeInsetsZero;
+    }
     return style.sectionInsets;
 }
 

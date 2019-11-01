@@ -11,6 +11,6 @@
 
 @interface AppView : YLT_BaseView
 
-@property (nonatomic, strong) NSArray<YLT_BaseModel *> *list;
+@property (nonatomic, strong) NSArray<NSArray<YLT_BaseModel *> *> *list;
 
 @end

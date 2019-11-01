@@ -18,6 +18,10 @@
     return objc_getAssociatedObject(self, @selector(sectionData));
 }
 
+- (NSString *)cellIdentify {
+    return @"AppPageCell";
+}
+
 /// 路由事件
 - (NSString *)routerAction {
     return @"";

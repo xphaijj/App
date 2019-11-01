@@ -11,7 +11,7 @@
 #import "YLT_LocationModular.h"
 #import "AppPlayerView.h"
 #import "AppView.h"
-#import "PPModel+PageProtocol.h"
+#import "PPModel.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -38,18 +38,21 @@
     }];
     NSMutableArray *list = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < 10; i++) {
-        User *user = [[User alloc] init];
-        user.userId = i;
-        user.name = [NSString stringWithFormat:@"%zd", i];
-        [list addObject:user];
+        Banner *banner = [[Banner alloc] init];
+        banner.title = [NSString stringWithFormat:@"%zd", i];
+        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+        [list addObject:banner];
     }
-    User *user = [[User alloc] init];
-    user.sectionData = list;
     
-    User *u = [[User alloc] init];
-    u.sectionData = list;
+    NSMutableArray *list2 = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < 4; i++) {
+        Menu *banner = [[Menu alloc] init];
+        banner.title = [NSString stringWithFormat:@"%zd", i];
+        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+        [list2 addObject:banner];
+    }
     
-    pageView.list = @[user, u];
+    pageView.list = @[list, list2];
     
 //    UITableView *table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);

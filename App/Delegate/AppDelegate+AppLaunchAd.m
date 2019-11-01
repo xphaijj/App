@@ -19,11 +19,11 @@
 
 - (void)initLaunchAd {
     //设置启动广告页
-    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchScreen];
-    XHLaunchImageAdConfiguration *configuration = [XHLaunchImageAdConfiguration defaultConfiguration];
-    configuration.imageNameOrURLString = @"https://randomuser.me/api/portraits/men/91.jpg";
-    configuration.openModel = @"https://www.baidu.com/";
-    [XHLaunchAd imageAdWithImageAdConfiguration:configuration delegate:self];
+//    [XHLaunchAd setLaunchSourceType:SourceTypeLaunchScreen];
+//    XHLaunchImageAdConfiguration *configuration = [XHLaunchImageAdConfiguration defaultConfiguration];
+//    configuration.imageNameOrURLString = @"https://randomuser.me/api/portraits/men/91.jpg";
+//    configuration.openModel = @"https://www.baidu.com/";
+//    [XHLaunchAd imageAdWithImageAdConfiguration:configuration delegate:self];
 }
 
 /**

@@ -5,7 +5,6 @@
 	<string>YLT_PushModular</string>
 	<string>YLT_LocationModular</string>
 	<string>YLT_TcpModular</string>
-	<string>YLT_TrackModular</string>
 	<string>YLT_PayModular</string>
 </array>
 </plist>

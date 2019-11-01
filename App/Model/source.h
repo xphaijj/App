@@ -6,12 +6,19 @@ Config config {
     "request":"json"
 }
 
-message AppPage {
-    optional string cellIdentify = @"";
-    optional
-}
-
 message User {
     required int userId = 0;//用户ID
     optional string name = nil;//用户名
+}
+
+message Banner {
+    optional string title = nil;//标题
+    optional string imageUrl = nil;//图片URL
+    optional string clickAction = nil;//事件
+}
+
+message Menu {
+    optional string imageUrl = nil;//图片URL
+    optional string title = nil;
+    optional string clickAction = nil;//事件
 }

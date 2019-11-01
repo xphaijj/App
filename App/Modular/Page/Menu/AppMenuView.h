@@ -10,6 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol AppMenuProtocol <NSObject>
+
+- (NSString *)title;
+
+- (NSString *)imageURL;
+
+- (NSString *)clickAction;
+
+@end
+
+
 @interface AppMenuView : AppPageView
 
 @end

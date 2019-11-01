@@ -34,7 +34,7 @@
     [self initLaunchAd];
     [self initUI];
     
-    TrackEvent(@"enter", @{@"data":@"str"});
+//    TrackEvent(@"enter", @{@"data":@"str"});
     [YLT_ModularManager ylt_modularWithPlistPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"Modular.plist"]];
     [YLT_ModularManager application:application didFinishLaunchingWithOptions:launchOptions];
     return YES;

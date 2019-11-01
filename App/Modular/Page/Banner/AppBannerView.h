@@ -10,6 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol AppBannerProtocol <NSObject>
+
+- (NSString *)title;
+
+- (NSString *)imageURL;
+
+- (NSString *)clickAction;
+
+@end
+
 @interface AppBannerView : AppPageView
 
 @end
