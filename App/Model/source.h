@@ -6,6 +6,11 @@ Config config {
     "request":"json"
 }
 
+message AppPage {
+    optional string cellIdentify = @"";
+    optional
+}
+
 message User {
     required int userId = 0;//用户ID
     optional string name = nil;//用户名

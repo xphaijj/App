@@ -7,10 +7,10 @@
 //
 
 #import <YLT_Kit/YLT_Kit.h>
-#import "AppCellProtocol.h"
+#import "YLT_BaseModel+AppPage.h"
 
 @interface AppPageView : YLT_BaseView
 
-@property (nonatomic, strong) NSArray<AppSectionData> *list;
+@property (nonatomic, strong) NSArray<YLT_BaseModel *> *list;
 
 @end

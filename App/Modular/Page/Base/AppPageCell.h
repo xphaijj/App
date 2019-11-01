@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppCellProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppPageCell : UICollectionViewCell
 
-@property (nonatomic, strong) id<AppRowData> data;
+@property (nonatomic, strong) id data;
 
 @end
 

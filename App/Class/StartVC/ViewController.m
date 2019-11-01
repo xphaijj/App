@@ -10,6 +10,8 @@
 #import <YLT_Kit/YLT_Kit.h>
 #import "YLT_LocationModular.h"
 #import "AppPlayerView.h"
+#import "AppPageView.h"
+#import "PPModel+PageProtocol.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -29,12 +31,26 @@
         locationLabel.text = address;
     }];
     
-    UITableView *table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
+    AppPageView *pageView = [[AppPageView alloc] init];
+    [self.view addSubview:pageView];
+    [pageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
-    }, UITableViewStylePlain);
-    table.delegate = self;
-    table.dataSource = self;
-    [table reloadData];
+    }];
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < 100; i++) {
+        User *user = [[User alloc] init];
+        user.userId = i;
+        user.name = [NSString stringWithFormat:@"%zd", i];
+        [list addObject:user];
+    }
+    pageView.list = list;
+    
+//    UITableView *table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self.view);
+//    }, UITableViewStylePlain);
+//    table.delegate = self;
+//    table.dataSource = self;
+//    [table reloadData];
     
     
 //    self.playerView = [[AppPlayerView alloc] init];

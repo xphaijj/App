@@ -37,6 +37,13 @@
 		FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B049235EDB5500D81F53 /* AppDelegate+AppBug.m */; };
 		FA44B04F235EF58900D81F53 /* YLT_TcpModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44B04E235EF58900D81F53 /* YLT_TcpModular.m */; };
 		FA5C8D9923668D5E006BC03F /* AppDelegate+AppLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5C8D9823668D5E006BC03F /* AppDelegate+AppLaunchAd.m */; };
+		FA600E58236BD42500CE75A0 /* PPModel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E57236BD42500CE75A0 /* PPModel+Extension.m */; };
+		FA600E5B236BD47C00CE75A0 /* PPModel+PageProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E5A236BD47C00CE75A0 /* PPModel+PageProtocol.m */; };
+		FA600E61236BDBE900CE75A0 /* YLT_BaseModel+AppPage.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E60236BDBE900CE75A0 /* YLT_BaseModel+AppPage.m */; };
+		FA600E66236BFA7100CE75A0 /* AppBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E65236BFA7100CE75A0 /* AppBannerView.m */; };
+		FA600E69236BFAA000CE75A0 /* AppBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E68236BFAA000CE75A0 /* AppBannerCell.m */; };
+		FA600E6D236BFCD400CE75A0 /* AppMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E6C236BFCD400CE75A0 /* AppMenuView.m */; };
+		FA600E70236BFD0A00CE75A0 /* AppMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E6F236BFD0A00CE75A0 /* AppMenuCell.m */; };
 		FA65C14B236A7723007DAFF6 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA65C149236A7722007DAFF6 /* AlipaySDK.bundle */; };
 		FA65C14C236A7723007DAFF6 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA65C14A236A7723007DAFF6 /* AlipaySDK.framework */; };
 		FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */; };
@@ -101,7 +108,6 @@
 		FA2DE246236A842400B9CC0D /* AppPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppPageView.m; sourceTree = "<group>"; };
 		FA2DE248236A84C000B9CC0D /* AppPageView+DataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppPageView+DataSource.h"; sourceTree = "<group>"; };
 		FA2DE249236A84C000B9CC0D /* AppPageView+DataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppPageView+DataSource.m"; sourceTree = "<group>"; };
-		FA2DE24E236A866E00B9CC0D /* AppCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCellProtocol.h; sourceTree = "<group>"; };
 		FA2DE24F236A874B00B9CC0D /* AppPageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppPageCell.h; sourceTree = "<group>"; };
 		FA2DE250236A874B00B9CC0D /* AppPageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppPageCell.m; sourceTree = "<group>"; };
 		FA2DE252236A8AFC00B9CC0D /* AppPageTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppPageTools.h; sourceTree = "<group>"; };
@@ -123,6 +129,20 @@
 		FA44B055235F01B500D81F53 /* YLT_TrackModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_TrackModular.m; sourceTree = "<group>"; };
 		FA5C8D9723668D5E006BC03F /* AppDelegate+AppLaunchAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppLaunchAd.h"; sourceTree = "<group>"; };
 		FA5C8D9823668D5E006BC03F /* AppDelegate+AppLaunchAd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppLaunchAd.m"; sourceTree = "<group>"; };
+		FA600E56236BD42500CE75A0 /* PPModel+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPModel+Extension.h"; sourceTree = "<group>"; };
+		FA600E57236BD42500CE75A0 /* PPModel+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPModel+Extension.m"; sourceTree = "<group>"; };
+		FA600E59236BD47C00CE75A0 /* PPModel+PageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PPModel+PageProtocol.h"; sourceTree = "<group>"; };
+		FA600E5A236BD47C00CE75A0 /* PPModel+PageProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PPModel+PageProtocol.m"; sourceTree = "<group>"; };
+		FA600E5F236BDBE900CE75A0 /* YLT_BaseModel+AppPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YLT_BaseModel+AppPage.h"; sourceTree = "<group>"; };
+		FA600E60236BDBE900CE75A0 /* YLT_BaseModel+AppPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YLT_BaseModel+AppPage.m"; sourceTree = "<group>"; };
+		FA600E64236BFA7100CE75A0 /* AppBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBannerView.h; sourceTree = "<group>"; };
+		FA600E65236BFA7100CE75A0 /* AppBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBannerView.m; sourceTree = "<group>"; };
+		FA600E67236BFAA000CE75A0 /* AppBannerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppBannerCell.h; sourceTree = "<group>"; };
+		FA600E68236BFAA000CE75A0 /* AppBannerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBannerCell.m; sourceTree = "<group>"; };
+		FA600E6B236BFCD400CE75A0 /* AppMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMenuView.h; sourceTree = "<group>"; };
+		FA600E6C236BFCD400CE75A0 /* AppMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppMenuView.m; sourceTree = "<group>"; };
+		FA600E6E236BFD0A00CE75A0 /* AppMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMenuCell.h; sourceTree = "<group>"; };
+		FA600E6F236BFD0A00CE75A0 /* AppMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppMenuCell.m; sourceTree = "<group>"; };
 		FA65C149236A7722007DAFF6 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		FA65C14A236A7723007DAFF6 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		FA6F1A2C23602B310029B0CF /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
@@ -238,6 +258,10 @@
 				FA2366F41FC01D3F006255D0 /* PPRequest.m */,
 				FA2366EF1FC01D0F006255D0 /* source.h */,
 				FA2366EE1FC01D0E006255D0 /* Tools */,
+				FA600E56236BD42500CE75A0 /* PPModel+Extension.h */,
+				FA600E57236BD42500CE75A0 /* PPModel+Extension.m */,
+				FA600E59236BD47C00CE75A0 /* PPModel+PageProtocol.h */,
+				FA600E5A236BD47C00CE75A0 /* PPModel+PageProtocol.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,15 +306,9 @@
 		FA2DE241236A83F800B9CC0D /* Page */ = {
 			isa = PBXGroup;
 			children = (
-				FA2DE24E236A866E00B9CC0D /* AppCellProtocol.h */,
-				FA2DE245236A842400B9CC0D /* AppPageView.h */,
-				FA2DE246236A842400B9CC0D /* AppPageView.m */,
-				FA2DE24F236A874B00B9CC0D /* AppPageCell.h */,
-				FA2DE250236A874B00B9CC0D /* AppPageCell.m */,
-				FA2DE248236A84C000B9CC0D /* AppPageView+DataSource.h */,
-				FA2DE249236A84C000B9CC0D /* AppPageView+DataSource.m */,
-				FA2DE252236A8AFC00B9CC0D /* AppPageTools.h */,
-				FA2DE253236A8AFC00B9CC0D /* AppPageTools.m */,
+				FA600E6A236BFCB100CE75A0 /* Menu */,
+				FA600E63236BFA0900CE75A0 /* Banner */,
+				FA600E62236BF9FF00CE75A0 /* Base */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -320,6 +338,45 @@
 				FA44B04B235EDB7600D81F53 /* StartVC */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		FA600E62236BF9FF00CE75A0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FA2DE245236A842400B9CC0D /* AppPageView.h */,
+				FA2DE246236A842400B9CC0D /* AppPageView.m */,
+				FA2DE24F236A874B00B9CC0D /* AppPageCell.h */,
+				FA2DE250236A874B00B9CC0D /* AppPageCell.m */,
+				FA2DE248236A84C000B9CC0D /* AppPageView+DataSource.h */,
+				FA2DE249236A84C000B9CC0D /* AppPageView+DataSource.m */,
+				FA2DE252236A8AFC00B9CC0D /* AppPageTools.h */,
+				FA2DE253236A8AFC00B9CC0D /* AppPageTools.m */,
+				FA600E5F236BDBE900CE75A0 /* YLT_BaseModel+AppPage.h */,
+				FA600E60236BDBE900CE75A0 /* YLT_BaseModel+AppPage.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FA600E63236BFA0900CE75A0 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				FA600E64236BFA7100CE75A0 /* AppBannerView.h */,
+				FA600E65236BFA7100CE75A0 /* AppBannerView.m */,
+				FA600E67236BFAA000CE75A0 /* AppBannerCell.h */,
+				FA600E68236BFAA000CE75A0 /* AppBannerCell.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		FA600E6A236BFCB100CE75A0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FA600E6B236BFCD400CE75A0 /* AppMenuView.h */,
+				FA600E6C236BFCD400CE75A0 /* AppMenuView.m */,
+				FA600E6E236BFD0A00CE75A0 /* AppMenuCell.h */,
+				FA600E6F236BFD0A00CE75A0 /* AppMenuCell.m */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		FA65C147236A7702007DAFF6 /* Channel */ = {
@@ -538,6 +595,7 @@
 				FAB73EE023680C5200F93280 /* AppPlayerView.m in Sources */,
 				FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */,
 				FA44B047235ED5CE00D81F53 /* UIFont+AppFont.m in Sources */,
+				FA600E5B236BD47C00CE75A0 /* PPModel+PageProtocol.m in Sources */,
 				FA2DE23F236A7D1100B9CC0D /* YLT_TrackModular.m in Sources */,
 				FA30B53123614E76006E9449 /* AppLogDetailVC.m in Sources */,
 				FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */,
@@ -547,11 +605,17 @@
 				FA2DE24A236A84C000B9CC0D /* AppPageView+DataSource.m in Sources */,
 				C734423421E3262E00BD5175 /* BaseCollection.m in Sources */,
 				FA44B044235ED09600D81F53 /* AppWebVC.m in Sources */,
+				FA600E69236BFAA000CE75A0 /* AppBannerCell.m in Sources */,
+				FA600E70236BFD0A00CE75A0 /* AppMenuCell.m in Sources */,
 				FA23669B1FC017A5006255D0 /* ViewController.m in Sources */,
 				FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */,
 				FA2DE251236A874B00B9CC0D /* AppPageCell.m in Sources */,
+				FA600E61236BDBE900CE75A0 /* YLT_BaseModel+AppPage.m in Sources */,
+				FA600E6D236BFCD400CE75A0 /* AppMenuView.m in Sources */,
+				FA600E66236BFA7100CE75A0 /* AppBannerView.m in Sources */,
 				FA2DE254236A8AFC00B9CC0D /* AppPageTools.m in Sources */,
 				FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */,
+				FA600E58236BD42500CE75A0 /* PPModel+Extension.m in Sources */,
 				FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */,
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
 				FA6F1A37236033CF0029B0CF /* AppAssistiveTouchView.m in Sources */,
