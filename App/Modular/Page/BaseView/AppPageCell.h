@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) YLT_BaseModel *data;
 
+- (Class)mainViewClass;
+
 @end
 
 NS_ASSUME_NONNULL_END

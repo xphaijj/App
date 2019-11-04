@@ -41,6 +41,7 @@
         Banner *banner = [[Banner alloc] init];
         banner.title = [NSString stringWithFormat:@"%zd", i];
         banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
         [list addObject:banner];
     }
     
@@ -49,10 +50,20 @@
         Menu *banner = [[Menu alloc] init];
         banner.title = [NSString stringWithFormat:@"%zd", i];
         banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
         [list2 addObject:banner];
     }
     
-    pageView.list = @[list, list2];
+    NSMutableArray *list3 = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < 4; i++) {
+        Card *banner = [[Card alloc] init];
+        banner.title = [NSString stringWithFormat:@"%zd", i];
+        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+        [list3 addObject:banner];
+    }
+    
+    pageView.list = @[list, list2, list3];
     
 //    UITableView *table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);

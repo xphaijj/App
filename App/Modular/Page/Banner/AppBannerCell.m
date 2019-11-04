@@ -10,16 +10,8 @@
 
 @implementation AppBannerCell
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.mainView = [[AppBannerView alloc] init];
-        [self addSubview:self.mainView];
-        [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self);
-        }];
-    }
-    return self;
+- (Class)mainViewClass {
+    return AppBannerView.class;
 }
 
 - (void)setData:(YLT_BaseModel *)data {

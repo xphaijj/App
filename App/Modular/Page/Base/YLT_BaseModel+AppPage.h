@@ -8,6 +8,20 @@
 
 #import <YLT_BaseLib/YLT_BaseLib.h>
 
+@protocol AppCardCellProtocol <NSObject>
+
+@optional
+
+- (NSString *)cardCellIdentify;
+
+- (CGSize)cardCellSize;
+
+/// 间隔，默认 8
+- (CGFloat)cardCellSpacing;
+
+@end
+
+
 @protocol AppPageProtocol <NSObject>
 
 @required
@@ -20,7 +34,7 @@
 - (NSString *)routerAction;
 
 #pragma mark - layout
-/// 每个 section 包含的 rowCount
+/// 每个 section 包含的 rowCount 
 - (NSInteger)sectionRowCount;
 
 /// 固定宽高      优先级 1
@@ -51,9 +65,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YLT_BaseModel (AppPage)<AppPageProtocol>
+@interface YLT_BaseModel (AppPage)<AppPageProtocol, AppCardCellProtocol>
 
-@property (nonatomic, strong) NSArray *sectionData;
+@property (nonatomic, strong) NSString *clickAction;
 
 @end
 

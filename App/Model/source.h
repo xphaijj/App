@@ -14,11 +14,14 @@ message User {
 message Banner {
     optional string title = nil;//标题
     optional string imageUrl = nil;//图片URL
-    optional string clickAction = nil;//事件
 }
 
 message Menu {
     optional string imageUrl = nil;//图片URL
     optional string title = nil;
-    optional string clickAction = nil;//事件
+}
+
+message Card {
+    optional string imageUrl = nil;
+    optional string title = nil;
 }

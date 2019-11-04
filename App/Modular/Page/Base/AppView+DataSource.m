@@ -13,7 +13,7 @@
 @implementation AppView (DataSource)
 
 - (void)registerMainCollection:(UICollectionView *)mainCollection {
-    [mainCollection registerCell:@[@"AppPageCell", @"AppBannerCell", @"AppMenuCell"]];
+    [AppPageTools registerCellToCollectionView:mainCollection];
     mainCollection.delegate = self;
     mainCollection.dataSource = self;
 }
@@ -72,11 +72,8 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    YLT_BaseModel *sectionData = self.list[indexPath.section][indexPath.row];
-    id rowData = sectionData.sectionData[indexPath.row];
-    if (sectionData.routerAction.ylt_isValid) {
-        [YLT_RouterManager ylt_routerToURL:sectionData.routerAction arg:rowData completion:nil];
-    }
+    YLT_BaseModel *rowData = self.list[indexPath.section][indexPath.row];
+    [AppPageTools routerForData:rowData];
 }
 
 @end

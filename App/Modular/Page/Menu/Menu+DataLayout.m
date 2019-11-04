@@ -36,4 +36,6 @@
     return self.imageUrl;
 }
 
+#pragma mark - action
+
 @end

@@ -1,18 +1,31 @@
 //
-//  Banner+AppBannerView.m
+//  Card+DataLayout.m
 //  App
 //
-//  Created by 項普華 on 2019/11/1.
+//  Created by 項普華 on 2019/11/4.
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "Banner+DataLayout.h"
+#import "Card+DataLayout.h"
+#import "YLT_BaseModel+AppPage.h"
 
-@implementation Banner (DataLayout)
+@implementation Card (DataLayout)
+
+- (NSString *)cardCellIdentify {
+    return @"AppCourseCell";
+}
+
+- (CGSize)cardCellSize {
+    return CGSizeMake(240, self.rowHeight-2*self.cardCellSpacing);
+}
+
+- (CGFloat)cardCellSpacing {
+    return 12;
+}
 
 #pragma mark - layout
 - (NSString *)cellIdentify {
-    return @"AppBannerCell";
+    return @"AppCardCell";
 }
 
 - (NSInteger)columnCount {
@@ -20,7 +33,7 @@
 }
 
 - (CGFloat)rowHeight {
-    return 138.;
+    return 238.;
 }
 
 - (UIEdgeInsets)sectionInsets {

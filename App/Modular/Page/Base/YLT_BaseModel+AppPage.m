@@ -10,12 +10,12 @@
 
 @implementation YLT_BaseModel (AppPage)
 
-- (void)setSectionData:(NSArray *)sectionData {
-    objc_setAssociatedObject(self, @selector(sectionData), sectionData, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setClickAction:(NSString *)clickAction {
+    objc_setAssociatedObject(self, @selector(clickAction), clickAction, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSArray *)sectionData {
-    return objc_getAssociatedObject(self, @selector(sectionData));
+- (NSString *)clickAction {
+    return objc_getAssociatedObject(self, @selector(clickAction));
 }
 
 - (NSString *)cellIdentify {

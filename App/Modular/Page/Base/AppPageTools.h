@@ -35,6 +35,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param style 单元格样式
 + (UIEdgeInsets)edgeInsetsFromStyle:(YLT_BaseModel *)style;
 
+/// 路由事件
+/// @param data 数据
++ (void)routerForData:(YLT_BaseModel *)data;
+
+/// 给CollectionView注册Cell
+/// @param collectionView collectionView
++ (void)registerCellToCollectionView:(UICollectionView *)collectionView;
+
 @end
 
 NS_ASSUME_NONNULL_END

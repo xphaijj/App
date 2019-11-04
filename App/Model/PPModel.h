@@ -2,7 +2,7 @@
 // PPModel.h 
 //
 // Created By 项普华 Version: 2.0
-// Copyright (C) 2019/11/01  By AlexXiang  All rights reserved.
+// Copyright (C) 2019/11/04  By AlexXiang  All rights reserved.
 // email:// xiangpuhua@126.com  tel:// +86 13316987488 
 //
 //
@@ -15,6 +15,7 @@
 @class User;
 @class Banner;
 @class Menu;
+@class Card;
 
 
 @interface User : YLT_BaseModel {
@@ -33,8 +34,6 @@
 @property (readwrite, nonatomic, copy) NSString *title;
 /** 图片URL */
 @property (readwrite, nonatomic, copy) NSString *imageUrl;
-/** 事件 */
-@property (readwrite, nonatomic, copy) NSString *clickAction;
 
 @end
 
@@ -42,6 +41,16 @@
 @interface Menu : YLT_BaseModel {
 }
 /** 图片URL */
+@property (readwrite, nonatomic, copy) NSString *imageUrl;
+/**  */
+@property (readwrite, nonatomic, copy) NSString *title;
+
+@end
+
+
+@interface Card : YLT_BaseModel {
+}
+/**  */
 @property (readwrite, nonatomic, copy) NSString *imageUrl;
 /**  */
 @property (readwrite, nonatomic, copy) NSString *title;

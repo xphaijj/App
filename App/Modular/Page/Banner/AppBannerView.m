@@ -7,9 +7,10 @@
 //
 
 #import "AppBannerView.h"
+#import "AppPageTools.h"
 #import <SDCycleScrollView/SDCycleScrollView.h>
 
-@interface AppBannerView ()
+@interface AppBannerView ()<SDCycleScrollViewDelegate>
 
 @property (nonatomic, strong) SDCycleScrollView *banner;
 
@@ -20,7 +21,10 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        self.clipsToBounds = YES;
+        self.layer.cornerRadius = 10;
         self.banner = [SDCycleScrollView cycleScrollViewWithFrame:frame shouldInfiniteLoop:YES imageNamesGroup:nil];
+        self.banner.delegate = self;
         [self addSubview:self.banner];
         [self.banner mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
@@ -57,6 +61,15 @@
                 }
             }
         }];
+    }
+}
+
+/** 点击图片回调 */
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    NSArray *list = (NSArray *)self.data;
+    if ([list isKindOfClass:[NSArray class]]) {
+        YLT_BaseModel<AppBannerProtocol> *data = list[index];
+        [AppPageTools routerForData:data];
     }
 }
 

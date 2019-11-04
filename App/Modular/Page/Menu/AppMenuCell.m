@@ -10,16 +10,8 @@
 
 @implementation AppMenuCell
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.mainView = [[AppMenuView alloc] init];
-        [self addSubview:self.mainView];
-        [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self);
-        }];
-    }
-    return self;
+- (Class)mainViewClass {
+    return AppMenuView.class;
 }
 
 - (void)setData:(YLT_BaseModel *)data {

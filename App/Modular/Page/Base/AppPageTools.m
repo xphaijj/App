@@ -8,6 +8,7 @@
 
 #import "AppPageTools.h"
 #import <YLT_BaseLib/YLT_BaseLib.h>
+#import <YLT_Kit/YLT_Kit.h>
 #import "YLT_BaseModel+AppPage.h"
 
 @implementation AppPageTools
@@ -71,5 +72,27 @@
     }
     return style.sectionInsets;
 }
+
+
+/// 路由事件
+/// @param data 数据
++ (void)routerForData:(YLT_BaseModel *)data {
+    if (data.routerAction.ylt_isValid) {
+        [YLT_RouterManager ylt_routerToURL:data.routerAction arg:data completion:nil];
+        return;
+    }
+    if (data.clickAction.ylt_isValid) {
+        [YLT_RouterManager ylt_routerToURL:data.clickAction arg:data completion:nil];
+        return;
+    }
+}
+
+/// 给CollectionView注册Cell
+/// @param collectionView collectionView
++ (void)registerCellToCollectionView:(UICollectionView *)collectionView {
+    [collectionView registerCell:@[@"AppPageCell", @"AppBannerCell", @"AppMenuCell", @"AppCardCell", @"AppCourseCell", @"AppTeacherCell"]];
+}
+
+
 
 @end
