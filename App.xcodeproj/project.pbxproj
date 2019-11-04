@@ -23,6 +23,11 @@
 		FA2184A4236FC94400FAA581 /* UserHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184A3236FC94400FAA581 /* UserHeaderView.m */; };
 		FA2184A8236FC99700FAA581 /* YLT_BaseView+AppTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184A7236FC99700FAA581 /* YLT_BaseView+AppTest.m */; };
 		FA2184AB236FCA0E00FAA581 /* User+DataLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184AA236FCA0E00FAA581 /* User+DataLayout.m */; };
+		FA2184B0236FEBCF00FAA581 /* AppPageReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184AF236FEBCF00FAA581 /* AppPageReusableView.m */; };
+		FA2184B3236FEC9200FAA581 /* AppNormalReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184B2236FEC9200FAA581 /* AppNormalReusableView.m */; };
+		FA2184BA236FECE200FAA581 /* NSArray+AppPage.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184B9236FECE200FAA581 /* NSArray+AppPage.m */; };
+		FA2184BD236FF12400FAA581 /* AppNormalView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184BC236FF12400FAA581 /* AppNormalView.m */; };
+		FA2184C0236FF7D900FAA581 /* Normal+DataLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184BF236FF7D900FAA581 /* Normal+DataLayout.m */; };
 		FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366971FC017A5006255D0 /* AppDelegate.m */; };
 		FA23669B1FC017A5006255D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23669A1FC017A5006255D0 /* ViewController.m */; };
 		FA23669E1FC017A5006255D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA23669C1FC017A5006255D0 /* Main.storyboard */; };
@@ -116,6 +121,16 @@
 		FA2184A7236FC99700FAA581 /* YLT_BaseView+AppTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YLT_BaseView+AppTest.m"; sourceTree = "<group>"; };
 		FA2184A9236FCA0E00FAA581 /* User+DataLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "User+DataLayout.h"; sourceTree = "<group>"; };
 		FA2184AA236FCA0E00FAA581 /* User+DataLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "User+DataLayout.m"; sourceTree = "<group>"; };
+		FA2184AE236FEBCF00FAA581 /* AppPageReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppPageReusableView.h; sourceTree = "<group>"; };
+		FA2184AF236FEBCF00FAA581 /* AppPageReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppPageReusableView.m; sourceTree = "<group>"; };
+		FA2184B1236FEC9200FAA581 /* AppNormalReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppNormalReusableView.h; sourceTree = "<group>"; };
+		FA2184B2236FEC9200FAA581 /* AppNormalReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppNormalReusableView.m; sourceTree = "<group>"; };
+		FA2184B8236FECE200FAA581 /* NSArray+AppPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+AppPage.h"; sourceTree = "<group>"; };
+		FA2184B9236FECE200FAA581 /* NSArray+AppPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AppPage.m"; sourceTree = "<group>"; };
+		FA2184BB236FF12400FAA581 /* AppNormalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppNormalView.h; sourceTree = "<group>"; };
+		FA2184BC236FF12400FAA581 /* AppNormalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppNormalView.m; sourceTree = "<group>"; };
+		FA2184BE236FF7D900FAA581 /* Normal+DataLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Normal+DataLayout.h"; sourceTree = "<group>"; };
+		FA2184BF236FF7D900FAA581 /* Normal+DataLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Normal+DataLayout.m"; sourceTree = "<group>"; };
 		FA2366931FC017A5006255D0 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2366961FC017A5006255D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA2366971FC017A5006255D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -292,6 +307,39 @@
 			path = debug;
 			sourceTree = "<group>";
 		};
+		FA2184AC236FEB9F00FAA581 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA600E6A236BFCB100CE75A0 /* Menu */,
+				FA600E63236BFA0900CE75A0 /* Banner */,
+				FA21847C236FAD8200FAA581 /* Card */,
+				FA21848D236FBE9900FAA581 /* Teacher */,
+				FA218486236FBE6D00FAA581 /* Course */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA2184AD236FEBAF00FAA581 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				FA2184B7236FECBE00FAA581 /* Normal */,
+			);
+			path = ReusableView;
+			sourceTree = "<group>";
+		};
+		FA2184B7236FECBE00FAA581 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				FA2184B1236FEC9200FAA581 /* AppNormalReusableView.h */,
+				FA2184B2236FEC9200FAA581 /* AppNormalReusableView.m */,
+				FA2184BB236FF12400FAA581 /* AppNormalView.h */,
+				FA2184BC236FF12400FAA581 /* AppNormalView.m */,
+				FA2184BE236FF7D900FAA581 /* Normal+DataLayout.h */,
+				FA2184BF236FF7D900FAA581 /* Normal+DataLayout.m */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
 		FA23668A1FC017A5006255D0 = {
 			isa = PBXGroup;
 			children = (
@@ -406,12 +454,9 @@
 		FA2DE241236A83F800B9CC0D /* Page */ = {
 			isa = PBXGroup;
 			children = (
-				FA21848D236FBE9900FAA581 /* Teacher */,
-				FA218486236FBE6D00FAA581 /* Course */,
-				FA21847C236FAD8200FAA581 /* Card */,
+				FA2184AD236FEBAF00FAA581 /* ReusableView */,
+				FA2184AC236FEB9F00FAA581 /* Cell */,
 				FAD4298A236C1C0000F737DC /* BaseView */,
-				FA600E6A236BFCB100CE75A0 /* Menu */,
-				FA600E63236BFA0900CE75A0 /* Banner */,
 				FA600E62236BF9FF00CE75A0 /* Base */,
 			);
 			path = Page;
@@ -456,6 +501,8 @@
 				FA2DE253236A8AFC00B9CC0D /* AppPageTools.m */,
 				FA600E5F236BDBE900CE75A0 /* YLT_BaseModel+AppPage.h */,
 				FA600E60236BDBE900CE75A0 /* YLT_BaseModel+AppPage.m */,
+				FA2184B8236FECE200FAA581 /* NSArray+AppPage.h */,
+				FA2184B9236FECE200FAA581 /* NSArray+AppPage.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -578,6 +625,8 @@
 			children = (
 				FA2DE24F236A874B00B9CC0D /* AppPageCell.h */,
 				FA2DE250236A874B00B9CC0D /* AppPageCell.m */,
+				FA2184AE236FEBCF00FAA581 /* AppPageReusableView.h */,
+				FA2184AF236FEBCF00FAA581 /* AppPageReusableView.m */,
 				FAD4298B236C1C1300F737DC /* AppPageView.h */,
 				FAD4298C236C1C1300F737DC /* AppPageView.m */,
 			);
@@ -709,6 +758,7 @@
 				FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */,
 				FA2DE247236A842400B9CC0D /* AppView.m in Sources */,
 				FA5C8D9923668D5E006BC03F /* AppDelegate+AppLaunchAd.m in Sources */,
+				FA2184BD236FF12400FAA581 /* AppNormalView.m in Sources */,
 				FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */,
 				FAB73EE023680C5200F93280 /* AppPlayerView.m in Sources */,
 				FA2366FB1FC01D3F006255D0 /* PPModel.m in Sources */,
@@ -720,6 +770,7 @@
 				FA218490236FBEBF00FAA581 /* AppTeacherView.m in Sources */,
 				FA21847F236FADEC00FAA581 /* AppCardView.m in Sources */,
 				FA2DE240236A7D1300B9CC0D /* UIViewController+AppTrack.m in Sources */,
+				FA2184C0236FF7D900FAA581 /* Normal+DataLayout.m in Sources */,
 				FA2184A4236FC94400FAA581 /* UserHeaderView.m in Sources */,
 				FA21849C236FC3E200FAA581 /* Teacher+DataLayout.m in Sources */,
 				FA2184A8236FC99700FAA581 /* YLT_BaseView+AppTest.m in Sources */,
@@ -731,11 +782,13 @@
 				FA600E69236BFAA000CE75A0 /* AppBannerCell.m in Sources */,
 				FA218496236FC27800FAA581 /* AppCardFlowLayout.m in Sources */,
 				FA600E70236BFD0A00CE75A0 /* AppMenuCell.m in Sources */,
+				FA2184BA236FECE200FAA581 /* NSArray+AppPage.m in Sources */,
 				FA218482236FAE1D00FAA581 /* AppCardCell.m in Sources */,
 				FA23669B1FC017A5006255D0 /* ViewController.m in Sources */,
 				FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */,
 				FA2DE251236A874B00B9CC0D /* AppPageCell.m in Sources */,
 				FA600E61236BDBE900CE75A0 /* YLT_BaseModel+AppPage.m in Sources */,
+				FA2184B3236FEC9200FAA581 /* AppNormalReusableView.m in Sources */,
 				FA600E6D236BFCD400CE75A0 /* AppMenuView.m in Sources */,
 				FA600E66236BFA7100CE75A0 /* AppBannerView.m in Sources */,
 				FA218489236FBE8200FAA581 /* AppCourseCell.m in Sources */,
@@ -755,6 +808,7 @@
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
 				FA44B04F235EF58900D81F53 /* YLT_TcpModular.m in Sources */,
 				FAE4424D236C31FA00C790A8 /* Menu+DataLayout.m in Sources */,
+				FA2184B0236FEBCF00FAA581 /* AppPageReusableView.m in Sources */,
 				FA6F1A3A23603A480029B0CF /* AppLogListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

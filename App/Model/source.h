@@ -14,6 +14,14 @@ message User {
     optional string age = nil;
 }
 
+message Normal {
+    optional string title = nil;//标题
+    optional string subtitle = nil;//副标题
+    optional string imageUrl = nil;//图片资源
+    optional string thumbImage = nil;//缩略图
+    optional string rightTitle = nil;//右副标题
+}
+
 message Banner {
     optional string title = nil;//标题
     optional string imageUrl = nil;//图片URL

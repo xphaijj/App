@@ -46,6 +46,37 @@
 @end
 
 
+@implementation Normal
+
+- (id)init {
+	self = [super init];
+	if (self) {
+		self.title = @"";
+		self.subtitle = @"";
+		self.imageUrl = @"";
+		self.thumbImage = @"";
+		self.rightTitle = @"";
+	}
+	return self;
+}
+
++ (NSDictionary *)ylt_keyMapper {
+	NSMutableDictionary *result = [super ylt_keyMapper].mutableCopy;
+	[result addEntriesFromDictionary: @{
+				}];
+	return result;
+}
+
++ (NSDictionary *)ylt_classInArray {
+	NSMutableDictionary *result = [super ylt_classInArray].mutableCopy;
+	[result addEntriesFromDictionary: @{
+				}];
+	return result;
+}
+
+@end
+
+
 @implementation Banner
 
 - (id)init {

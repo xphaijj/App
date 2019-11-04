@@ -49,16 +49,6 @@
     return 1.;
 }
 
-/// 块头
-- (UIView *)sectionHeaderView {
-    return nil;
-}
-
-/// 块头
-- (UIView *)sectionFooterView {
-    return nil;
-}
-
 /// 每行多少列，默认1
 - (NSInteger)columnCount {
     return 1;

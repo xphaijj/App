@@ -91,6 +91,10 @@
 /// @param collectionView collectionView
 + (void)registerCellToCollectionView:(UICollectionView *)collectionView {
     [collectionView registerCell:@[@"AppPageCell", @"AppBannerCell", @"AppMenuCell", @"AppCardCell", @"AppCourseCell", @"AppTeacherCell"]];
+    
+    NSArray<NSString *> *reusableList = @[@"AppNormalReusableView"];
+    [collectionView registerHeader:reusableList];
+    [collectionView registerFooter:reusableList];
 }
 
 

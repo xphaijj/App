@@ -9,6 +9,8 @@
 #import "AppView+DataSource.h"
 #import "AppPageCell.h"
 #import "AppPageTools.h"
+#import "AppPageReusableView.h"
+#import "NSArray+AppPage.h"
 
 @implementation AppView (DataSource)
 
@@ -41,6 +43,35 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     YLT_BaseModel *sectionData = self.list[section].firstObject;
     return [AppPageTools spacingFromStyle:sectionData];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    NSArray *list = self.list[section];
+    if ([list isKindOfClass:[NSArray class]]) {
+        return list.sectionHeaderSize;
+    }
+    return CGSizeZero;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    NSArray *list = self.list[section];
+    if ([list isKindOfClass:[NSArray class]]) {
+        return list.sectionFooterSize;
+    }
+    return CGSizeZero;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    NSArray *list = self.list[indexPath.section];
+    if ([list isKindOfClass:[NSArray class]]) {
+        BOOL isHeader = ([kind isEqualToString:UICollectionElementKindSectionHeader]);
+        NSString *reusableIdentify = isHeader ? (list.sectionHeaderIdentify) : (list.sectionFooterIdentify);
+        reusableIdentify = reusableIdentify.ylt_isValid?reusableIdentify:@"AppPageReusableView";
+        AppPageReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:reusableIdentify forIndexPath:indexPath];
+        reusableView.data = isHeader ? list.sectionHeaderData : list.sectionFooterData;
+        return reusableView;
+    }
+    return nil;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

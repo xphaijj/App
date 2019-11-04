@@ -46,12 +46,6 @@
 /// 宽高比，联合列一起计算size 默认16:9  优先级 3
 - (CGFloat)ratio;
 
-/// 块头
-- (UIView *)sectionHeaderView;
-
-/// 块头
-- (UIView *)sectionFooterView;
-
 /// 每行多少列，默认1
 - (NSInteger)columnCount;
 

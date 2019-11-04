@@ -56,6 +56,11 @@
         banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
         [list addObject:banner];
     }
+    list.sectionHeaderSize = CGSizeMake(YLT_SCREEN_WIDTH, 64);
+    list.sectionHeaderIdentify = @"AppNormalReusableView";
+    Normal *normal = [[Normal alloc] init];
+    normal.title = @"亲子课程";
+    list.sectionHeaderData = normal;
     
     NSMutableArray *list2 = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < 4; i++) {
@@ -83,8 +88,29 @@
         banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
         [list4 addObject:banner];
     }
+    list4.sectionHeaderSize = CGSizeMake(YLT_SCREEN_WIDTH, 64);
+    list4.sectionHeaderIdentify = @"AppNormalReusableView";
+    Normal *normal1 = [[Normal alloc] init];
+    normal1.title = @"教师风采";
+    list4.sectionHeaderData = normal1;
     
     pageView.list = @[list, list2, list3, list4];
+    
+    @weakify(pageView);
+    pageView.pullHeader = ^{
+        YLT_Log(@"下拉加载");
+        YLT_MAINDelay(0.8, ^{
+            @strongify(pageView);
+            [pageView stopLoading];
+        });
+    };
+    pageView.pullFooter = ^{
+        YLT_Log(@"上拉加载");
+        YLT_MAINDelay(0.8, ^{
+            @strongify(pageView);
+            [pageView stopLoading];
+        });
+    };
     
 //    UITableView *table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);

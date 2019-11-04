@@ -22,6 +22,12 @@ typedef void(^YLT_DBComplete)(id response);
 @end
 
 
+@interface Normal(DB) {
+}
+
+@end
+
+
 @interface Banner(DB) {
 }
 

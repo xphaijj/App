@@ -17,6 +17,12 @@
 @end
 
 
+@implementation Normal(DB)
+
+
+@end
+
+
 @implementation Banner(DB)
 
 

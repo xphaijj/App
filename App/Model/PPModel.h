@@ -13,6 +13,7 @@
 
 
 @class User;
+@class Normal;
 @class Banner;
 @class Menu;
 @class Course;
@@ -31,6 +32,22 @@
 @property (readwrite, nonatomic, copy) NSString *sex;
 /**  */
 @property (readwrite, nonatomic, copy) NSString *age;
+
+@end
+
+
+@interface Normal : YLT_BaseModel {
+}
+/** 标题 */
+@property (readwrite, nonatomic, copy) NSString *title;
+/** 副标题 */
+@property (readwrite, nonatomic, copy) NSString *subtitle;
+/** 图片资源 */
+@property (readwrite, nonatomic, copy) NSString *imageUrl;
+/** 缩略图 */
+@property (readwrite, nonatomic, copy) NSString *thumbImage;
+/** 右副标题 */
+@property (readwrite, nonatomic, copy) NSString *rightTitle;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import "AppView.h"
 #import "AppView+DataSource.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface AppView () {
 }
@@ -30,6 +31,29 @@
         [self registerMainCollection:self.mainCollection];
     }
     return self;
+}
+
+- (void)stopLoading {
+    [self.mainCollection.mj_header endRefreshing];
+    [self.mainCollection.mj_footer endRefreshing];
+}
+
+- (void)setPullHeader:(void (^)(void))pullHeader {
+    _pullHeader = pullHeader;
+    if (pullHeader) {
+        self.mainCollection.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:pullHeader];
+    } else {
+        self.mainCollection.mj_header = nil;
+    }
+}
+
+- (void)setPullFooter:(void (^)(void))pullFooter {
+    _pullFooter = pullFooter;
+    if (pullFooter) {
+        self.mainCollection.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:pullFooter];
+    } else {
+        self.mainCollection.mj_footer = nil;
+    }
 }
 
 @end
