@@ -10,4 +10,8 @@
 
 @implementation Normal (DataLayout)
 
+- (NSString *)cellIdentify {
+    return @"AppNormalReusableView";
+}
+
 @end

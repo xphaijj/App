@@ -27,6 +27,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     YLT_BaseModel *sectionData = self.list[indexPath.section].firstObject;
+    YLT_Log(@"%@", sectionData.cellIdentify);
     if ([AppPageTools isValidPageData:sectionData]) {
         //计算当前 cell 的 size 大小
         return [AppPageTools rowSizeFromStyle:sectionData totalWidth:collectionView.ylt_width];
@@ -48,7 +49,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     NSArray *list = self.list[section];
     if ([list isKindOfClass:[NSArray class]]) {
-        return list.sectionHeaderSize;
+        return CGSizeMake(YLT_SCREEN_WIDTH, list.sectionHeaderHeight);
     }
     return CGSizeZero;
 }
@@ -56,7 +57,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     NSArray *list = self.list[section];
     if ([list isKindOfClass:[NSArray class]]) {
-        return list.sectionFooterSize;
+        return CGSizeMake(YLT_SCREEN_WIDTH, list.sectionFooterHeight);
     }
     return CGSizeZero;
 }
@@ -65,7 +66,7 @@
     NSArray *list = self.list[indexPath.section];
     if ([list isKindOfClass:[NSArray class]]) {
         BOOL isHeader = ([kind isEqualToString:UICollectionElementKindSectionHeader]);
-        NSString *reusableIdentify = isHeader ? (list.sectionHeaderIdentify) : (list.sectionFooterIdentify);
+        NSString *reusableIdentify = isHeader ? (list.sectionHeaderData.cellIdentify) : (list.sectionFooterData.cellIdentify);
         reusableIdentify = reusableIdentify.ylt_isValid?reusableIdentify:@"AppPageReusableView";
         AppPageReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:reusableIdentify forIndexPath:indexPath];
         reusableView.data = isHeader ? list.sectionHeaderData : list.sectionFooterData;

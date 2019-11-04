@@ -7,6 +7,8 @@
 //
 
 #import "HomeVC.h"
+#import "PPModel.h"
+#import "UserHeaderView.h"
 
 @interface HomeVC ()
 
@@ -16,7 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UserHeaderView *userHeaderView = [[UserHeaderView alloc] initWithFrame:CGRectMake(0, 0, 240, 44)];
+    [userHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(240, 44));
+    }];
+    User *user = [[User alloc] init];
+    user.name = @"云小夕";
+    user.logo = @"https://randomuser.me/api/portraits/men/80.jpg";
+    userHeaderView.data = user;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:userHeaderView];
+    
+    [self mainView];
 }
 
 /*

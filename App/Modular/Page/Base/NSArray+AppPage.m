@@ -10,43 +10,21 @@
 
 @implementation NSArray (AppPage)
 
-- (void)setSectionHeaderSize:(CGSize)sectionHeaderSize {
-    objc_setAssociatedObject(self, @selector(sectionHeaderSize), [NSValue valueWithCGSize:sectionHeaderSize], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setSectionHeaderHeight:(CGFloat)sectionHeaderHeight {
+    objc_setAssociatedObject(self, @selector(sectionHeaderHeight), @(sectionHeaderHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 /// 头部 size
-- (CGSize)sectionHeaderSize {
-    NSValue *value = objc_getAssociatedObject(self, @selector(sectionHeaderSize));
-    return value?value.CGSizeValue:CGSizeZero;
+- (CGFloat)sectionHeaderHeight {
+    return [objc_getAssociatedObject(self, @selector(sectionHeaderHeight)) floatValue];
 }
 
-- (void)setSectionFooterSize:(CGSize)sectionFooterSize {
-    objc_setAssociatedObject(self, @selector(sectionFooterSize), [NSValue valueWithCGSize:sectionFooterSize], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setSectionFooterHeight:(CGFloat)sectionFooterHeight {
+    objc_setAssociatedObject(self, @selector(sectionFooterHeight), @(sectionFooterHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 /// 尾部 size
-- (CGSize)sectionFooterSize {
-    NSValue *value = objc_getAssociatedObject(self, @selector(sectionFooterSize));
-    return value?value.CGSizeValue:CGSizeZero;
-}
-
-- (void)setSectionHeaderIdentify:(NSString *)sectionHeaderIdentify {
-    objc_setAssociatedObject(self, @selector(sectionHeaderIdentify), sectionHeaderIdentify, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-/// 头部复用的类名
-- (NSString *)sectionHeaderIdentify {
-    NSString *value = objc_getAssociatedObject(self, @selector(sectionHeaderIdentify));
-    return value.ylt_isValid?value:@"";
-}
-
-- (void)setSectionFooterIdentify:(NSString *)sectionFooterIdentify {
-    objc_setAssociatedObject(self, @selector(sectionFooterIdentify), sectionFooterIdentify, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-/// 尾部复用的类名
-- (NSString *)sectionFooterIdentify {
-    NSString *value = objc_getAssociatedObject(self, @selector(sectionFooterIdentify));
-    return value.ylt_isValid?value:@"";
+- (CGFloat)sectionFooterHeight {
+    return [objc_getAssociatedObject(self, @selector(sectionFooterHeight)) floatValue];
 }
 
 - (void)setSectionHeaderData:(YLT_BaseModel *)sectionHeaderData {

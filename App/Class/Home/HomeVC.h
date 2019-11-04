@@ -6,11 +6,11 @@
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "YLT_BaseVC.h"
+#import "AppPageVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeVC : YLT_BaseVC
+@interface HomeVC : AppPageVC
 
 @end
 

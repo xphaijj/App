@@ -56,4 +56,9 @@
     }
 }
 
+- (void)setList:(NSArray<NSArray<YLT_BaseModel *> *> *)list {
+    _list = list;
+    [self.mainCollection reloadData];
+}
+
 @end

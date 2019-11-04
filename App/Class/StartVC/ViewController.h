@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppPageVC.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : AppPageVC
 
 
 @end

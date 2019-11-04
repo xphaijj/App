@@ -18,121 +18,98 @@
 
 @property (nonatomic, strong) AppPlayerView *playerView;
 
+@property (nonatomic, strong) NSMutableArray<Banner *> *banner;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[YLT_LocationModular shareInstance] initLocationService];
-    __block UILabel *locationLabel = UILabel.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }).ylt_convertToLabel().ylt_textColor(UIColor.redColor);
-    [[YLT_LocationModular shareInstance] addressType:YLT_ADDRESS_TYPE_CITY success:^(NSString *address, NSArray<CLPlacemark *> *placemarks) {
-        locationLabel.text = address;
-    }];
+    [self mainView];
     
-    UserHeaderView *userHeaderView = [[UserHeaderView alloc] initWithFrame:CGRectMake(0, 0, 240, 44)];
-    [userHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(240, 44));
-    }];
-    User *user = [[User alloc] init];
-    user.name = @"云小夕";
-    user.logo = @"https://randomuser.me/api/portraits/men/80.jpg";
-    userHeaderView.data = user;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:userHeaderView];
+    YLT_MAINDelay(1, (^{
+        self.banner = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < 10; i++) {
+            Banner *banner = [[Banner alloc] init];
+            banner.title = [NSString stringWithFormat:@"%zd", i];
+            banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+            banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+            [self.banner addObject:banner];
+        }
+        [self reloadData];
+    }));
     
-    
-    AppView *pageView = [[AppView alloc] init];
-    [self.view addSubview:pageView];
-    [pageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 10; i++) {
-        Banner *banner = [[Banner alloc] init];
-        banner.title = [NSString stringWithFormat:@"%zd", i];
-        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
-        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
-        [list addObject:banner];
-    }
-    list.sectionHeaderSize = CGSizeMake(YLT_SCREEN_WIDTH, 64);
-    list.sectionHeaderIdentify = @"AppNormalReusableView";
-    Normal *normal = [[Normal alloc] init];
-    normal.title = @"亲子课程";
-    list.sectionHeaderData = normal;
-    
-    NSMutableArray *list2 = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 4; i++) {
-        Menu *banner = [[Menu alloc] init];
-        banner.title = [NSString stringWithFormat:@"%zd", i];
-        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
-        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
-        [list2 addObject:banner];
-    }
-    
-    NSMutableArray *list3 = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 4; i++) {
-        Course *banner = [[Course alloc] init];
-        banner.title = [NSString stringWithFormat:@"%zd", i];
-        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
-        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
-        [list3 addObject:banner];
-    }
-    
-    NSMutableArray *list4 = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 4; i++) {
-        Teacher *banner = [[Teacher alloc] init];
-        banner.title = [NSString stringWithFormat:@"%zd", i];
-        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
-        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
-        [list4 addObject:banner];
-    }
-    list4.sectionHeaderSize = CGSizeMake(YLT_SCREEN_WIDTH, 64);
-    list4.sectionHeaderIdentify = @"AppNormalReusableView";
-    Normal *normal1 = [[Normal alloc] init];
-    normal1.title = @"教师风采";
-    list4.sectionHeaderData = normal1;
-    
-    pageView.list = @[list, list2, list3, list4];
-    
-    @weakify(pageView);
-    pageView.pullHeader = ^{
-        YLT_Log(@"下拉加载");
-        YLT_MAINDelay(0.8, ^{
-            @strongify(pageView);
-            [pageView stopLoading];
-        });
-    };
-    pageView.pullFooter = ^{
-        YLT_Log(@"上拉加载");
-        YLT_MAINDelay(0.8, ^{
-            @strongify(pageView);
-            [pageView stopLoading];
-        });
-    };
-    
-//    UITableView *table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
+//
+//
+//    AppView *pageView = [[AppView alloc] init];
+//    [self.view addSubview:pageView];
+//    [pageView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);
-//    }, UITableViewStylePlain);
-//    table.delegate = self;
-//    table.dataSource = self;
-//    [table reloadData];
-    
-    
-//    self.playerView = [[AppPlayerView alloc] init];
-//    [self.view addSubview:self.playerView];
-//
-//    NSString *path = @"http://111.1.62.17/mp4files/61000000062E8681/clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
-//    NSDictionary *info = [AppPlayerView videoInfoWithPath:path targetSize:self.view.bounds.size];
-//    CGSize size = [info[@"screenSize"] CGSizeValue];
-//
-//    [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self.view);
-//        make.size.mas_equalTo(size);
 //    }];
-//    [self.playerView layoutIfNeeded];
-//    self.playerView.path = path;
+//    NSMutableArray *list = [[NSMutableArray alloc] init];
+//    for (NSInteger i = 0; i < 10; i++) {
+//        Banner *banner = [[Banner alloc] init];
+//        banner.title = [NSString stringWithFormat:@"%zd", i];
+//        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+//        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+//        [list addObject:banner];
+//    }
+//    pageView.list = @[list];
+    
+//    list.sectionHeaderSize = CGSizeMake(YLT_SCREEN_WIDTH, 64);
+//    Normal *normal = [[Normal alloc] init];
+//    normal.title = @"亲子课程";
+//    list.sectionHeaderData = normal;
+//
+//    NSMutableArray *list2 = [[NSMutableArray alloc] init];
+//    for (NSInteger i = 0; i < 4; i++) {
+//        Menu *banner = [[Menu alloc] init];
+//        banner.title = [NSString stringWithFormat:@"%zd", i];
+//        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+//        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+//        [list2 addObject:banner];
+//    }
+//
+//    NSMutableArray *list3 = [[NSMutableArray alloc] init];
+//    for (NSInteger i = 0; i < 4; i++) {
+//        Course *banner = [[Course alloc] init];
+//        banner.title = [NSString stringWithFormat:@"%zd", i];
+//        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+//        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+//        [list3 addObject:banner];
+//    }
+//
+//    NSMutableArray *list4 = [[NSMutableArray alloc] init];
+//    for (NSInteger i = 0; i < 4; i++) {
+//        Teacher *banner = [[Teacher alloc] init];
+//        banner.title = [NSString stringWithFormat:@"%zd", i];
+//        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+//        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+//        [list4 addObject:banner];
+//    }
+//    list4.sectionHeaderSize = CGSizeMake(YLT_SCREEN_WIDTH, 64);
+//    Normal *normal1 = [[Normal alloc] init];
+//    normal1.title = @"教师风采";
+//    list4.sectionHeaderData = normal1;
+//
+//    pageView.list = @[list, list2, list3, list4];
+//
+//    @weakify(pageView);
+//    pageView.pullHeader = ^{
+//        YLT_Log(@"下拉加载");
+//        YLT_MAINDelay(0.8, ^{
+//            @strongify(pageView);
+//            [pageView stopLoading];
+//        });
+//    };
+//    pageView.pullFooter = ^{
+//        YLT_Log(@"上拉加载");
+//        YLT_MAINDelay(0.8, ^{
+//            @strongify(pageView);
+//            [pageView stopLoading];
+//        });
+//    };
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

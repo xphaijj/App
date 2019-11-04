@@ -1,11 +1,92 @@
 {
-    "result":1,
-    "errorMsg":"",
-    "data":[
-        
-    
-    
-    
-    
-    ]
+    "page":[
+        {
+            "class":"Banner",
+            "data":"$banner"
+        }, {
+            "class":"Menu",
+            "data":"$menu"
+        }, {
+            "class":"Course",
+            "data":"$course",
+            "header":{
+                "height":32,
+                "class":"Normal",
+                "title":"标题",
+                "subtitle":"副标题"
+            },
+            "footer":{
+                "height":64,
+                "class":"Normal",
+                "title":"标题",
+                "subtitle":"副标题"
+            }
+        }, {
+            "class":"Banner",
+            "data":"$banner"
+        }
+    ],
+    "data":{
+        "banner":[
+            {
+                "title":"1111",
+                "imageUrl":"https://randomuser.me/api/portraits/men/1.jpg"
+            },{
+                "title":"2222",
+                "imageUrl":"https://randomuser.me/api/portraits/men/2.jpg"
+            },{
+                "title":"3333",
+                "imageUrl":"https://randomuser.me/api/portraits/men/3.jpg"
+            },{
+                "title":"4444",
+                "imageUrl":"https://randomuser.me/api/portraits/men/4.jpg"
+            },{
+                "title":"5555",
+                "imageUrl":"https://randomuser.me/api/portraits/men/5.jpg"
+            }
+        ],
+        "menu":[
+            {
+                "title":"1111",
+                "imageUrl":"https://randomuser.me/api/portraits/men/1.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/1.jpg"
+            },{
+                "title":"2222",
+                "imageUrl":"https://randomuser.me/api/portraits/men/2.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/2.jpg"
+            },{
+                "title":"3333",
+                "imageUrl":"https://randomuser.me/api/portraits/men/3.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/3.jpg"
+            },{
+                "title":"4444",
+                "imageUrl":"https://randomuser.me/api/portraits/men/4.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/4.jpg"
+            }
+        ],
+        "course":[
+            {
+                "title":"1111",
+                "imageUrl":"https://randomuser.me/api/portraits/men/1.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/1.jpg"
+            },{
+                "title":"2222",
+                "imageUrl":"https://randomuser.me/api/portraits/men/2.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/2.jpg"
+            },{
+                "title":"3333",
+                "imageUrl":"https://randomuser.me/api/portraits/men/3.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/3.jpg"
+            },{
+                "title":"4444",
+                "imageUrl":"https://randomuser.me/api/portraits/men/4.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/4.jpg"
+            },{
+                "title":"5555",
+                "imageUrl":"https://randomuser.me/api/portraits/men/5.jpg",
+                "clickAction":"https://randomuser.me/api/portraits/men/5.jpg"
+            }
+        ]
+    }
 }
+

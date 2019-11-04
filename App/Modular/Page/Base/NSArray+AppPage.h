@@ -13,14 +13,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSArray (AppPage)
-/// 头部 size
-@property (nonatomic, assign) CGSize sectionHeaderSize;
-/// 尾部 size
-@property (nonatomic, assign) CGSize sectionFooterSize;
-/// 头部复用的类名
-@property (nonatomic, strong) NSString *sectionHeaderIdentify;
-/// 尾部复用的类名
-@property (nonatomic, strong) NSString *sectionFooterIdentify;
+/// 头部 高度
+@property (nonatomic, assign) CGFloat sectionHeaderHeight;
+/// 尾部 高度
+@property (nonatomic, assign) CGFloat sectionFooterHeight;
 /// 头部的数据
 @property (nonatomic, strong) YLT_BaseModel *sectionHeaderData;
 /// 尾部的数据
