@@ -15,7 +15,8 @@
 @class User;
 @class Banner;
 @class Menu;
-@class Card;
+@class Course;
+@class Teacher;
 
 
 @interface User : YLT_BaseModel {
@@ -24,6 +25,12 @@
 @property (readwrite, nonatomic, assign) NSInteger userId;
 /** 用户名 */
 @property (readwrite, nonatomic, copy) NSString *name;
+/**  */
+@property (readwrite, nonatomic, copy) NSString *logo;
+/**  */
+@property (readwrite, nonatomic, copy) NSString *sex;
+/**  */
+@property (readwrite, nonatomic, copy) NSString *age;
 
 @end
 
@@ -48,7 +55,17 @@
 @end
 
 
-@interface Card : YLT_BaseModel {
+@interface Course : YLT_BaseModel {
+}
+/**  */
+@property (readwrite, nonatomic, copy) NSString *imageUrl;
+/**  */
+@property (readwrite, nonatomic, copy) NSString *title;
+
+@end
+
+
+@interface Teacher : YLT_BaseModel {
 }
 /**  */
 @property (readwrite, nonatomic, copy) NSString *imageUrl;

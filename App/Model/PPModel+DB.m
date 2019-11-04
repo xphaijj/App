@@ -29,7 +29,13 @@
 @end
 
 
-@implementation Card(DB)
+@implementation Course(DB)
+
+
+@end
+
+
+@implementation Teacher(DB)
 
 
 @end

@@ -9,6 +9,9 @@ Config config {
 message User {
     required int userId = 0;//用户ID
     optional string name = nil;//用户名
+    optional string logo = nil;
+    optional string sex = nil;
+    optional string age = nil;
 }
 
 message Banner {
@@ -21,7 +24,12 @@ message Menu {
     optional string title = nil;
 }
 
-message Card {
+message Course {
+    optional string imageUrl = nil;
+    optional string title = nil;
+}
+
+message Teacher {
     optional string imageUrl = nil;
     optional string title = nil;
 }

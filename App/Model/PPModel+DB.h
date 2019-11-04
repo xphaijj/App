@@ -34,7 +34,13 @@ typedef void(^YLT_DBComplete)(id response);
 @end
 
 
-@interface Card(DB) {
+@interface Course(DB) {
+}
+
+@end
+
+
+@interface Teacher(DB) {
 }
 
 @end

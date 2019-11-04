@@ -1,22 +1,17 @@
 //
-//  AppTeacherView.h
+//  User+DataLayout.h
 //  App
 //
 //  Created by 項普華 on 2019/11/4.
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "AppPageView.h"
-
-@protocol AppTeacherProtocol <NSObject>
-
-- (NSString *)logo;
-
-@end
+#import "UserHeaderView.h"
+#import "PPModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AppTeacherView : AppPageView
+@interface User (DataLayout)<UserHeaderProtocol>
 
 @end
 

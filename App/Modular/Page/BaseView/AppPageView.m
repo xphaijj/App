@@ -13,9 +13,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-#if DEBUG
-        self.backgroundColor = UIColor.ylt_randomColor;
-#endif
     }
     return self;
 }

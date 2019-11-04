@@ -8,6 +8,13 @@
 
 #import "AppPageView.h"
 
+@protocol AppCourseProtocol <NSObject>
+
+/// 预览图
+- (NSString *)previewImage;
+
+@end
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppCourseView : AppPageView

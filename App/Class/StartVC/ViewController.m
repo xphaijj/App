@@ -12,6 +12,7 @@
 #import "AppPlayerView.h"
 #import "AppView.h"
 #import "PPModel.h"
+#import "UserHeaderView.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -30,6 +31,14 @@
     [[YLT_LocationModular shareInstance] addressType:YLT_ADDRESS_TYPE_CITY success:^(NSString *address, NSArray<CLPlacemark *> *placemarks) {
         locationLabel.text = address;
     }];
+    
+    UserHeaderView *userHeaderView = [[UserHeaderView alloc] initWithFrame:CGRectMake(0, 0, 240, 44)];
+    User *user = [[User alloc] init];
+    user.name = @"云小夕";
+    user.logo = @"https://randomuser.me/api/portraits/men/80.jpg";
+    userHeaderView.data = user;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:userHeaderView];
+    
     
     AppView *pageView = [[AppView alloc] init];
     [self.view addSubview:pageView];
@@ -56,14 +65,23 @@
     
     NSMutableArray *list3 = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < 4; i++) {
-        Card *banner = [[Card alloc] init];
+        Course *banner = [[Course alloc] init];
         banner.title = [NSString stringWithFormat:@"%zd", i];
         banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
         banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
         [list3 addObject:banner];
     }
     
-    pageView.list = @[list, list2, list3];
+    NSMutableArray *list4 = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < 4; i++) {
+        Teacher *banner = [[Teacher alloc] init];
+        banner.title = [NSString stringWithFormat:@"%zd", i];
+        banner.imageUrl = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+        banner.clickAction = [NSString stringWithFormat:@"https://randomuser.me/api/portraits/men/%zd.jpg", i+1];
+        [list4 addObject:banner];
+    }
+    
+    pageView.list = @[list, list2, list3, list4];
     
 //    UITableView *table = UITableView.ylt_createLayout(self.view, ^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);

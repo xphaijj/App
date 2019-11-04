@@ -13,12 +13,16 @@
 		C734423421E3262E00BD5175 /* BaseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C734423321E3262E00BD5175 /* BaseCollection.m */; };
 		FA21847F236FADEC00FAA581 /* AppCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA21847E236FADEC00FAA581 /* AppCardView.m */; };
 		FA218482236FAE1D00FAA581 /* AppCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218481236FAE1D00FAA581 /* AppCardCell.m */; };
-		FA218485236FB90700FAA581 /* Card+DataLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218484236FB90700FAA581 /* Card+DataLayout.m */; };
 		FA218489236FBE8200FAA581 /* AppCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218488236FBE8200FAA581 /* AppCourseCell.m */; };
 		FA21848C236FBE9200FAA581 /* AppCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA21848B236FBE9200FAA581 /* AppCourseView.m */; };
 		FA218490236FBEBF00FAA581 /* AppTeacherView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA21848F236FBEBF00FAA581 /* AppTeacherView.m */; };
 		FA218493236FBECF00FAA581 /* AppTeacherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218492236FBECF00FAA581 /* AppTeacherCell.m */; };
 		FA218496236FC27800FAA581 /* AppCardFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218495236FC27800FAA581 /* AppCardFlowLayout.m */; };
+		FA218499236FC3D400FAA581 /* Course+DataLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218498236FC3D400FAA581 /* Course+DataLayout.m */; };
+		FA21849C236FC3E200FAA581 /* Teacher+DataLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA21849B236FC3E200FAA581 /* Teacher+DataLayout.m */; };
+		FA2184A4236FC94400FAA581 /* UserHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184A3236FC94400FAA581 /* UserHeaderView.m */; };
+		FA2184A8236FC99700FAA581 /* YLT_BaseView+AppTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184A7236FC99700FAA581 /* YLT_BaseView+AppTest.m */; };
+		FA2184AB236FCA0E00FAA581 /* User+DataLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2184AA236FCA0E00FAA581 /* User+DataLayout.m */; };
 		FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366971FC017A5006255D0 /* AppDelegate.m */; };
 		FA23669B1FC017A5006255D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23669A1FC017A5006255D0 /* ViewController.m */; };
 		FA23669E1FC017A5006255D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA23669C1FC017A5006255D0 /* Main.storyboard */; };
@@ -92,8 +96,6 @@
 		FA21847E236FADEC00FAA581 /* AppCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCardView.m; sourceTree = "<group>"; };
 		FA218480236FAE1D00FAA581 /* AppCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCardCell.h; sourceTree = "<group>"; };
 		FA218481236FAE1D00FAA581 /* AppCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCardCell.m; sourceTree = "<group>"; };
-		FA218483236FB90700FAA581 /* Card+DataLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Card+DataLayout.h"; sourceTree = "<group>"; };
-		FA218484236FB90700FAA581 /* Card+DataLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Card+DataLayout.m"; sourceTree = "<group>"; };
 		FA218487236FBE8200FAA581 /* AppCourseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCourseCell.h; sourceTree = "<group>"; };
 		FA218488236FBE8200FAA581 /* AppCourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCourseCell.m; sourceTree = "<group>"; };
 		FA21848A236FBE9200FAA581 /* AppCourseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCourseView.h; sourceTree = "<group>"; };
@@ -104,6 +106,16 @@
 		FA218492236FBECF00FAA581 /* AppTeacherCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTeacherCell.m; sourceTree = "<group>"; };
 		FA218494236FC27800FAA581 /* AppCardFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCardFlowLayout.h; sourceTree = "<group>"; };
 		FA218495236FC27800FAA581 /* AppCardFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCardFlowLayout.m; sourceTree = "<group>"; };
+		FA218497236FC3D400FAA581 /* Course+DataLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Course+DataLayout.h"; sourceTree = "<group>"; };
+		FA218498236FC3D400FAA581 /* Course+DataLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Course+DataLayout.m"; sourceTree = "<group>"; };
+		FA21849A236FC3E200FAA581 /* Teacher+DataLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Teacher+DataLayout.h"; sourceTree = "<group>"; };
+		FA21849B236FC3E200FAA581 /* Teacher+DataLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Teacher+DataLayout.m"; sourceTree = "<group>"; };
+		FA2184A2236FC94400FAA581 /* UserHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserHeaderView.h; sourceTree = "<group>"; };
+		FA2184A3236FC94400FAA581 /* UserHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserHeaderView.m; sourceTree = "<group>"; };
+		FA2184A6236FC99700FAA581 /* YLT_BaseView+AppTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YLT_BaseView+AppTest.h"; sourceTree = "<group>"; };
+		FA2184A7236FC99700FAA581 /* YLT_BaseView+AppTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YLT_BaseView+AppTest.m"; sourceTree = "<group>"; };
+		FA2184A9236FCA0E00FAA581 /* User+DataLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "User+DataLayout.h"; sourceTree = "<group>"; };
+		FA2184AA236FCA0E00FAA581 /* User+DataLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "User+DataLayout.m"; sourceTree = "<group>"; };
 		FA2366931FC017A5006255D0 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2366961FC017A5006255D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA2366971FC017A5006255D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -228,8 +240,6 @@
 				FA21847E236FADEC00FAA581 /* AppCardView.m */,
 				FA218480236FAE1D00FAA581 /* AppCardCell.h */,
 				FA218481236FAE1D00FAA581 /* AppCardCell.m */,
-				FA218483236FB90700FAA581 /* Card+DataLayout.h */,
-				FA218484236FB90700FAA581 /* Card+DataLayout.m */,
 				FA218494236FC27800FAA581 /* AppCardFlowLayout.h */,
 				FA218495236FC27800FAA581 /* AppCardFlowLayout.m */,
 			);
@@ -243,6 +253,8 @@
 				FA21848B236FBE9200FAA581 /* AppCourseView.m */,
 				FA218487236FBE8200FAA581 /* AppCourseCell.h */,
 				FA218488236FBE8200FAA581 /* AppCourseCell.m */,
+				FA218497236FC3D400FAA581 /* Course+DataLayout.h */,
+				FA218498236FC3D400FAA581 /* Course+DataLayout.m */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -254,8 +266,30 @@
 				FA21848F236FBEBF00FAA581 /* AppTeacherView.m */,
 				FA218491236FBECF00FAA581 /* AppTeacherCell.h */,
 				FA218492236FBECF00FAA581 /* AppTeacherCell.m */,
+				FA21849A236FC3E200FAA581 /* Teacher+DataLayout.h */,
+				FA21849B236FC3E200FAA581 /* Teacher+DataLayout.m */,
 			);
 			path = Teacher;
+			sourceTree = "<group>";
+		};
+		FA2184A1236FC90C00FAA581 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA2184A2236FC94400FAA581 /* UserHeaderView.h */,
+				FA2184A3236FC94400FAA581 /* UserHeaderView.m */,
+				FA2184A9236FCA0E00FAA581 /* User+DataLayout.h */,
+				FA2184AA236FCA0E00FAA581 /* User+DataLayout.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA2184A5236FC97900FAA581 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				FA2184A6236FC99700FAA581 /* YLT_BaseView+AppTest.h */,
+				FA2184A7236FC99700FAA581 /* YLT_BaseView+AppTest.m */,
+			);
+			path = debug;
 			sourceTree = "<group>";
 		};
 		FA23668A1FC017A5006255D0 = {
@@ -362,6 +396,7 @@
 		FA2366E91FC01CF5006255D0 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FA2184A5236FC97900FAA581 /* debug */,
 				FAB73EDD23680C3800F93280 /* Player */,
 				FA6F1A34236033A60029B0CF /* AssisitiveTouch */,
 			);
@@ -404,6 +439,7 @@
 		FA44B04C235EDB8500D81F53 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				FA2184A1236FC90C00FAA581 /* View */,
 				FA44B04B235EDB7600D81F53 /* StartVC */,
 			);
 			path = Class;
@@ -684,6 +720,10 @@
 				FA218490236FBEBF00FAA581 /* AppTeacherView.m in Sources */,
 				FA21847F236FADEC00FAA581 /* AppCardView.m in Sources */,
 				FA2DE240236A7D1300B9CC0D /* UIViewController+AppTrack.m in Sources */,
+				FA2184A4236FC94400FAA581 /* UserHeaderView.m in Sources */,
+				FA21849C236FC3E200FAA581 /* Teacher+DataLayout.m in Sources */,
+				FA2184A8236FC99700FAA581 /* YLT_BaseView+AppTest.m in Sources */,
+				FA218499236FC3D400FAA581 /* Course+DataLayout.m in Sources */,
 				FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */,
 				FA2DE24A236A84C000B9CC0D /* AppView+DataSource.m in Sources */,
 				C734423421E3262E00BD5175 /* BaseCollection.m in Sources */,
@@ -702,6 +742,7 @@
 				FA2DE254236A8AFC00B9CC0D /* AppPageTools.m in Sources */,
 				FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */,
 				FA600E58236BD42500CE75A0 /* PPModel+Extension.m in Sources */,
+				FA2184AB236FCA0E00FAA581 /* User+DataLayout.m in Sources */,
 				FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */,
 				FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */,
 				FAE4424A236C2F7000C790A8 /* Banner+DataLayout.m in Sources */,
@@ -709,7 +750,6 @@
 				FA6F1A37236033CF0029B0CF /* AppAssistiveTouchView.m in Sources */,
 				FA21848C236FBE9200FAA581 /* AppCourseView.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
-				FA218485236FB90700FAA581 /* Card+DataLayout.m in Sources */,
 				FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */,
 				FA218493236FBECF00FAA581 /* AppTeacherCell.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,

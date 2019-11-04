@@ -1,26 +1,25 @@
 //
-//  Card+DataLayout.m
+//  Course+DataLayout.m
 //  App
 //
 //  Created by 項普華 on 2019/11/4.
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "Card+DataLayout.h"
-#import "YLT_BaseModel+AppPage.h"
+#import "Course+DataLayout.h"
 
-@implementation Card (DataLayout)
+@implementation Course (DataLayout)
 
 - (NSString *)cardCellIdentify {
-    return @"AppMenuCell";
+    return @"AppCourseCell";
 }
 
 - (CGSize)cardCellSize {
-    return CGSizeMake(240, self.rowHeight-2*self.cardCellSpacing);
+    return CGSizeMake(240, self.rowHeight);
 }
 
 - (CGFloat)cardCellSpacing {
-    return 12;
+    return 8;
 }
 
 #pragma mark - layout
@@ -33,7 +32,7 @@
 }
 
 - (CGFloat)rowHeight {
-    return 238.;
+    return 360.;
 }
 
 - (UIEdgeInsets)sectionInsets {
@@ -45,7 +44,7 @@
 }
 
 #pragma mark - data
-- (NSString *)imageURL {
+- (NSString *)previewImage {
     return self.imageUrl;
 }
 
