@@ -12,7 +12,7 @@
 @implementation Card (DataLayout)
 
 - (NSString *)cardCellIdentify {
-    return @"AppCourseCell";
+    return @"AppMenuCell";
 }
 
 - (CGSize)cardCellSize {

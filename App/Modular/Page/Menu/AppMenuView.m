@@ -20,7 +20,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = UIColor.greenColor;
         self.imageView = UIImageView.ylt_createLayout(self, ^(MASConstraintMaker *make) {
             make.centerX.equalTo(self);
             make.centerY.equalTo(self).offset(-8);

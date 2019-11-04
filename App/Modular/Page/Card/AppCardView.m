@@ -9,6 +9,7 @@
 #import "AppCardView.h"
 #import "AppPageCell.h"
 #import "AppPageTools.h"
+#import "AppCardFlowLayout.h"
 #import <YLT_Kit/YLT_Kit.h>
 
 @interface AppCardView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -24,7 +25,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        AppCardFlowLayout *flowLayout = [[AppCardFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.cardView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:flowLayout];
         [self addSubview:self.cardView];
