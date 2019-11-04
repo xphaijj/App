@@ -49,7 +49,7 @@
             {
                 "title":"1111",
                 "imageUrl":"https://randomuser.me/api/portraits/men/1.jpg",
-                "clickAction":"https://randomuser.me/api/portraits/men/1.jpg"
+                "clickAction":"ylt://TabBarVC/routerWithParams:?index=2"
             },{
                 "title":"2222",
                 "imageUrl":"https://randomuser.me/api/portraits/men/2.jpg",

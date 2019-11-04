@@ -77,12 +77,12 @@
 /// 路由事件
 /// @param data 数据
 + (void)routerForData:(YLT_BaseModel *)data {
-    if (data.routerAction.ylt_isValid) {
-        [YLT_RouterManager ylt_routerToURL:data.routerAction arg:data completion:nil];
-        return;
-    }
     if (data.clickAction.ylt_isValid) {
         [YLT_RouterManager ylt_routerToURL:data.clickAction arg:data completion:nil];
+        return;
+    }
+    if (data.routerAction.ylt_isValid) {
+        [YLT_RouterManager ylt_routerToURL:data.routerAction arg:data completion:nil];
         return;
     }
 }

@@ -27,7 +27,6 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     YLT_BaseModel *sectionData = self.list[indexPath.section].firstObject;
-    YLT_Log(@"%@", sectionData.cellIdentify);
     if ([AppPageTools isValidPageData:sectionData]) {
         //计算当前 cell 的 size 大小
         return [AppPageTools rowSizeFromStyle:sectionData totalWidth:collectionView.ylt_width];

@@ -1,34 +1,34 @@
 //
-//  Menu+DataLayout.m
+//  Banner+AppBannerView.m
 //  App
 //
 //  Created by 項普華 on 2019/11/1.
 //  Copyright © 2019 Alex. All rights reserved.
 //
 
-#import "Menu+DataLayout.h"
+#import "Banner+DataLayout.h"
 
-@implementation Menu (DataLayout)
+@implementation Banner (DataLayout)
 
 #pragma mark - layout
 - (NSString *)cellIdentify {
-    return @"AppMenuCell";
+    return @"AppBannerCell";
 }
 
 - (NSInteger)columnCount {
-    return 4;
+    return 1;
 }
 
-- (CGFloat)ratio {
-    return 1;
+- (CGFloat)rowHeight {
+    return 138.;
 }
 
 - (UIEdgeInsets)sectionInsets {
     return UIEdgeInsetsMake(4, 15, 4, 15);
 }
 
-- (CGFloat)spacing {
-    return 2;
+- (NSInteger)sectionRowCount {
+    return 1;
 }
 
 #pragma mark - data
@@ -37,5 +37,9 @@
 }
 
 #pragma mark - action
+
+- (NSString *)routerAction {
+    return @"ylt://TabBarVC/routerWithParams:?index=1";
+}
 
 @end

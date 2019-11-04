@@ -105,7 +105,7 @@ PODS:
   - WToast (2.1.1)
   - XHLaunchAd (3.9.8):
     - FLAnimatedImage (~> 1.0.12)
-  - YLT_BaseLib (0.3.55):
+  - YLT_BaseLib (0.3.56):
     - FastCoding
     - FMDB
     - MJExtension
@@ -217,7 +217,7 @@ SPEC CHECKSUMS:
   UMCShare: e0cef55c0fd6051254c8cda1d0630eb578b27bad
   WToast: d4bd28442dd5ff69d66fe82f5be8c8895c7a0a67
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
-  YLT_BaseLib: dfdd1377329956d71a4ab39b7e33bd94dc691a12
+  YLT_BaseLib: dc5d004db486d6a76d2d54c829920561e73d4b46
   YLT_Kit: 033730eb2ed99b1cf4aebbb5493ddfb315ee9920
 
 PODFILE CHECKSUM: 2bb03961056d11e2ad7b746dfdf17ac1a2559449
