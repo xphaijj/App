@@ -22,6 +22,7 @@
     if (self) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         self.mainCollection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        self.mainCollection.backgroundColor = UIColor.clearColor;
         [self addSubview:self.mainCollection];
         [self.mainCollection mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
