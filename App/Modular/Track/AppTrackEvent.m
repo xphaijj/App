@@ -67,7 +67,7 @@
     UMSocialMessageObject *object = [UMSocialMessageObject messageObject];
     object.text = @"测试分享";
     object.title = @"分享标题";
-    UMSocialPlatformType type = UMSocialPlatformType_WechatSession;
+    UMSocialPlatformType type = UMSocialPlatformType_QQ;
     [[UMSocialManager defaultManager] shareToPlatform:type messageObject:object currentViewController:self.ylt_currentVC completion:^(id result, NSError *error) {
         if (error) {
             YLT_LogError(@"分享失败 %@", error.description);

@@ -22,7 +22,7 @@
 
 /// 注册信息
 - (BOOL)ylt_register {
-    [WXApi registerApp:WX_APPID universalLink:WX_UNIVERSAL_LINK];
+//    [WXApi registerApp:WX_APPID universalLink:WX_UNIVERSAL_LINK];
     return YES;
 }
 
@@ -44,9 +44,9 @@
 }
 
 - (void)ylt_pay {
-    PayReq *req = [PayReq mj_objectWithKeyValues:self.order.credential];
-    [WXApi sendReq:req completion:^(BOOL success) {
-    }];
+//    PayReq *req = [PayReq mj_objectWithKeyValues:self.order.credential];
+//    [WXApi sendReq:req completion:^(BOOL success) {
+//    }];
 }
 
 /**
@@ -70,9 +70,9 @@
     return NO;
 }
 
-- (BOOL)handleUserActivity:(NSUserActivity *)userActivity {
-    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
-}
+//- (BOOL)handleUserActivity:(NSUserActivity *)userActivity {
+//    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
+//}
 
 #pragma mark - WXApiDelegate
 /*! @brief 收到一个来自微信的请求，第三方应用程序处理完后调用sendResp向微信发送结果

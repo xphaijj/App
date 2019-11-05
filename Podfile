@@ -34,10 +34,10 @@ pod 'UMCSecurityPlugins'
 pod 'UMCAnalytics'
 # 友盟分享
 pod 'UMCShare/UI'
-#pod 'UMCShare/Social/WeChat'
+pod 'UMCShare/Social/WeChat'
 pod 'UMCShare/Social/QQ'
 pod 'UMCShare/Social/Sina'
-pod 'WechatOpenSDK'
+#pod 'WechatOpenSDK'
 
 # 友盟推送
 pod 'UMCPush'
