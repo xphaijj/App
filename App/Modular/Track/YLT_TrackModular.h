@@ -12,20 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YLT_TrackModular : YLT_BaseModular
 
-/// 登陆成功
-/// @param uid 用户ID
-+ (void)login:(NSString *)uid;
-
-/// 退出登陆
-+ (void)logout;
-
-+ (void)trackBeginPage:(UIViewController *)sender;
-+ (void)trackEndPage:(UIViewController *)sender;
-
-/// 分享
-/// @param data 分享的数据
-+ (void)shareData:(NSDictionary *)data;
-
 @end
 
 NS_ASSUME_NONNULL_END

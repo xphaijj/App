@@ -22,6 +22,7 @@
 		FA07570723714BC5007D35BD /* YLT_UnionPay.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07570623714BC5007D35BD /* YLT_UnionPay.mm */; };
 		FA07570B23714BD9007D35BD /* YLT_ApplePay.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07570A23714BD9007D35BD /* YLT_ApplePay.m */; };
 		FA0757112371526D007D35BD /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA07570E2371526D007D35BD /* libPaymentControl.a */; };
+		FA1BA0E623715E7C00F59D04 /* AppTrackEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1BA0E523715E7C00F59D04 /* AppTrackEvent.m */; };
 		FA21847F236FADEC00FAA581 /* AppCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA21847E236FADEC00FAA581 /* AppCardView.m */; };
 		FA218482236FAE1D00FAA581 /* AppCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218481236FAE1D00FAA581 /* AppCardCell.m */; };
 		FA218489236FBE8200FAA581 /* AppCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218488236FBE8200FAA581 /* AppCourseCell.m */; };
@@ -54,7 +55,6 @@
 		FA2366A61FC017A5006255D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366A51FC017A5006255D0 /* main.m */; };
 		FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366D41FC019FF006255D0 /* AppDelegate+AppService.m */; };
 		FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */; };
-		FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E41FC01C62006255D0 /* YLT_PushModular.m */; };
 		FA2366E81FC01C8C006255D0 /* ShareData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366E71FC01C8C006255D0 /* ShareData.m */; };
 		FA2366F01FC01D0F006255D0 /* Tools in Resources */ = {isa = PBXBuildFile; fileRef = FA2366EE1FC01D0E006255D0 /* Tools */; };
 		FA2366FA1FC01D3F006255D0 /* PPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2366F41FC01D3F006255D0 /* PPRequest.m */; };
@@ -133,6 +133,8 @@
 		FA07570A23714BD9007D35BD /* YLT_ApplePay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_ApplePay.m; sourceTree = "<group>"; };
 		FA07570E2371526D007D35BD /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
 		FA0757102371526D007D35BD /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
+		FA1BA0E423715E7C00F59D04 /* AppTrackEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTrackEvent.h; sourceTree = "<group>"; };
+		FA1BA0E523715E7C00F59D04 /* AppTrackEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTrackEvent.m; sourceTree = "<group>"; };
 		FA21847D236FADEC00FAA581 /* AppCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCardView.h; sourceTree = "<group>"; };
 		FA21847E236FADEC00FAA581 /* AppCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCardView.m; sourceTree = "<group>"; };
 		FA218480236FAE1D00FAA581 /* AppCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCardCell.h; sourceTree = "<group>"; };
@@ -192,8 +194,6 @@
 		FA2366D41FC019FF006255D0 /* AppDelegate+AppService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppService.m"; sourceTree = "<group>"; };
 		FA2366D91FC01A6F006255D0 /* UIColor+AppColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColor.h"; sourceTree = "<group>"; };
 		FA2366DA1FC01A6F006255D0 /* UIColor+AppColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColor.m"; sourceTree = "<group>"; };
-		FA2366E31FC01C62006255D0 /* YLT_PushModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PushModular.h; sourceTree = "<group>"; };
-		FA2366E41FC01C62006255D0 /* YLT_PushModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PushModular.m; sourceTree = "<group>"; };
 		FA2366E61FC01C8C006255D0 /* ShareData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareData.h; sourceTree = "<group>"; };
 		FA2366E71FC01C8C006255D0 /* ShareData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareData.m; sourceTree = "<group>"; };
 		FA2366EE1FC01D0E006255D0 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = Tools; sourceTree = "<group>"; };
@@ -581,7 +581,6 @@
 				FA6F1A2D23602B9B0029B0CF /* Pay */,
 				FA6F1A3323602BD10029B0CF /* TCP */,
 				FA6F1A3223602BC30029B0CF /* Location */,
-				FA6F1A3123602BBA0029B0CF /* Push */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -729,15 +728,6 @@
 			path = Pay;
 			sourceTree = "<group>";
 		};
-		FA6F1A3123602BBA0029B0CF /* Push */ = {
-			isa = PBXGroup;
-			children = (
-				FA2366E31FC01C62006255D0 /* YLT_PushModular.h */,
-				FA2366E41FC01C62006255D0 /* YLT_PushModular.m */,
-			);
-			path = Push;
-			sourceTree = "<group>";
-		};
 		FA6F1A3223602BC30029B0CF /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,6 +766,8 @@
 				FA44B052235EF60F00D81F53 /* UIViewController+AppTrack.m */,
 				FA44B054235F01B500D81F53 /* YLT_TrackModular.h */,
 				FA44B055235F01B500D81F53 /* YLT_TrackModular.m */,
+				FA1BA0E423715E7C00F59D04 /* AppTrackEvent.h */,
+				FA1BA0E523715E7C00F59D04 /* AppTrackEvent.m */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -927,6 +919,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1BA0E623715E7C00F59D04 /* AppTrackEvent.m in Sources */,
 				FA2366D51FC019FF006255D0 /* AppDelegate+AppService.m in Sources */,
 				FA2DE247236A842400B9CC0D /* AppView.m in Sources */,
 				FA5C8D9923668D5E006BC03F /* AppDelegate+AppLaunchAd.m in Sources */,
@@ -972,7 +965,6 @@
 				FA2184CC236FFDEC00FAA581 /* MineVC.m in Sources */,
 				FA218489236FBE8200FAA581 /* AppCourseCell.m in Sources */,
 				FA2DE254236A8AFC00B9CC0D /* AppPageTools.m in Sources */,
-				FA2366E51FC01C62006255D0 /* YLT_PushModular.m in Sources */,
 				FA600E58236BD42500CE75A0 /* PPModel+Extension.m in Sources */,
 				FA2184AB236FCA0E00FAA581 /* User+DataLayout.m in Sources */,
 				FA44B04A235EDB5500D81F53 /* AppDelegate+AppBug.m in Sources */,
@@ -1176,8 +1168,6 @@
 					"-l\"YLT_Kit\"",
 					"-l\"c++\"",
 					"-l\"crypto\"",
-					"-l\"jcore-ios-2.1.4\"",
-					"-l\"jpush-ios-3.2.6\"",
 					"-l\"resolv\"",
 					"-l\"sqlite3\"",
 					"-l\"sqlite3.0\"",
@@ -1296,8 +1286,6 @@
 					"-l\"YLT_Kit\"",
 					"-l\"c++\"",
 					"-l\"crypto\"",
-					"-l\"jcore-ios-2.1.4\"",
-					"-l\"jpush-ios-3.2.6\"",
 					"-l\"resolv\"",
 					"-l\"sqlite3\"",
 					"-l\"sqlite3.0\"",

@@ -236,14 +236,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## JCore
-
-Copyright jpush.cn
-
-## JPush
-
-Copyright jiguang.cn
-
 ## MIHCrypto
 
 Copyright (c) 2014 Michael Hohl (http://www.michaelhohl.net)
@@ -695,6 +687,11 @@ Copyright 2011 - 2019 umeng.com. All rights reserved.
 ## UMCCommon
 
 Copyright 2011 - 2019 umeng.com. All rights reserved.
+
+
+## UMCPush
+
+Copyright 2011 - 2018 umeng.com. All rights reserved.
 
 
 ## UMCSecurityPlugins
