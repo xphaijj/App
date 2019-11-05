@@ -35,6 +35,10 @@ typedef void(^YLT_PayComplation)(id response, YLT_PayError *error);
 - (BOOL)handleOpenURL:(NSURL *)url
               options:(NSDictionary *)options;
 
+/// 处理用户事件
+/// @param userActivity 事件
+- (BOOL)handleUserActivity:(NSUserActivity *)userActivity;
+
 @end
 
 

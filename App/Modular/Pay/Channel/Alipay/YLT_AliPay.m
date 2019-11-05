@@ -20,12 +20,14 @@
 
 - (BOOL)ylt_invalidOrder {
     
-    
     return YES;
 }
 
 - (void)ylt_pay {
-    
+    // NOTE: 调用支付结果开始支付
+    [[AlipaySDK defaultService] payOrder:self.order.orderString fromScheme:YLT_PayEngine.shareInstance.scheme callback:^(NSDictionary *resultDic) {
+        YLT_Log(@"reslut = %@",resultDic);
+    }];
 }
 
 /**

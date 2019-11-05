@@ -18,6 +18,10 @@
 		FA0756FA23710FF5007D35BD /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA0756F823710FF4007D35BD /* AlipaySDK.bundle */; };
 		FA0756FB23710FF5007D35BD /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0756F923710FF5007D35BD /* AlipaySDK.framework */; };
 		FA0756FF23711409007D35BD /* YLT_WxPay.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0756FE23711409007D35BD /* YLT_WxPay.m */; };
+		FA07570323714945007D35BD /* YLT_iAPPay.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07570223714945007D35BD /* YLT_iAPPay.m */; };
+		FA07570723714BC5007D35BD /* YLT_UnionPay.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA07570623714BC5007D35BD /* YLT_UnionPay.mm */; };
+		FA07570B23714BD9007D35BD /* YLT_ApplePay.m in Sources */ = {isa = PBXBuildFile; fileRef = FA07570A23714BD9007D35BD /* YLT_ApplePay.m */; };
+		FA0757112371526D007D35BD /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA07570E2371526D007D35BD /* libPaymentControl.a */; };
 		FA21847F236FADEC00FAA581 /* AppCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA21847E236FADEC00FAA581 /* AppCardView.m */; };
 		FA218482236FAE1D00FAA581 /* AppCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218481236FAE1D00FAA581 /* AppCardCell.m */; };
 		FA218489236FBE8200FAA581 /* AppCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218488236FBE8200FAA581 /* AppCourseCell.m */; };
@@ -121,6 +125,14 @@
 		FA0756F923710FF5007D35BD /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		FA0756FD23711409007D35BD /* YLT_WxPay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_WxPay.h; sourceTree = "<group>"; };
 		FA0756FE23711409007D35BD /* YLT_WxPay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_WxPay.m; sourceTree = "<group>"; };
+		FA07570123714945007D35BD /* YLT_iAPPay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_iAPPay.h; sourceTree = "<group>"; };
+		FA07570223714945007D35BD /* YLT_iAPPay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_iAPPay.m; sourceTree = "<group>"; };
+		FA07570523714BC5007D35BD /* YLT_UnionPay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_UnionPay.h; sourceTree = "<group>"; };
+		FA07570623714BC5007D35BD /* YLT_UnionPay.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = YLT_UnionPay.mm; sourceTree = "<group>"; };
+		FA07570923714BD9007D35BD /* YLT_ApplePay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_ApplePay.h; sourceTree = "<group>"; };
+		FA07570A23714BD9007D35BD /* YLT_ApplePay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_ApplePay.m; sourceTree = "<group>"; };
+		FA07570E2371526D007D35BD /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
+		FA0757102371526D007D35BD /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
 		FA21847D236FADEC00FAA581 /* AppCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCardView.h; sourceTree = "<group>"; };
 		FA21847E236FADEC00FAA581 /* AppCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCardView.m; sourceTree = "<group>"; };
 		FA218480236FAE1D00FAA581 /* AppCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCardCell.h; sourceTree = "<group>"; };
@@ -254,6 +266,7 @@
 			files = (
 				3242D8E250EF808B63039ED3 /* libPods-App.a in Frameworks */,
 				FA0756FB23710FF5007D35BD /* AlipaySDK.framework in Frameworks */,
+				FA0757112371526D007D35BD /* libPaymentControl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +305,8 @@
 		FA0756E52370FE23007D35BD /* iAP */ = {
 			isa = PBXGroup;
 			children = (
+				FA07570123714945007D35BD /* YLT_iAPPay.h */,
+				FA07570223714945007D35BD /* YLT_iAPPay.m */,
 			);
 			path = iAP;
 			sourceTree = "<group>";
@@ -316,6 +331,50 @@
 				FA0756F923710FF5007D35BD /* AlipaySDK.framework */,
 			);
 			path = framework;
+			sourceTree = "<group>";
+		};
+		FA07570423714B6F007D35BD /* UnionPay */ = {
+			isa = PBXGroup;
+			children = (
+				FA07570C23715235007D35BD /* framework */,
+				FA07570523714BC5007D35BD /* YLT_UnionPay.h */,
+				FA07570623714BC5007D35BD /* YLT_UnionPay.mm */,
+			);
+			path = UnionPay;
+			sourceTree = "<group>";
+		};
+		FA07570823714BCA007D35BD /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				FA07570923714BD9007D35BD /* YLT_ApplePay.h */,
+				FA07570A23714BD9007D35BD /* YLT_ApplePay.m */,
+			);
+			path = Apple;
+			sourceTree = "<group>";
+		};
+		FA07570C23715235007D35BD /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				FA07570F2371526D007D35BD /* inc */,
+				FA07570D2371526D007D35BD /* libs */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		FA07570D2371526D007D35BD /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				FA07570E2371526D007D35BD /* libPaymentControl.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		FA07570F2371526D007D35BD /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				FA0757102371526D007D35BD /* UPPaymentControl.h */,
+			);
+			path = inc;
 			sourceTree = "<group>";
 		};
 		FA21847C236FAD8200FAA581 /* Card */ = {
@@ -640,6 +699,8 @@
 		FA65C147236A7702007DAFF6 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
+				FA07570823714BCA007D35BD /* Apple */,
+				FA07570423714B6F007D35BD /* UnionPay */,
 				FA0756E52370FE23007D35BD /* iAP */,
 				FA0756E42370FE14007D35BD /* WeChat */,
 				FA65C148236A7708007DAFF6 /* Alipay */,
@@ -877,11 +938,13 @@
 				FA2DE23F236A7D1100B9CC0D /* YLT_TrackModular.m in Sources */,
 				FA30B53123614E76006E9449 /* AppLogDetailVC.m in Sources */,
 				FA2366DB1FC01A6F006255D0 /* UIColor+AppColor.m in Sources */,
+				FA07570B23714BD9007D35BD /* YLT_ApplePay.m in Sources */,
 				C734423121E3262800BD5175 /* PHRequest.m in Sources */,
 				FA218490236FBEBF00FAA581 /* AppTeacherView.m in Sources */,
 				FA21847F236FADEC00FAA581 /* AppCardView.m in Sources */,
 				FA2DE240236A7D1300B9CC0D /* UIViewController+AppTrack.m in Sources */,
 				FA2184C0236FF7D900FAA581 /* Normal+DataLayout.m in Sources */,
+				FA07570723714BC5007D35BD /* YLT_UnionPay.mm in Sources */,
 				FA2184A4236FC94400FAA581 /* UserHeaderView.m in Sources */,
 				FA21849C236FC3E200FAA581 /* Teacher+DataLayout.m in Sources */,
 				FA0756E92370FE59007D35BD /* YLT_PayEngine.m in Sources */,
@@ -902,6 +965,7 @@
 				FA2366FC1FC01D3F006255D0 /* PPModel+DB.m in Sources */,
 				FA2DE251236A874B00B9CC0D /* AppPageCell.m in Sources */,
 				FA600E61236BDBE900CE75A0 /* YLT_BaseModel+AppPage.m in Sources */,
+				FA07570323714945007D35BD /* YLT_iAPPay.m in Sources */,
 				FA2184B3236FEC9200FAA581 /* AppNormalReusableView.m in Sources */,
 				FA600E6D236BFCD400CE75A0 /* AppMenuView.m in Sources */,
 				FA600E66236BFA7100CE75A0 /* AppBannerView.m in Sources */,
@@ -1073,6 +1137,10 @@
 				);
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/App/Modular/Pay/Channel/UnionPay/framework/libs",
+				);
 				MARKETING_VERSION = 5.1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1192,6 +1260,10 @@
 				);
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/App/Modular/Pay/Channel/UnionPay/framework/libs",
+				);
 				MARKETING_VERSION = 5.1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

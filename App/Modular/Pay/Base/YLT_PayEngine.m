@@ -36,10 +36,16 @@ YLT_ShareInstance(YLT_PayEngine);
         Class cls = NSClassFromString(value);
         if (cls != NULL) {
             id<YLT_PayProtocol> pay = [[cls alloc] init];
-            [pay ylt_register];//注册所有信息
             [self.channels setObject:pay forKey:key];
         }
     }];
+}
+
+- (BOOL)ylt_register {
+    [self.channels enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id<YLT_PayProtocol>  _Nonnull obj, BOOL * _Nonnull stop) {
+        [obj ylt_register];//注册所有信息
+    }];
+    return YES;
 }
 
 /**
@@ -103,6 +109,14 @@ YLT_ShareInstance(YLT_PayEngine);
               options:(NSDictionary *)options {
     id<YLT_PayProtocol> pay = self.channels[@(self.payChannel)];
     [pay handleOpenURL:url options:options];
+    return YES;
+}
+
+- (BOOL)handleUserActivity:(NSUserActivity *)userActivity {
+    id<YLT_PayProtocol> pay = self.channels[@(self.payChannel)];
+    if ([pay respondsToSelector:@selector(handleUserActivity:)]) {
+        [pay handleUserActivity:userActivity];
+    }
     return YES;
 }
 

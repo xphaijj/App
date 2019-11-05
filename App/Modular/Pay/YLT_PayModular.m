@@ -13,7 +13,7 @@
 @implementation YLT_PayModular
 
 + (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [[YLT_PayEngine shareInstance] ylt_register];
     return YES;
 }
 
@@ -34,7 +34,7 @@
 }
 
 + (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nonnull))restorationHandler {
-    
+    [YLT_PayEngine.shareInstance handleUserActivity:userActivity];
     return YES;
 }
 
