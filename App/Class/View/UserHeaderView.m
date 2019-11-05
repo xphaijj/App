@@ -50,10 +50,11 @@
 }
 
 - (void)tapAction:(UITapGestureRecognizer *)sender {
-    YLT_Log(@"tap action");
+    [YLT_RouterManager ylt_routerToURL:@"https://randomuser.me/api/portraits/men/80.jpg" arg:nil completion:nil];
 }
 
 - (void)setData:(YLT_BaseModel<UserHeaderProtocol> *)data {
+    
     [super setData:data];
     if ([data conformsToProtocol:@protocol(UserHeaderProtocol)]) {
         [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:data.logo]];

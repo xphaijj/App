@@ -8,10 +8,6 @@
 
 #import "YLT_BaseModular.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface YLT_PayModular : YLT_BaseModular
 
 @end
-
-NS_ASSUME_NONNULL_END

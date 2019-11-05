@@ -734,6 +734,11 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
 
+## WechatOpenSDK
+
+Copyright 2019 tencent.com. All rights reserved.
+
+
 ## XHLaunchAd
 
 The MIT License (MIT)

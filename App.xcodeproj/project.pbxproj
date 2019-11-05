@@ -11,6 +11,13 @@
 		3570393D200736E700F76CAC /* Modular.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3570393C200736E600F76CAC /* Modular.plist */; };
 		C734423121E3262800BD5175 /* PHRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C734423021E3262800BD5175 /* PHRequest.m */; };
 		C734423421E3262E00BD5175 /* BaseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C734423321E3262E00BD5175 /* BaseCollection.m */; };
+		FA0756E92370FE59007D35BD /* YLT_PayEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0756E82370FE59007D35BD /* YLT_PayEngine.m */; };
+		FA0756ED2370FEB1007D35BD /* YLT_PayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0756EC2370FEB1007D35BD /* YLT_PayOrder.m */; };
+		FA0756F02370FF32007D35BD /* YLT_PayError.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0756EF2370FF32007D35BD /* YLT_PayError.m */; };
+		FA0756F4237105B3007D35BD /* YLT_AliPay.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0756F3237105B3007D35BD /* YLT_AliPay.m */; };
+		FA0756FA23710FF5007D35BD /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA0756F823710FF4007D35BD /* AlipaySDK.bundle */; };
+		FA0756FB23710FF5007D35BD /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0756F923710FF5007D35BD /* AlipaySDK.framework */; };
+		FA0756FF23711409007D35BD /* YLT_WxPay.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0756FE23711409007D35BD /* YLT_WxPay.m */; };
 		FA21847F236FADEC00FAA581 /* AppCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA21847E236FADEC00FAA581 /* AppCardView.m */; };
 		FA218482236FAE1D00FAA581 /* AppCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218481236FAE1D00FAA581 /* AppCardCell.m */; };
 		FA218489236FBE8200FAA581 /* AppCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA218488236FBE8200FAA581 /* AppCourseCell.m */; };
@@ -67,8 +74,6 @@
 		FA600E69236BFAA000CE75A0 /* AppBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E68236BFAA000CE75A0 /* AppBannerCell.m */; };
 		FA600E6D236BFCD400CE75A0 /* AppMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E6C236BFCD400CE75A0 /* AppMenuView.m */; };
 		FA600E70236BFD0A00CE75A0 /* AppMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA600E6F236BFD0A00CE75A0 /* AppMenuCell.m */; };
-		FA65C14B236A7723007DAFF6 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA65C149236A7722007DAFF6 /* AlipaySDK.bundle */; };
-		FA65C14C236A7723007DAFF6 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA65C14A236A7723007DAFF6 /* AlipaySDK.framework */; };
 		FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */; };
 		FA6F1A37236033CF0029B0CF /* AppAssistiveTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A36236033CF0029B0CF /* AppAssistiveTouchView.m */; };
 		FA6F1A3A23603A480029B0CF /* AppLogListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6F1A3923603A480029B0CF /* AppLogListVC.m */; };
@@ -104,6 +109,18 @@
 		C734423221E3262D00BD5175 /* BaseCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollection.h; sourceTree = "<group>"; };
 		C734423321E3262E00BD5175 /* BaseCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollection.m; sourceTree = "<group>"; };
 		E7CBEFF6D1B981D12FAD5356 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0756E72370FE59007D35BD /* YLT_PayEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PayEngine.h; sourceTree = "<group>"; };
+		FA0756E82370FE59007D35BD /* YLT_PayEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PayEngine.m; sourceTree = "<group>"; };
+		FA0756EB2370FEB1007D35BD /* YLT_PayOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PayOrder.h; sourceTree = "<group>"; };
+		FA0756EC2370FEB1007D35BD /* YLT_PayOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PayOrder.m; sourceTree = "<group>"; };
+		FA0756EE2370FF32007D35BD /* YLT_PayError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PayError.h; sourceTree = "<group>"; };
+		FA0756EF2370FF32007D35BD /* YLT_PayError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PayError.m; sourceTree = "<group>"; };
+		FA0756F2237105B3007D35BD /* YLT_AliPay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_AliPay.h; sourceTree = "<group>"; };
+		FA0756F3237105B3007D35BD /* YLT_AliPay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_AliPay.m; sourceTree = "<group>"; };
+		FA0756F823710FF4007D35BD /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		FA0756F923710FF5007D35BD /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		FA0756FD23711409007D35BD /* YLT_WxPay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_WxPay.h; sourceTree = "<group>"; };
+		FA0756FE23711409007D35BD /* YLT_WxPay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_WxPay.m; sourceTree = "<group>"; };
 		FA21847D236FADEC00FAA581 /* AppCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCardView.h; sourceTree = "<group>"; };
 		FA21847E236FADEC00FAA581 /* AppCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCardView.m; sourceTree = "<group>"; };
 		FA218480236FAE1D00FAA581 /* AppCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCardCell.h; sourceTree = "<group>"; };
@@ -211,8 +228,6 @@
 		FA600E6C236BFCD400CE75A0 /* AppMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppMenuView.m; sourceTree = "<group>"; };
 		FA600E6E236BFD0A00CE75A0 /* AppMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMenuCell.h; sourceTree = "<group>"; };
 		FA600E6F236BFD0A00CE75A0 /* AppMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppMenuCell.m; sourceTree = "<group>"; };
-		FA65C149236A7722007DAFF6 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		FA65C14A236A7723007DAFF6 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		FA6F1A2C23602B310029B0CF /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		FA6F1A2E23602BAE0029B0CF /* YLT_PayModular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLT_PayModular.h; sourceTree = "<group>"; };
 		FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLT_PayModular.m; sourceTree = "<group>"; };
@@ -238,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3242D8E250EF808B63039ED3 /* libPods-App.a in Frameworks */,
-				FA65C14C236A7723007DAFF6 /* AlipaySDK.framework in Frameworks */,
+				FA0756FB23710FF5007D35BD /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +278,44 @@
 				A88F6468F2F7D84B609017C6 /* libPods-Track.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA0756E42370FE14007D35BD /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				FA0756FD23711409007D35BD /* YLT_WxPay.h */,
+				FA0756FE23711409007D35BD /* YLT_WxPay.m */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		FA0756E52370FE23007D35BD /* iAP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iAP;
+			sourceTree = "<group>";
+		};
+		FA0756E62370FE3F007D35BD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FA0756E72370FE59007D35BD /* YLT_PayEngine.h */,
+				FA0756E82370FE59007D35BD /* YLT_PayEngine.m */,
+				FA0756EB2370FEB1007D35BD /* YLT_PayOrder.h */,
+				FA0756EC2370FEB1007D35BD /* YLT_PayOrder.m */,
+				FA0756EE2370FF32007D35BD /* YLT_PayError.h */,
+				FA0756EF2370FF32007D35BD /* YLT_PayError.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FA0756F12371057A007D35BD /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				FA0756F823710FF4007D35BD /* AlipaySDK.bundle */,
+				FA0756F923710FF5007D35BD /* AlipaySDK.framework */,
+			);
+			path = framework;
 			sourceTree = "<group>";
 		};
 		FA21847C236FAD8200FAA581 /* Card */ = {
@@ -464,8 +517,8 @@
 		FA2366CB1FC01990006255D0 /* Modular */ = {
 			isa = PBXGroup;
 			children = (
-				FAB5154B236A74B0004C1698 /* Track */,
 				3570393C200736E600F76CAC /* Modular.plist */,
+				FAB5154B236A74B0004C1698 /* Track */,
 				FA6F1A2D23602B9B0029B0CF /* Pay */,
 				FA6F1A3323602BD10029B0CF /* TCP */,
 				FA6F1A3223602BC30029B0CF /* Location */,
@@ -587,6 +640,8 @@
 		FA65C147236A7702007DAFF6 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
+				FA0756E52370FE23007D35BD /* iAP */,
+				FA0756E42370FE14007D35BD /* WeChat */,
 				FA65C148236A7708007DAFF6 /* Alipay */,
 			);
 			path = Channel;
@@ -595,8 +650,9 @@
 		FA65C148236A7708007DAFF6 /* Alipay */ = {
 			isa = PBXGroup;
 			children = (
-				FA65C149236A7722007DAFF6 /* AlipaySDK.bundle */,
-				FA65C14A236A7723007DAFF6 /* AlipaySDK.framework */,
+				FA0756F2237105B3007D35BD /* YLT_AliPay.h */,
+				FA0756F3237105B3007D35BD /* YLT_AliPay.m */,
+				FA0756F12371057A007D35BD /* framework */,
 			);
 			path = Alipay;
 			sourceTree = "<group>";
@@ -604,9 +660,10 @@
 		FA6F1A2D23602B9B0029B0CF /* Pay */ = {
 			isa = PBXGroup;
 			children = (
-				FA65C147236A7702007DAFF6 /* Channel */,
 				FA6F1A2E23602BAE0029B0CF /* YLT_PayModular.h */,
 				FA6F1A2F23602BAE0029B0CF /* YLT_PayModular.m */,
+				FA0756E62370FE3F007D35BD /* Base */,
+				FA65C147236A7702007DAFF6 /* Channel */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -745,7 +802,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA65C14B236A7723007DAFF6 /* AlipaySDK.bundle in Resources */,
+				FA0756FA23710FF5007D35BD /* AlipaySDK.bundle in Resources */,
 				FA2184CE236FFE2B00FAA581 /* HomeVC.geojson in Resources */,
 				FA2366A31FC017A5006255D0 /* LaunchScreen.storyboard in Resources */,
 				FA2366F01FC01D0F006255D0 /* Tools in Resources */,
@@ -827,6 +884,7 @@
 				FA2184C0236FF7D900FAA581 /* Normal+DataLayout.m in Sources */,
 				FA2184A4236FC94400FAA581 /* UserHeaderView.m in Sources */,
 				FA21849C236FC3E200FAA581 /* Teacher+DataLayout.m in Sources */,
+				FA0756E92370FE59007D35BD /* YLT_PayEngine.m in Sources */,
 				FA2184A8236FC99700FAA581 /* YLT_BaseView+AppTest.m in Sources */,
 				FA218499236FC3D400FAA581 /* Course+DataLayout.m in Sources */,
 				FABD69DB214A9F3F00234DA4 /* YLT_LocationModular.m in Sources */,
@@ -837,6 +895,7 @@
 				FA218496236FC27800FAA581 /* AppCardFlowLayout.m in Sources */,
 				FA600E70236BFD0A00CE75A0 /* AppMenuCell.m in Sources */,
 				FA2184BA236FECE200FAA581 /* NSArray+AppPage.m in Sources */,
+				FA0756F02370FF32007D35BD /* YLT_PayError.m in Sources */,
 				FA218482236FAE1D00FAA581 /* AppCardCell.m in Sources */,
 				FA2184C9236FFDE200FAA581 /* CourseVC.m in Sources */,
 				FA2184D5236FFFE800FAA581 /* AppPageVC.m in Sources */,
@@ -858,8 +917,11 @@
 				FAD4298D236C1C1300F737DC /* AppPageView.m in Sources */,
 				FA2184C6236FFDD500FAA581 /* HomeVC.m in Sources */,
 				FA6F1A37236033CF0029B0CF /* AppAssistiveTouchView.m in Sources */,
+				FA0756ED2370FEB1007D35BD /* YLT_PayOrder.m in Sources */,
 				FA21848C236FBE9200FAA581 /* AppCourseView.m in Sources */,
+				FA0756F4237105B3007D35BD /* YLT_AliPay.m in Sources */,
 				FA2366A61FC017A5006255D0 /* main.m in Sources */,
+				FA0756FF23711409007D35BD /* YLT_WxPay.m in Sources */,
 				FA6F1A3023602BAE0029B0CF /* YLT_PayModular.m in Sources */,
 				FA218493236FBECF00FAA581 /* AppTeacherCell.m in Sources */,
 				FA2366981FC017A5006255D0 /* AppDelegate.m in Sources */,
@@ -1007,6 +1069,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/Modular/Pay/Channel/Alipay",
+					"$(PROJECT_DIR)/App/Modular/Pay/Channel/Alipay/framework",
 				);
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1034,7 +1097,6 @@
 					"-l\"SVProgressHUD\"",
 					"-l\"SocialQQ\"",
 					"-l\"SocialSina\"",
-					"-l\"SocialWeChat\"",
 					"-l\"UIActionSheet+Blocks\"",
 					"-l\"UIAlertController+Blocks\"",
 					"-l\"UIAlertView+Blocks\"",
@@ -1126,6 +1188,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/App/Modular/Pay/Channel/Alipay",
+					"$(PROJECT_DIR)/App/Modular/Pay/Channel/Alipay/framework",
 				);
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1150,7 +1213,6 @@
 					"-l\"SVProgressHUD\"",
 					"-l\"SocialQQ\"",
 					"-l\"SocialSina\"",
-					"-l\"SocialWeChat\"",
 					"-l\"UIActionSheet+Blocks\"",
 					"-l\"UIAlertController+Blocks\"",
 					"-l\"UIAlertView+Blocks\"",
