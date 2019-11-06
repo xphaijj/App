@@ -20,8 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 退出登陆
 + (void)logout;
 
-+ (void)trackBeginPage:(UIViewController *)sender;
-+ (void)trackEndPage:(UIViewController *)sender;
++ (void)trackBeginPage:(NSDictionary *)sender;
++ (void)trackEndPage:(NSDictionary *)sender;
 
 /// 分享
 /// @param data 分享的数据

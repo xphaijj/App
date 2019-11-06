@@ -34,15 +34,15 @@
     [MobClick profileSignOff];
 }
 
-+ (void)trackBeginPage:(UIViewController *)sender {
-    if ([sender isKindOfClass:[UIViewController class]]) {
-        [MobClick beginLogPageView:NSStringFromClass(sender.class)];
++ (void)trackBeginPage:(NSDictionary *)sender {
+    if ([sender isKindOfClass:[NSDictionary class]] && [sender.allKeys containsObject:@"pagename"]) {
+        [MobClick beginLogPageView:sender[@"pagename"]];
     }
 }
 
-+ (void)trackEndPage:(UIViewController *)sender {
-    if ([sender isKindOfClass:[UIViewController class]]) {
-        [MobClick endLogPageView:NSStringFromClass(sender.class)];
++ (void)trackEndPage:(NSDictionary *)sender {
+    if ([sender isKindOfClass:[NSDictionary class]] && [sender.allKeys containsObject:@"pagename"]) {
+        [MobClick endLogPageView:sender[@"pagename"]];
     }
 }
 

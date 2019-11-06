@@ -20,17 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    UserHeaderView *userHeaderView = [[UserHeaderView alloc] initWithFrame:CGRectMake(0, 0, 240, 44)];
-//    [userHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(240, 44));
-//    }];
-//    User *user = [[User alloc] init];
-//    user.name = @"云小夕";
-//    user.logo = @"https://randomuser.me/api/portraits/men/80.jpg";
-//    userHeaderView.data = user;
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:userHeaderView];
-//
-//    [self mainView];
+    UserHeaderView *userHeaderView = [[UserHeaderView alloc] initWithFrame:CGRectMake(0, 0, 240, 44)];
+    [userHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(240, 44));
+    }];
+    User *user = [[User alloc] init];
+    user.name = @"云小夕";
+    user.logo = @"https://randomuser.me/api/portraits/men/80.jpg";
+    userHeaderView.data = user;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:userHeaderView];
+
+    [self mainView];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

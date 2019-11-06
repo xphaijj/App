@@ -39,7 +39,8 @@
 #pragma mark - action
 
 - (NSString *)routerAction {
-    return @"ylt://TabBarVC/routerWithParams:?index=1";
+    return @"ylt://CourseVC";
+    //return @"ylt://TabBarVC/routerWithParams:?index=1";
 }
 
 @end
