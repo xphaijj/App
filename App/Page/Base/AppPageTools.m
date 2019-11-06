@@ -47,7 +47,7 @@
         CGFloat spacing = [self spacingFromStyle:style];
         CGFloat width = (totalWidth-insets.left-insets.right-((CGFloat) (column-1))*spacing)/column;
         if (style.rowHeight != 0) {
-            return CGSizeMake(width, style.rowHeight);
+            return CGSizeMake(width, YLT_Scale_Width(style.rowHeight));
         }
         CGFloat ratio = (style.ratio == 0) ? 16.0/9.0 : style.ratio;
         return CGSizeMake(width, width/ratio);
